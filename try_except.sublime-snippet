@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[
+try
+	$1
+except
+	$2
+endtry
+
+]]></content>
+	<tabTrigger>try</tabTrigger>
+	<description>try-except構文</description>
+	<scope>source.uwsc</scope>
+</snippet>

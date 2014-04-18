@@ -1,0 +1,412 @@
+{
+	"name": "UWSC",
+	"scopeName": "source.uwsc",
+	"fileTypes": ["uws"],
+	"patterns": [
+		{
+			"name": "comment.line.uwsc",
+			"match": "(?-m)(\/\/).*\\n?"
+		},
+		{
+			"name": "string.quoted.double.uwsc",
+			"begin": "\"",
+			"end":"\"",
+			"patterns": [
+				{
+					"name": "string.interpolated.uwsc",
+					"match": "(?i)<#(CR|DBL|TAB)>"
+				}
+			]
+		},
+		{
+			"match": "\\b\\d+(\\.\\d+)?\\b",
+			"name": "constant.numeric.uwsc",
+			"comment": "numbers"
+		},
+		{
+			"match": "\\$[0-9A-Fa-f]+\\b",
+			"name": "constant.numeric.hex.uwsc",
+			"comment": "hex numbers"
+		},
+		{
+			"name":  "constant.language.uwsc",
+			"match": "(?i)\\b(TRUE|FALSE|NULL|EMPTY|NOTHING)\\b"
+		},	
+		{
+			"name":  "variable.parameter.uwsc",
+			"match": "(?i:\\b(EVENT_PRM|PARAM_STR|ALL_ITEM_LIST|ALL_OLE_ITEM|ALL_WIN_ID|ALL_IMG_[XY]|GETDIR_FILES)\\b)"
+		},
+		{
+			"name":  "constant.other.uwsc",
+			"match": "(?i:\\bGET_((ACTIVE|FROMPOINT|THISUWSC|LOGPRINT|FUKIDASI|BALLOON|FORM|SCHEDULE)_WIN|FROMPOINT_OBJ)\\b)",
+			"comment": "GETID"
+		},
+		{
+			"name":  "constant.other.uwsc",
+			"match": "(?i:\\bCLK_(BTN|LIST|TAB|MENU|TREEVEW|TREEVIEW|LSTVEW|LISTVIEW|TOOLBAR|ACC|SHORT|BACK|MUSMOVE|RIGHTCLK|LEFTCLK|DBLCLK|FROMLAST|CONTINUE)\\b)",
+			"comment": "CLKITEM"
+		},
+		{
+			"name":  "constant.other.uwsc",
+			"match": "(?i:\\b(ACTIVATE|CLOSE|CLOSE2|HIDE|SHOW|MIN|MAX|NORMAL|TOPMOST|NOTOPMOST|TOPNOACTV)\\b)",
+			"comment": "CTRLWIN"
+		},
+		{
+			"name":  "constant.other.uwsc",
+			"match": "(?i:\\bSTR_(ACC_EDIT|ACC_STATIC|EDIT|STATIC|STATUS|ACC_CELL)\\b)",
+			"comment": "SENDSTR GETSTR"
+		},
+		{
+			"name":  "constant.other.uwsc",
+			"match": "(?i:\\bITM_(BTN|LIST|TAB|MENU|TREEVEW|TREEVIEW|LSTVEW|LISTVIEW|EDIT|STATIC|STATUSBAR|TOOLBAR|ACCCLK|ACCCLK2|ACCTXT|BACK)\\b)",
+			"comment": "GETITEM"
+		},
+		{
+			"name":  "constant.other.uwsc",
+			"match": "(?i:\\b(SLD_(POS|MIN|MAX|PAGE|BAR|X|Y)|GET_SLIDER)\\b)",
+			"comment": "SETSLIDER GETSLIDER"
+		},
+		{
+			"name":  "constant.other.uwsc",
+			"match": "(?i:\\bST_(TITLE|CLASS|X|Y|WIDTH|HEIGHT|CLX|CLY|CLWIDTH|CLHEIGHT|PARENT|ICON|MAXIMIZED|VISIBLE|ACTIVE|BUSY|ISID|WIN64|PATH|PROCESS|MONITOR)\\b)",
+			"comment": "STATUS"
+		},
+		{
+			"name":  "constant.other.uwsc",
+			"match": "(?i:\\bCOL_([RGB]|RGB)\\b)",
+			"comment": "PEEKCOLOR"
+		},
+		{
+			"name":  "constant.other.uwsc",
+			"match": "(?i:\\b(G_IMG_[XY]|IMG_MSK_([BGR]|BGR)[1-4]|IMG_(FORE|BACK))\\b)",
+			"comment": "CHKIMG SAVEIMG"
+		},
+		{
+			"name":  "constant.other.uwsc",
+			"match": "(?i:\\bCUR_(APPSTARTING|ARROW|CROSS|HAND|HELP|IBEAM|NO|SIZEALL|SIZENESW|SIZENS|SIZENWSE|SIZEWE|UPARROW|WAIT)\\b)",
+			"comment": "MUSCUR"
+		},
+		{
+			"name":  "constant.other.uwsc",
+			"match": "(?i:\\bACC_(ACC|API|DESCRIPTION|LOCATION|NAME|ROLE|STATE|VALUE)\\b)",
+			"comment": "POSACC"
+		},
+		{
+			"name":  "constant.other.uwsc",
+			"match": "(?i:\\bBTN_(YES|NO|OK|CANCEL|ABORT|RETRY|IGNORE)\\b)",
+			"comment": "MSGBOX"
+		},
+		{
+			"name":  "constant.other.uwsc",
+			"match": "(?i:\\bSLCT_([1-9]|[12][0-9]|3[01]|BTN|CHK|CMB|LST|NUM|RDO|STR)\\b)",
+			"comment": "SLCTBOX"
+		},
+		{
+			"name":  "constant.other.uwsc",
+			"match": "(?i:\\bMON_(HEIGHT|WIDTH|X|Y)\\b)",
+			"comment": "MONITOR"
+		},
+		{
+			"name":  "constant.other.uwsc",
+			"match": "(?i:\\bG_TIME_((DD|HH|MM|NN|SS|ZZ|YY)2?|WW|YY4)\\b)",
+			"comment": "GETTIME"
+		},
+		{
+			"name":  "constant.other.uwsc",
+			"match": "(?i:\\bP_(FORCE|LOGOFF|MONIPOWER[23]?|POWEROFF|REBOOT|SCREENSAVE|SHUTDOWN|SUSPEND2?|UWSC_REEXEC)\\b)",
+			"comment": "POFF"
+		},
+		{
+			"name":  "constant.other.uwsc",
+			"match": "(?i:\\bTGL_(CAPSLOCK|IME|KANALOCK|NUMLOCK|SCROLLLOCK)\\b)",
+			"comment": "GETKEYSTATE"
+		},
+		{
+			"name":  "constant.other.uwsc",
+			"match": "(?i:\\b(HOTKEY_(MOD|VK)|MOD_(ALT|CONTROL|SHIFT|WIN))\\b)",
+			"comment": "SETHOTKEY"
+		},
+		{
+			"name":  "constant.other.uwsc",
+			"match": "(?i:\\bLOCK_(KEYBOARD|MOUSE)\\b)",
+			"comment": "LOCKHARDEX"
+		},
+		{
+			"name":  "constant.other.uwsc",
+			"match": "(?i:\\bGET_(SYS)?MENU_HND\\b)",
+			"comment": "GETCTLHND"
+		},
+		{
+			"name":  "constant.other.uwsc",
+			"match": "(?i:\\bVAR_(ARRAY|BOOLEAN|BSTR|BYTE|CURRENCY|DATE|DISPATCH|DOUBLE|DWORD|EMPTY|ERROR|INT64|INTEGER|NULL|SBYTE|SINGLE|SMALLINT|UNKNOWN|VARIANT|WORD)\\b)",
+			"comment": "VARTYPE"
+		},
+		{
+			"name":  "constant.other.uwsc",
+			"match": "(?i:\\b(LEFT|RIGHT|MIDDLE|WHEEL|CLICK|DOWN|UP)\\b)",
+			"comment": "BTN KBD"
+		},
+		{
+			"name":  "constant.other.uwsc",
+			"match": "(?i:\\b(ERR_VALUE|COM_ERR_FLG)\\b)",
+			"comment": "VAL COMエラー"
+		},
+		{
+			"name":  "constant.other.uwsc",
+			"match": "(?i:\\bSC_((FULL|HALF)WIDTH|HIRAGANA|KATAKANA|(LOWER|UPPER)CASE)\\b)",
+			"comment": "STRCONV"
+		},
+		{
+			"name":  "constant.other.uwsc",
+			"match": "(?i:\\bCALC_(ADD|MIN|MAX|AVR)\\b)",
+			"comment": "CALCARRAY"
+		},
+		{
+			"name":  "constant.other.uwsc",
+			"match": "(?i:\\bF_(READ|WRITE(8B?|16?)?|EXISTS|EXCLUSIVE|TAB|NOCR|LINECOUNT|ALLTEXT|INSERT)\\b)",
+			"comment": "FOPEN FGET FPUT"
+		},
+		{
+			"name":  "constant.other.uwsc",
+			"match": "(?i:\\bCODE_(URL|UTF8|BYTEARRAYW?)\\b)",
+			"comment": "ENCODE DECODE"
+		},
+		{
+			"name":  "constant.other.uwsc",
+			"match": "(?i:\\bFOM_(NO(ICON|HIDE|SUBMIT|RESIZE|LUNA)|(MINI|MAXI)MIZE|BROWSER|FORMHIDE|GETVALUE)\\b)",
+			"comment": "CREATEFORM GETFORMDATA"
+		},
+		{
+			"name":  "constant.other.uwsc",
+			"match": "(?i:\\bXL_(NEW|BOOK|OOOC)\\b)",
+			"comment": "XLOPEN"
+		},
+		{
+			"name":  "constant.other.uwsc",
+			"match": "(?i:\\b(GET_((WIN|SYS|CUR|APPDATA|UWSC)_DIR|UWSC_(VER|PRO|NAME))|G_(MOUSE_[XY]|SCREEN_[WHC]))\\b)",
+			"comment": "特殊変数"
+		},
+		{
+			"name":  "constant.other.uwsc",
+			"match": "(?i:\\bHASH_(CASECARE|EXISTS|KEY|REMOVE(ALL)?|SORT|VAL)\\b)",
+			"comment": "連想配列"
+		},
+		{
+			"name":  "constant.other.uwsc",
+			"match": "(?i:\\bTRY_ERR(LINE|MSG)\\b)",
+			"comment": "TRY"
+		},
+		{
+			"name":  "constant.other.uwsc",
+			"match": "(?i:\\b(VK_([0-9A-Z]|F[1-9]|F1[0-2]|NUMPAD[0-9]|OEM_([1-8]|PA[1-3]|COMMA|JUMP|MINUS|PERIOD|PLUS|RESET)|VOLUME_(DOWN|MUTE|UP)|MEDIA_(NEXT_TRACK|PLAY_PAUSE|PREV_TRACK|STOP)|LAUNCH_(APP1|APP2|MAIL|MEDIA_SELECT)|BROWSER_(BACK|FAVORITES|FORWARD|HOME|REFRESH|SEARCH|STOP)|ACCEPT|ADD|ALT|APPS|BACK|CAPITAL|CLEAR|CONTROL|CONVERT|CTRL|DECIMAL|DELETE|DIVIDE|DOWN|END|ESC|ESCAPE|EXECUTE|FINAL|HELP|HOME|INSERT|KANA|KANJI|LBUTTON|LEFT|MBUTTON|MENU|MODECHANGE|MULTIPLY|NEXT|NONCONVERT|NUMLOCK|PAUSE|PRINT|PRIOR|RBUTTON|RCTRL|RETURN|RIGHT|RSHIFT|SCROLL|SELECT|SEPARATOR|SHIFT|SLEEP|SNAPSHOT|SPACE|START|SUBTRACT|TAB|UP|WIN))\\b)",
+			"comment": "Virtual KeyCode"
+		},
+		{
+			"name":  "storage.modifier.uwsc",
+			"match": "(?i)option\\s+(EXPLICIT|SAMESTR|OPTFINALLY|OPTPUBLIC|SPECIALCHAR|SHORTCIRCUIT|DEFAULTFONT|POSITION|LOGPATH|LOGLINES|LOGFILE|DLGTITLE)"
+		},
+		{
+			"name":  "storage.type.block.uwsc",
+			"match": "(?i:\\b(FOR|TO|STEP|NEXT|IFB?|THEN|ELSE(IF)?|ENDIF|TRY|EXCEPT|FINALLY|ENDTRY|WITH|ENDWITH)\\b)"
+		},
+		{
+			"name":  "keyword.operator.uwsc",
+			"match": "(?i:\\b(mod|and|or|xor)\\b)"
+		},
+		{
+			"name":  "support.function.uwsc",
+			"comment": "ウィンドウ関連",
+			"match": "(?i:\\b(GETID|CLKITEM|CHKBTN|CTRLWIN|SENDSTR|GETSTR|GETITEM|GETSLCTLST|SETSLIDER|GETSLIDER|SCKEY|GETALLWIN|STATUS|MOUSEORG|PEEKCOLOR|CHKIMG|SAVEIMG|MUSCUR|POSACC)\\b)"
+		},
+		{
+			"name":  "support.function.uwsc",
+			"comment": "ダイアログ/表示関連",
+			"match": "(?i:\\b(INPUT|MSGBOX|SLCTBOX|POPUPMENU|BALLOON|FUKIDASI|STOPFORM|LOGPRINT|MONITOR)\\b)"
+		},
+		{
+			"name":  "support.function.uwsc",
+			"comment": "制御関数関連",
+			"match": "(?i:\\b(EXEC|SLEEP|DOSCMD|POWERSHELL|SOUND|GETTIME|POFF|KINDOFOS|CPUUSERATE|GETKEYSTATE|SETHOTKEY|LOCKHARD|LOCKHARDEX|EVAL)\\b)"
+		},
+		{
+			"name":  "support.function.uwsc",
+			"comment": "システム関数関連 ウィンドウ関数低レベル",
+			"match": "(?i:\\b(GETCTLHND|IDTOHND|HNDTOID|VARTYPE|MMV|BTN|KBD|ACW)\\b)"
+		},
+		{
+			"name":  "support.function.uwsc",
+			"comment": "文字操作関連",
+			"match": "(?i:\\b(COPYB?|POSB?|LENGTHB?|CHKNUM|VAL|REPLACE|CHGMOJ|TRIM|FORMAT|CHRB?|ASCB?|ISUNICODE|STRCONV|TOKEN|BETWEENSTR)\\b)"
+		},
+		{
+			"name":  "support.function.uwsc",
+			"comment": "配列操作関連",
+			"match": "(?i:\\b(RESIZE|SETCLEAR|SHIFTARRAY|CALCARRAY|SPLIT|JOIN|SLICE|QSORT)\\b)"
+		},
+		{
+			"name":  "support.function.uwsc",
+			"comment": "ファイル関連 INIファイル",
+			"match": "(?i:\\b(FOPEN|FGET|FPUT|FDELLINE|FCLOSE|GETDIR|DROPFILE|READINI|WRITEINI|DELETEINI)\\b)"
+		},
+		{
+			"name":  "support.function.uwsc",
+			"comment": "COMオブジェクト 音声認識/合成",
+			"match": "(?i:\\b(CREATEOLEOBJ|GETACTIVEOLEOBJ|GETOLEITEM|OLEEVENT|SAFEARRAY|SPEAK|RECOSTATE|DICTATE)\\b)"
+		},
+		{
+			"name":  "support.function.uwsc",
+			"comment": "IE操作関連 フォーム画面 Excel操作関連",
+			"match": "(?i:\\b(IEGETDATA|IESETDATA|IEGETSRC|IESETSRC|IELINK|ENCODE|DECODE|CREATEFORM|GETFORMDATA|SETFORMDATA|XLOPEN|XLCLOSE|XLACTIVATE|XLSHEET|XLGETDATA|XLSETDATA)\\b)"
+		},
+		{
+			"name":  "support.function.uwsc",
+			"comment": "数学関数",
+			"match": "(?i:\\b(RANDOM|ABS|ZCUT|INT|CEIL|ROUND|SQRT|POWER|EXP|LN|LOGN|SIN|COS|TAN|ARCSIN|ARCCOS|ARCTAN)\\b)"
+		},
+		{
+			"name":  "keyword.control.uwsc",
+			"match": "(?i:\\b(COM_ERR_IGN|COM_ERR_RET|EXIT|EXITEXIT|PRINT|THREAD|VAR)\\b)"
+		},
+		{
+			"name": "meta.loop.uwsc",
+			"begin": "(?i)^\\s*\\b(for|while|repeat)\\b",
+			"captures": {
+				"1": { "name": "storage.type.loop.uwsc" }
+			},
+			"patterns": [
+				{ "include": "source.uwsc" },
+				{
+					"name":  "variable.parameter.uwsc",
+					"match": "(?i:\\b(break|continue)\\b)"
+				}
+			],
+			"end": "(?i)^\\s*\\b(next|wend|until)\\b"
+		},
+		{
+			"name": "meta.select.uwsc",
+			"begin": "(?i)^\\s*\\b(select)\\b",
+			"captures": {
+				"1": { "name": "storage.type.select.uwsc" }
+			},
+			"patterns": [
+				{ "include": "source.uwsc" },
+				{
+					"name":  "variable.parameter.uwsc",
+					"match": "(?i:\\b(case|default)\\b)"
+				}
+			],
+			"end": "(?i)^\\s*\\b(selend)\\b"
+		},
+		{
+			"name": "meta.procedure.uwsc",
+			"begin": "(?i)^\\s*(procedure)\\s+(\\w+)",
+			"beginCaptures": {
+				"2": { "name": "entity.name.function.procedure.uwsc"}
+			},
+			"captures": {
+				"1": { "name": "storage.type.procedure.uwsc" }
+			},
+			"patterns": [
+					{ "include": "source.uwsc" }
+			],
+			"end": "(?i)^\\s*(fend)",
+			"comment": "関数宣言部"
+		},
+		{
+			"name": "meta.function.uwsc",
+			"begin": "(?i)^\\s*(function)\\s+(\\w+)\\(",
+			"captures": {
+				"1": { "name": "storage.type.function.uwsc" },
+				"2": { "name": "entity.name.function.function.uwsc"}
+			},
+			"patterns": [
+					{ "include": "source.uwsc" },
+					{
+						"name":  "variable.parameter.uwsc",
+						"match": "(?i:\\b(RESULT)\\b)"
+					}
+			],
+			"end": "(?i)^\\s*(fend)",
+			"comment": "関数宣言部"
+		},
+		{
+			"name": "meta.module.uwsc",
+			"begin": "(?i)^\\s*(module|class)\\s+(\\w+)",
+			"beginCaptures": {
+				"2": { "name": "entity.name.function.module.uwsc"}
+			},
+			"captures": {
+				"1": { "name": "storage.type.module.uwsc" }
+			},
+			"patterns": [
+					{ "include": "source.uwsc" },
+					{
+						"name":  "variable.parameter.uwsc",
+						"match": "(?i:\\b(this|global)\\b)"
+					}
+			],
+			"end": "(?i)^\\s*(end(module|class))"
+		},
+		{
+			"name": "meta.define.uwsc",
+			"match": "(?i)^\\s*(DIM|PUBLIC|CONST|CALL|HASHTBL)\\s+(\\w+)",
+			"captures": {
+				"1": { "name": "storage.type.define.uwsc" },
+				"2": { "name": "entity.name.function.uwsc"}
+			},
+			"comment": "変数・dll関数宣言部"
+		},
+		{
+			"name": "meta.dll.type.uwsc",
+			"begin": "(?i)^\\s*(def_dll)\\s+(\\w+)\\(",
+			"beginCaptures": {
+				"1": { "name": "storage.type.function.uwsc" },
+				"2": { "name": "entity.name.function.uwsc"}
+			},
+			"patterns": [
+				{
+					"name":  "constant.language.dll.uwsc",
+					"match": "(?i)\\b(int|long|bool|uint|hwnd|string|Wstring|float|double|word|dword|byte|char|pchar|Wchar|pWchar|boolean|longlong|Extended|SafeArray)\\b"
+				}
+			],
+			"end": "\\)(\\s*:\\s*(?i)(int|long|bool|uint|hwnd|string|Wstring|float|double|word|dword|byte|char|pchar|Wchar|pWchar|boolean|longlong|Extended|SafeArray))?\\s*:\\s*((\\w+)(\\.dll)?)",
+			"endCaptures": {
+				"2": { "name": "constant.language.dll.uwsc" },
+				"3": { "name": "storage.type.dllfile.uwsc"}
+			}
+		},
+		{
+			"name": "meta.textblock.uwsc",
+			"begin": "^\\s*(?i)(\\btextblock\\b)\\s+(\\w+)?",
+			"captures": {
+				"1": { "name": "storage.type.textblock.uwsc" },
+				"2": { "name": "entity.name.function.textblock.uwsc"}
+			},
+			"patterns": [
+				{
+					"name": "comment.block.uwsc",
+					"match": ".*"
+				}
+			],
+			"end": "^\\s*(?i)(\\bendtextblock\\b)",
+			"comment": "textblock宣言"
+		},
+		{
+			"name": "meta.module.uwsc",
+			"begin": "(?i)^\\s*(class|module)\\s+(\\w+)",
+			"captures": {
+				"1": { "name": "storage.type.module.uwsc" },
+				"2": { "name": "entity.name.function.uwsc"}
+			},
+			"patterns": [
+				{ "include": "source.uwsc" },
+				{
+					"name":  "variable.parameter.uwsc",
+					"match": "(?i:\\b(GLOBAL|THIS)\\b)"
+				}
+			],
+			"end": "(?i)^\\s*end(class|module)"
+		}
+	],
+	"uuid": "0f466014-285a-4612-b00a-32866f2d6e6d"
+}

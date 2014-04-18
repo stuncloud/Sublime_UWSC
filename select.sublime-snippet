@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+select ${1:expression}
+	case $2
+		$0
+	default
+		
+selend
+
+]]></content>
+	<tabTrigger>select</tabTrigger>
+	<description>select構文</description>
+	<scope>source.uwsc</scope>
+</snippet>

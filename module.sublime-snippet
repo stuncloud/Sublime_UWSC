@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+module ${1:name}
+	procedure ${1:name}
+		$2
+	fend
+	$0
+endmodule
+
+]]></content>
+	<tabTrigger>module</tabTrigger>
+	<description>module宣言</description>
+	<scope>source.uwsc</scope>
+</snippet>

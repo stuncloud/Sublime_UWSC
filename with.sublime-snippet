@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+with ${1:variable}
+	$0
+endwith
+
+]]></content>
+	<tabTrigger>with</tabTrigger>
+	<description>with構文</description>
+	<scope>source.uwsc</scope>
+</snippet>

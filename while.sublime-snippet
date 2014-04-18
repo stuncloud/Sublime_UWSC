@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+while ${1:expression}
+	$0
+wend
+
+]]></content>
+	<tabTrigger>while</tabTrigger>
+	<description>while構文</description>
+	<scope>source.uwsc</scope>
+</snippet>

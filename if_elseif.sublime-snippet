@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[
+if ${1:expression} then
+	$3
+elseif ${2:expression2}
+	$0
+endif
+
+]]></content>
+	<tabTrigger>if</tabTrigger>
+	<description>if elseif</description>
+	<scope>source.uwsc</scope>
+</snippet>

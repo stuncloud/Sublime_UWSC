@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+repeat
+	$0
+until ${1:expression}
+
+]]></content>
+	<tabTrigger>repeat</tabTrigger>
+	<description>repeat構文</description>
+	<scope>source.uwsc</scope>
+</snippet>

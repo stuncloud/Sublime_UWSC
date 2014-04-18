@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+def_dll ${1:funcname}(${2:varType}):${3:retType}:${4:dllName}.dll
+
+]]></content>
+	<tabTrigger>def_dll</tabTrigger>
+	<scope>source.uwsc</scope>
+	<description>dll宣言</description>
+</snippet>

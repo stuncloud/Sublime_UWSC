@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+ifb ${1:expression} then
+	$0
+endif
+
+]]></content>
+	<tabTrigger>ifb</tabTrigger>
+	<description>ifb</description>
+	<scope>source.uwsc</scope>
+</snippet>

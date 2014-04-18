@@ -1,0 +1,34 @@
+{
+	"selector":"source.uwsc",
+	"cmd": [ "echo", "Sorry, UWSC won't work on your platform :(" ],
+
+	"windows":
+	{
+		"encoding": "cp932",
+		"cmd": [ "$file" ],
+		"shell":true
+	},
+
+	"variants":
+	[
+		{
+			"name": "UWS2EXE (GUI)",
+			"windows":
+			{
+				"encoding": "cp932",
+				"cmd": ["Uws2Exe.exe", "$file"],
+				"path": "C:\\Program Files\\UWSC;C:\\Program Files (x86)\\UWSC"
+			}
+		},
+		{
+			"name": "UWS2EXE (Silent)",
+			"windows":
+			{
+				"encoding": "cp932",
+				"shell":true,
+				"cmd": ["Uws2Exe.exe", "/SILMUE", "$file"],
+				"path": "C:\\Program Files\\UWSC;C:\\Program Files (x86)\\UWSC"
+			}
+		}
+	]
+}

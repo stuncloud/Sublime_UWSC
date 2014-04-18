@@ -1,0 +1,9 @@
+<snippet>
+	<content><![CDATA[
+if ${1:expression} then $0
+
+]]></content>
+	<tabTrigger>if</tabTrigger>
+	<description>if 単行</description>
+	<scope>source.uwsc</scope>
+</snippet>

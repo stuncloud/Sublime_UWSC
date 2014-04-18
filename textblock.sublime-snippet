@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+textblock ${1:name}
+	$0
+endtextblock
+
+]]></content>
+	<tabTrigger>textblock</tabTrigger>
+	<description>textblock構文</description>
+	<scope>source.uwsc</scope>
+</snippet>
