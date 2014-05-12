@@ -97,7 +97,7 @@
 			<key>comment</key>
 			<string>GETITEM</string>
 			<key>match</key>
-			<string>(?i:\bITM_(BTN|LIST|TAB|MENU|TREEVEW|TREEVIEW|LSTVEW|LISTVIEW|EDIT|STATIC|STATUSBAR|TOOLBAR|ACCCLK|ACCCLK2|ACCTXT|BACK)\b)</string>
+			<string>(?i:\bITM_(BTN|LIST|TAB|MENU|TREEVI?EW|LISTVIEW|LSTVEW|EDIT|STATIC|STATUSBAR|TOOLBAR|ACC(CLK2?|TXT|EDIT)|FROMLAST|BACK)\b)</string>
 			<key>name</key>
 			<string>constant.other.uwsc</string>
 		</dict>
@@ -273,7 +273,7 @@
 			<key>comment</key>
 			<string>ENCODE DECODE</string>
 			<key>match</key>
-			<string>(?i:\bCODE_(URL|UTF8|BYTEARRAYW?)\b)</string>
+			<string>(?i:\bCODE_(URL|UTF8|ANSI|BYTEARRAYW?)\b)</string>
 			<key>name</key>
 			<string>constant.other.uwsc</string>
 		</dict>

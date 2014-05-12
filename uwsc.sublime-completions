@@ -53,7 +53,7 @@
 		{ "trigger": "getitem (keyword)", "contents": "getitem"},
 		{ "trigger": "ALL_ITEM_LIST", "contents": "ALL_ITEM_LIST${2:[${1:}]}"},
 		"ITM_BTN", "ITM_LIST", "ITM_TAB", "ITM_MENU", "ITM_TREEVEW", "ITM_TREEVIEW", "ITM_LSTVEW", "ITM_LISTVIEW", "ITM_EDIT",
-		"ITM_STATIC", "ITM_STATUSBAR", "ITM_TOOLBAR", "ITM_ACCCLK", "ITM_ACCCLK2", "ITM_ACCTXT", "ITM_BACK",
+		"ITM_STATIC", "ITM_STATUSBAR", "ITM_TOOLBAR", "ITM_ACCCLK", "ITM_ACCCLK2", "ITM_ACCTXT", "ITM_ACCEDIT", "ITM_FROMLAST", "ITM_BACK",
 		{ "trigger": "getslctlst", "contents": "getslctlst(${1:id}${2:, ${3:number}${4:, ${5:column}}})${0}"},
 		{ "trigger": "getslctlst (keyword)", "contents": "getslctlst"},
 		{ "trigger": "setslider", "contents": "setslider(${1:id}, ${2:value}${3:, ${4:number}})${0}"},
@@ -184,12 +184,12 @@
 		//ウィンドウ関数低レベル
 		{ "trigger": "mmv", "contents": "mmv(${1:x}, ${2:y}${3:, ${4:ms}})${0}"},
 		{ "trigger": "mmv (keyword)", "contents": "mmv"},
-		{ "trigger": "btn", "contents": "btn(${1:button}, ${2:stat}${3:, ${4:x}${5:, ${6:y}${7:, ${8:ms}}}})${0}"},
+		{ "trigger": "btn", "contents": "btn(${1:button}${2:, ${3:stat}${4:, ${5:x}${6:, ${7:y}${8:, ${9:ms}}}}})${0}"},
 		{ "trigger": "btn (keyword)", "contents": "btn"},
 		"LEFT", "RIGHT", "MIDDLE", "WHEEL", "CLICK", "DOWN", "UP",
 		{ "trigger": "kbd", "contents": "kbd(VK_${1}${2:, ${3:stat}${4:, ${5:ms}}})${0}"},
 		{ "trigger": "kbd (keyword)", "contents": "kbd"},
-		{ "trigger": "acw", "contents": "acw(${1:id}, ${2:x}, ${3:y}${4:, ${5:w}${6:, ${7:h}${8:, ${9:ms}}}})${0}"},
+		{ "trigger": "acw", "contents": "acw(${1:id}${2:, ${3:x}${4:, ${5:y}${6:, ${7:w}${8:, ${9:h}${10:, ${11:ms}}}}}})${0}"},
 		{ "trigger": "acw (keyword)", "contents": "acw"},
 		//文字操作関連
 		{ "trigger": "copy", "contents": "copy(${1:str}, ${2:start}${3:, ${4:len}})${0}"},
@@ -232,7 +232,7 @@
 		"SC_LOWERCASE", "SC_UPPERCASE", "SC_HIRAGANA", "SC_KATAKANA", "SC_HALFWIDTH", "SC_FULLWIDTH",
 		{ "trigger": "token", "contents": "token(${1:delimiter}, ${2:str}${3:, ${4:blank}${5:, ${6:dbl}}})${0}"},
 		{ "trigger": "token (keyword)", "contents": "token"},
-		{ "trigger": "betweenstr", "contents": "betweenstr(${1:str}, ${2:start}, ${3:end}${4:, ${5:n}${6:, ${7:flg}}})${0}"},
+		{ "trigger": "betweenstr", "contents": "betweenstr(${1:str}${2:, ${3:start}${4:, ${5:end}${6:, ${7:n}${8:, ${9:flg}}}}})${0}"},
 		{ "trigger": "betweenstr (keyword)", "contents": "betweenstr"},
 		//配列操作関連
 		{ "trigger": "resize", "contents": "resize(${1:array}${2:, ${3:size}})${0}"},
@@ -329,7 +329,7 @@
 		{ "trigger": "decode", "contents": "decode(${1:str}, CODE_${2})${0}"},
 		{ "trigger": "encode (keyword)", "contents": "encode"},
 		{ "trigger": "decode (keyword)", "contents": "decode"},
-		"CODE_URL", "CODE_UTF8", "CODE_BYTEARRAY", "CODE_BYTEARRAYW",
+		"CODE_URL", "CODE_UTF8", "CODE_ANSI", "CODE_BYTEARRAY", "CODE_BYTEARRAYW",
 		//フォーム画面
 		{ "trigger": "createform", "contents": "createform(${1:html}, ${2:title}${3:, ${4:syncflg}${5:, FOM_${6:}${7:, ${8:w}${9:, ${10:h}${11:, ${12:x}${13:, ${14:y}}}}}}})${0}"},
 		{ "trigger": "createform (keyword)", "contents": "createform"},
