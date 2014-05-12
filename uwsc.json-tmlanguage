@@ -138,7 +138,7 @@
 		},
 		{
 			"name":  "constant.other.uwsc",
-			"match": "(?i:\\bVAR_(ARRAY|BOOLEAN|BSTR|BYTE|CURRENCY|DATE|DISPATCH|DOUBLE|DWORD|EMPTY|ERROR|INT64|INTEGER|NULL|SBYTE|SINGLE|SMALLINT|UNKNOWN|VARIANT|WORD)\\b)",
+			"match": "(?i:\\bVAR_(EMPTY|NULL|SMALLINT|INTEGER|SINGLE|DOUBLE|CURRENCY|DATE|DISPATCH|ERROR|BOOLEAN|VARIANT|UNKNOWN|S?BYTE|D?WORD|INT64|[BAU]STR|ARRAY)\\b)",
 			"comment": "VARTYPE"
 		},
 		{
@@ -178,6 +178,11 @@
 		},
 		{
 			"name":  "constant.other.uwsc",
+			"match": "(?i:\\bSNSR_(Biometric_Human(Presense|Proximity)|Electrical_(Capacitance|Resistance|Inductance|Current|Voltage|Power)|Environmental_(Temperature|Pressure|Humidity|WindDirection|WindSpeed)|Light_(Lux|Temperature)|Mechanical_(Force|AbsPressure|GaugePressure|Weight)|Motion_(Acceleration[XYZ]|AngleAccel[XYZ]|Speed)|Scanner_(RFIDTag|BarcodeData)|Orientation_(Tilt[XYZ]|Distance[XYZ]|MagHeading|TrueHeading|CompMagHeading|CompTrueHeading))\\b)",
+			"comment": "SENSOR"
+		},
+		{
+			"name":  "constant.other.uwsc",
 			"match": "(?i:\\bXL_(NEW|BOOK|OOOC)\\b)",
 			"comment": "XLOPEN"
 		},
@@ -207,7 +212,7 @@
 		},
 		{
 			"name":  "storage.type.block.uwsc",
-			"match": "(?i:\\b(FOR|TO|STEP|NEXT|IFB?|THEN|ELSE(IF)?|ENDIF|TRY|EXCEPT|FINALLY|ENDTRY|WITH|ENDWITH)\\b)"
+			"match": "(?i:\\b(FOR|TO|IN|STEP|NEXT|IFB?|THEN|ELSE(IF)?|ENDIF|TRY|EXCEPT|FINALLY|ENDTRY|WITH|ENDWITH)\\b)"
 		},
 		{
 			"name":  "keyword.operator.uwsc",
@@ -226,7 +231,7 @@
 		{
 			"name":  "support.function.uwsc",
 			"comment": "制御関数関連",
-			"match": "(?i:\\b(EXEC|SLEEP|DOSCMD|POWERSHELL|SOUND|GETTIME|POFF|KINDOFOS|CPUUSERATE|GETKEYSTATE|SETHOTKEY|LOCKHARD|LOCKHARDEX|EVAL)\\b)"
+			"match": "(?i:\\b(EXEC|SLEEP|DOSCMD|POWERSHELL|SOUND|GETTIME|POFF|KINDOFOS|CPUUSERATE|GETKEYSTATE|SETHOTKEY|LOCKHARD|LOCKHARDEX|EVAL|SENSOR)\\b)"
 		},
 		{
 			"name":  "support.function.uwsc",
@@ -246,7 +251,7 @@
 		{
 			"name":  "support.function.uwsc",
 			"comment": "ファイル関連 INIファイル",
-			"match": "(?i:\\b(FOPEN|FGET|FPUT|FDELLINE|FCLOSE|GETDIR|DROPFILE|READINI|WRITEINI|DELETEINI)\\b)"
+			"match": "(?i:\\b(FOPEN|FGET|FPUT|FDELLINE|FCLOSE|GETDIR|DROPFILE|READINI|WRITEINI|DELETEINI|DELETEFILE)\\b)"
 		},
 		{
 			"name":  "support.function.uwsc",

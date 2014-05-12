@@ -225,7 +225,7 @@
 			<key>comment</key>
 			<string>VARTYPE</string>
 			<key>match</key>
-			<string>(?i:\bVAR_(ARRAY|BOOLEAN|BSTR|BYTE|CURRENCY|DATE|DISPATCH|DOUBLE|DWORD|EMPTY|ERROR|INT64|INTEGER|NULL|SBYTE|SINGLE|SMALLINT|UNKNOWN|VARIANT|WORD)\b)</string>
+			<string>(?i:\bVAR_(EMPTY|NULL|SMALLINT|INTEGER|SINGLE|DOUBLE|CURRENCY|DATE|DISPATCH|ERROR|BOOLEAN|VARIANT|UNKNOWN|S?BYTE|D?WORD|INT64|[BAU]STR|ARRAY)\b)</string>
 			<key>name</key>
 			<string>constant.other.uwsc</string>
 		</dict>
@@ -287,6 +287,14 @@
 		</dict>
 		<dict>
 			<key>comment</key>
+			<string>SENSOR</string>
+			<key>match</key>
+			<string>(?i:\bSNSR_(Biometric_Human(Presense|Proximity)|Electrical_(Capacitance|Resistance|Inductance|Current|Voltage|Power)|Environmental_(Temperature|Pressure|Humidity|WindDirection|WindSpeed)|Light_(Lux|Temperature)|Mechanical_(Force|AbsPressure|GaugePressure|Weight)|Motion_(Acceleration[XYZ]|AngleAccel[XYZ]|Speed)|Scanner_(RFIDTag|BarcodeData)|Orientation_(Tilt[XYZ]|Distance[XYZ]|MagHeading|TrueHeading|CompMagHeading|CompTrueHeading))\b)</string>
+			<key>name</key>
+			<string>constant.other.uwsc</string>
+		</dict>
+		<dict>
+			<key>comment</key>
 			<string>XLOPEN</string>
 			<key>match</key>
 			<string>(?i:\bXL_(NEW|BOOK|OOOC)\b)</string>
@@ -333,7 +341,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?i:\b(FOR|TO|STEP|NEXT|IFB?|THEN|ELSE(IF)?|ENDIF|TRY|EXCEPT|FINALLY|ENDTRY|WITH|ENDWITH)\b)</string>
+			<string>(?i:\b(FOR|TO|IN|STEP|NEXT|IFB?|THEN|ELSE(IF)?|ENDIF|TRY|EXCEPT|FINALLY|ENDTRY|WITH|ENDWITH)\b)</string>
 			<key>name</key>
 			<string>storage.type.block.uwsc</string>
 		</dict>
@@ -363,7 +371,7 @@
 			<key>comment</key>
 			<string>制御関数関連</string>
 			<key>match</key>
-			<string>(?i:\b(EXEC|SLEEP|DOSCMD|POWERSHELL|SOUND|GETTIME|POFF|KINDOFOS|CPUUSERATE|GETKEYSTATE|SETHOTKEY|LOCKHARD|LOCKHARDEX|EVAL)\b)</string>
+			<string>(?i:\b(EXEC|SLEEP|DOSCMD|POWERSHELL|SOUND|GETTIME|POFF|KINDOFOS|CPUUSERATE|GETKEYSTATE|SETHOTKEY|LOCKHARD|LOCKHARDEX|EVAL|SENSOR)\b)</string>
 			<key>name</key>
 			<string>support.function.uwsc</string>
 		</dict>
@@ -395,7 +403,7 @@
 			<key>comment</key>
 			<string>ファイル関連 INIファイル</string>
 			<key>match</key>
-			<string>(?i:\b(FOPEN|FGET|FPUT|FDELLINE|FCLOSE|GETDIR|DROPFILE|READINI|WRITEINI|DELETEINI)\b)</string>
+			<string>(?i:\b(FOPEN|FGET|FPUT|FDELLINE|FCLOSE|GETDIR|DROPFILE|READINI|WRITEINI|DELETEINI|DELETEFILE)\b)</string>
 			<key>name</key>
 			<string>support.function.uwsc</string>
 		</dict>

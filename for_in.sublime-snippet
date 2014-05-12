@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+for ${1:i} in ${2:arr}
+	$0
+next
+]]></content>
+	<tabTrigger>forin</tabTrigger>
+	<scope>source.uwsc</scope>
+	<description>for in</description>
+</snippet>

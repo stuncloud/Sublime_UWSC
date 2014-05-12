@@ -3,9 +3,8 @@
 for ${1:i} = ${2:0} to ${3:0} step ${4:0}
 	$0
 next
-
 ]]></content>
-	<tabTrigger>for</tabTrigger>
+	<tabTrigger>forstep</tabTrigger>
 	<scope>source.uwsc</scope>
 	<description>for step</description>
 </snippet>
