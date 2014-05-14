@@ -145,7 +145,7 @@
 			<key>comment</key>
 			<string>POSACC</string>
 			<key>match</key>
-			<string>(?i:\bACC_(ACC|API|DESCRIPTION|LOCATION|NAME|ROLE|STATE|VALUE)\b)</string>
+			<string>(?i:\bACC_(ACC|API|DESCRIPTION|LOCATION|NAME|ROLE|STATE|VALUE|BACK)\b)</string>
 			<key>name</key>
 			<string>constant.other.uwsc</string>
 		</dict>

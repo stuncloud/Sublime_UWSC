@@ -88,7 +88,7 @@
 		},
 		{
 			"name":  "constant.other.uwsc",
-			"match": "(?i:\\bACC_(ACC|API|DESCRIPTION|LOCATION|NAME|ROLE|STATE|VALUE)\\b)",
+			"match": "(?i:\\bACC_(ACC|API|DESCRIPTION|LOCATION|NAME|ROLE|STATE|VALUE|BACK)\\b)",
 			"comment": "POSACC"
 		},
 		{

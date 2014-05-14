@@ -95,7 +95,7 @@
 		"CUR_SIZENESW", "CUR_SIZENS", "CUR_SIZENWSE", "CUR_SIZEWE", "CUR_UPARROW", "CUR_WAIT",
 		{ "trigger": "posacc", "contents": "posacc(${1:id}, ${2:clx}, ${3:cly}${4:, ${5:ACC_${6:}}})${0}"},
 		{ "trigger": "posacc (keyword)", "contents": "posacc"},
-		"ACC_ACC", "ACC_API", "ACC_DESCRIPTION", "ACC_LOCATION", "ACC_NAME", "ACC_ROLE", "ACC_STATE", "ACC_VALUE",
+		"ACC_ACC", "ACC_API", "ACC_DESCRIPTION", "ACC_LOCATION", "ACC_NAME", "ACC_ROLE", "ACC_STATE", "ACC_VALUE", "ACC_BACK",
 		//ダイアログ/表示関連
 		{ "trigger": "input", "contents": "input(${1:msg}${2:, ${3:default}${4:, ${5:pwd}${6:, ${7:x}${8:, ${9:y}}}}})${0}"},
 		{ "trigger": "input (keyword)", "contents": "input"},
