@@ -1,0 +1,6 @@
+{
+	// UWSCのインストールディレクトリ
+	// 例:
+	// "uwsc_path": "C:\\Program Files (x86)\\UWSC"
+	"uwsc_path": ""
+}
