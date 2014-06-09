@@ -273,7 +273,7 @@
 			<key>comment</key>
 			<string>ENCODE DECODE</string>
 			<key>match</key>
-			<string>(?i:\bCODE_(URL|UTF8|ANSI|BYTEARRAYW?)\b)</string>
+			<string>(?i:\bCODE_(URL|UTF8|ANSI|BYTEARRAYW?|HTML)\b)</string>
 			<key>name</key>
 			<string>constant.other.uwsc</string>
 		</dict>

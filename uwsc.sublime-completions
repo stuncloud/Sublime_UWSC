@@ -102,7 +102,7 @@
 		//ダイアログ/表示関連
 		{ "trigger": "input", "contents": "input(${1:msg}${2:, ${3:default}${4:, ${5:pwd}${6:, ${7:x}${8:, ${9:y}}}}})${0}"},
 		{ "trigger": "input (keyword)", "contents": "input"},
-		{ "trigger": "msgbox", "contents": "msgbox(${1:msg}${2:, BTN_${3:}${4:, ${5:pwd}${6:, ${7:x}${8:, ${9:y}${10:, BTN_${11:}}}}}})${0}"},
+		{ "trigger": "msgbox", "contents": "msgbox(${1:msg}${2:, BTN_${3:}${4:, ${5:pwd}${6:, ${7:x}${8:, ${9:y}${10:, BTN_${11:}${12:, ${13:link}}}}}}})${0}"},
 		{ "trigger": "msgbox (keyword)", "contents": "msgbox"},
 		"BTN_YES", "BTN_NO", "BTN_OK", "BTN_CANCEL", "BTN_ABORT", "BTN_RETRY", "BTN_IGNORE",
 		{ "trigger": "slctbox", "contents": "slctbox(SLCT_${1}, ${2:timeout}${3:, ${4:msg}${5:, ${6:item}${7:}}})${0}"},
@@ -332,7 +332,7 @@
 		{ "trigger": "decode", "contents": "decode(${1:str}, CODE_${2})${0}"},
 		{ "trigger": "encode (keyword)", "contents": "encode"},
 		{ "trigger": "decode (keyword)", "contents": "decode"},
-		"CODE_URL", "CODE_UTF8", "CODE_ANSI", "CODE_BYTEARRAY", "CODE_BYTEARRAYW",
+		"CODE_URL", "CODE_UTF8", "CODE_ANSI", "CODE_BYTEARRAY", "CODE_BYTEARRAYW", "CODE_HTML",
 		//フォーム画面
 		{ "trigger": "createform", "contents": "createform(${1:html}, ${2:title}${3:, ${4:syncflg}${5:, FOM_${6:}${7:, ${8:w}${9:, ${10:h}${11:, ${12:x}${13:, ${14:y}}}}}}})${0}"},
 		{ "trigger": "createform (keyword)", "contents": "createform"},

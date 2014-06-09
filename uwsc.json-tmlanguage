@@ -168,7 +168,7 @@
 		},
 		{
 			"name":  "constant.other.uwsc",
-			"match": "(?i:\\bCODE_(URL|UTF8|ANSI|BYTEARRAYW?)\\b)",
+			"match": "(?i:\\bCODE_(URL|UTF8|ANSI|BYTEARRAYW?|HTML)\\b)",
 			"comment": "ENCODE DECODE"
 		},
 		{
