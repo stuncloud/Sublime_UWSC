@@ -27,11 +27,23 @@ class UwscHelpCommand(sublime_plugin.TextCommand):
                 output_view.insert(edit, output_view.size(), text)
             output_view.set_read_only(True)
 
-        help_path = os.path.join(self.view.settings().get('uwsc_path'), 'uwsc.chm')
-        if not os.path.exists(help_path):
-            err = u'{0} が開けませんでした\nuwsc_pathの設定を確認して下さい'.format(help_path)
-            output(err)
-            return
+        uwsc_path = self.view.settings().get('uwsc_path')
+        if uwsc_path.__class__.__name__ == 'list':
+            for p in uwsc_path:
+                help_path = os.path.join(p, 'uwsc.chm')
+                if os.path.exists(help_path):
+                    break
+            else:
+                err = u'uwsc.chm が見つかりませんでした\nuwsc_pathの設定を確認して下さい'
+                output(err)
+                return
+        else:
+            help_path = os.path.join(uwsc_path, 'uwsc.chm')
+            if not os.path.exists(help_path):
+                err = u'{0} が開けませんでした\nuwsc_pathの設定を確認して下さい'.format(help_path)
+                output(err)
+                return
+
         if word.upper() in self.keywords:
             url = self.keywords[word.upper()]
             args = '{0} {1}'.format(help_path, url)
