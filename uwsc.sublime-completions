@@ -134,7 +134,7 @@
 		{ "trigger": "doscmd (keyword)", "contents": "doscmd"},
 		{ "trigger": "powershell", "contents": "powershell(${1:cmd}${2:, ${3:sync}${4:, ${5:visible}}})${0}"},
 		{ "trigger": "powershell (keyword)", "contents": "powershell"},
-		{ "trigger": "sound", "contents": "sound(${1:snd}${2:, ${3:sync}})${0}"},
+		{ "trigger": "sound", "contents": "sound(${1:snd}${2:, ${3:sync}${4:, ${5:wavout}}})${0}"},
 		{ "trigger": "sound (keyword)", "contents": "sound"},
 		{ "trigger": "gettime", "contents": "gettime(${1:${2:n}${3:, ${4:date}}})${0}"},
 		{ "trigger": "gettime (keyword)", "contents": "gettime"},
@@ -573,6 +573,7 @@
 		"VK_OEM_RESET",
 		"VK_P",
 		"VK_PAUSE",
+		"VK_PLAY",
 		"VK_PRINT",
 		"VK_PRIOR",
 		"VK_Q",
@@ -604,6 +605,7 @@
 		"VK_WIN",
 		"VK_X",
 		"VK_Y",
-		"VK_Z"
+		"VK_Z",
+		"VK_ZOOM"
 	]
 }
