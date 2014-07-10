@@ -279,7 +279,7 @@
 				"1": { "name": "storage.type.loop.uwsc" }
 			},
 			"patterns": [
-				{ "include": "source.uwsc" },
+				{ "include": "$self" },
 				{
 					"name":  "variable.parameter.uwsc",
 					"match": "(?i:\\b(break|continue)\\b)"
@@ -294,7 +294,7 @@
 				"1": { "name": "storage.type.select.uwsc" }
 			},
 			"patterns": [
-				{ "include": "source.uwsc" },
+				{ "include": "$self" },
 				{
 					"name":  "variable.parameter.uwsc",
 					"match": "(?i:\\b(case|default)\\b)"
@@ -312,7 +312,7 @@
 				"1": { "name": "storage.type.procedure.uwsc" }
 			},
 			"patterns": [
-					{ "include": "source.uwsc" }
+					{ "include": "$self" }
 			],
 			"end": "(?i)^\\s*(fend)",
 			"comment": "関数宣言部"
@@ -325,11 +325,11 @@
 				"2": { "name": "entity.name.function.function.uwsc"}
 			},
 			"patterns": [
-					{ "include": "source.uwsc" },
 					{
 						"name":  "variable.parameter.uwsc",
 						"match": "(?i:\\b(RESULT)\\b)"
-					}
+					},
+					{ "include": "$self" }
 			],
 			"end": "(?i)^\\s*(fend)",
 			"comment": "関数宣言部"
@@ -344,7 +344,7 @@
 				"1": { "name": "storage.type.module.uwsc" }
 			},
 			"patterns": [
-					{ "include": "source.uwsc" },
+					{ "include": "$self" },
 					{
 						"name":  "variable.parameter.uwsc",
 						"match": "(?i:\\b(this|global)\\b)"
@@ -354,12 +354,29 @@
 		},
 		{
 			"name": "meta.define.uwsc",
-			"match": "(?i)^\\s*(DIM|PUBLIC|CONST|CALL|HASHTBL)\\s+(\\w+)",
+			"begin": "(?i)^\\s*(DIM|PUBLIC|CONST|HASHTBL)\\s+",
+			"captures": {
+				"1": { "name": "storage.type.define.uwsc" }
+			},
+			"patterns": [
+					{
+						"match": "([^\\s,=]+)(\\s*=\\s*[^\\s,=]+)?",
+						"captures": {
+							"1": { "name": "entity.name.function.uwsc"}
+						}
+					}
+			],
+			"end": "$",
+			"comment": "変数・定数宣言部"
+		},
+		{
+			"name": "meta.define.uwsc",
+			"match": "(?i)^\\s*(CALL)\\s+(\\w+(\\.uws))?",
 			"captures": {
 				"1": { "name": "storage.type.define.uwsc" },
 				"2": { "name": "entity.name.function.uwsc"}
 			},
-			"comment": "変数・dll関数宣言部"
+			"comment": "CALL"
 		},
 		{
 			"name": "meta.dll.type.uwsc",
@@ -404,7 +421,7 @@
 				"2": { "name": "entity.name.function.uwsc"}
 			},
 			"patterns": [
-				{ "include": "source.uwsc" },
+				{ "include": "$self" },
 				{
 					"name":  "variable.parameter.uwsc",
 					"match": "(?i:\\b(GLOBAL|THIS)\\b)"

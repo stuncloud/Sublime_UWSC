@@ -9,15 +9,9 @@
 	<key>settings</key>
 	<dict>
 		<key>decreaseIndentPattern</key>
-		<string></string>
+		<string>(?i)^\s*(else(if)?|endif|next|wend|until|case|default|selend|except|finally|endtry|fend|endmodule|endclass)</string>
 		<key>increaseIndentPattern</key>
-		<string></string>
-
-		<key>bracketIndentNextLinePattern</key>
-		<string>(?x)
-			^ \s* \b(for|while|select|case|default|if|repeat|try|except|finally|function|procedure|module|class)\b .* $
-		</string>
-
+		<string>(?i)^\s*(ifb?|else(if)?|for|while|repeat|select|case|default|try|except|finally|function|procedure|module|class)\b.*$</string>
 	</dict>
 </dict>
 </plist>

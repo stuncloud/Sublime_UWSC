@@ -456,7 +456,7 @@
 			<array>
 				<dict>
 					<key>include</key>
-					<string>source.uwsc</string>
+					<string>$self</string>
 				</dict>
 				<dict>
 					<key>match</key>
@@ -485,7 +485,7 @@
 			<array>
 				<dict>
 					<key>include</key>
-					<string>source.uwsc</string>
+					<string>$self</string>
 				</dict>
 				<dict>
 					<key>match</key>
@@ -524,7 +524,7 @@
 			<array>
 				<dict>
 					<key>include</key>
-					<string>source.uwsc</string>
+					<string>$self</string>
 				</dict>
 			</array>
 		</dict>
@@ -553,14 +553,14 @@
 			<key>patterns</key>
 			<array>
 				<dict>
-					<key>include</key>
-					<string>source.uwsc</string>
-				</dict>
-				<dict>
 					<key>match</key>
 					<string>(?i:\b(RESULT)\b)</string>
 					<key>name</key>
 					<string>variable.parameter.uwsc</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>$self</string>
 				</dict>
 			</array>
 		</dict>
@@ -591,13 +591,46 @@
 			<array>
 				<dict>
 					<key>include</key>
-					<string>source.uwsc</string>
+					<string>$self</string>
 				</dict>
 				<dict>
 					<key>match</key>
 					<string>(?i:\b(this|global)\b)</string>
 					<key>name</key>
 					<string>variable.parameter.uwsc</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>(?i)^\s*(DIM|PUBLIC|CONST|HASHTBL)\s+</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type.define.uwsc</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>変数・定数宣言部</string>
+			<key>end</key>
+			<string>$</string>
+			<key>name</key>
+			<string>meta.define.uwsc</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>entity.name.function.uwsc</string>
+						</dict>
+					</dict>
+					<key>match</key>
+					<string>([^\s,=]+)(\s*=\s*[^\s,=]+)?</string>
 				</dict>
 			</array>
 		</dict>
@@ -616,9 +649,9 @@
 				</dict>
 			</dict>
 			<key>comment</key>
-			<string>変数・dll関数宣言部</string>
+			<string>CALL</string>
 			<key>match</key>
-			<string>(?i)^\s*(DIM|PUBLIC|CONST|CALL|HASHTBL)\s+(\w+)</string>
+			<string>(?i)^\s*(CALL)\s+(\w+(\.uws))?</string>
 			<key>name</key>
 			<string>meta.define.uwsc</string>
 		</dict>
@@ -721,7 +754,7 @@
 			<array>
 				<dict>
 					<key>include</key>
-					<string>source.uwsc</string>
+					<string>$self</string>
 				</dict>
 				<dict>
 					<key>match</key>
