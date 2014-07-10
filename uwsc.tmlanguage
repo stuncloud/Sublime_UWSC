@@ -651,7 +651,7 @@
 			<key>comment</key>
 			<string>CALL</string>
 			<key>match</key>
-			<string>(?i)^\s*(CALL)\s+(\w+(\.uws))?</string>
+			<string>(?i)^\s*(CALL)\s+([\w\.\\]+(\.uws)?)</string>
 			<key>name</key>
 			<string>meta.define.uwsc</string>
 		</dict>

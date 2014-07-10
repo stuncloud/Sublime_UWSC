@@ -371,7 +371,7 @@
 		},
 		{
 			"name": "meta.define.uwsc",
-			"match": "(?i)^\\s*(CALL)\\s+(\\w+(\\.uws))?",
+			"match": "(?i)^\\s*(CALL)\\s+([\\w\\.\\\\]+(\\.uws)?)",
 			"captures": {
 				"1": { "name": "storage.type.define.uwsc" },
 				"2": { "name": "entity.name.function.uwsc"}
