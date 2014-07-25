@@ -354,27 +354,17 @@
 		},
 		{
 			"name": "meta.define.uwsc",
-			"begin": "(?i)^\\s*(DIM|PUBLIC|CONST|HASHTBL)\\s+",
+			"match": "(?i)^\\s*(DIM|PUBLIC|CONST|HASHTBL)\\s+",
 			"captures": {
 				"1": { "name": "storage.type.define.uwsc" }
 			},
-			"patterns": [
-					{
-						"match": "([^\\s,=]+)(\\s*=\\s*[^\\s,=]+)?",
-						"captures": {
-							"1": { "name": "entity.name.function.uwsc"}
-						}
-					}
-			],
-			"end": "$",
 			"comment": "変数・定数宣言部"
 		},
 		{
 			"name": "meta.define.uwsc",
-			"match": "(?i)^\\s*(CALL)\\s+([\\w\\.\\\\]+(\\.uws)?)",
+			"match": "(?i)^\\s*(CALL)\\s+",
 			"captures": {
-				"1": { "name": "storage.type.define.uwsc" },
-				"2": { "name": "entity.name.function.uwsc"}
+				"1": { "name": "storage.type.define.uwsc" }
 			},
 			"comment": "CALL"
 		},

@@ -602,8 +602,6 @@
 			</array>
 		</dict>
 		<dict>
-			<key>begin</key>
-			<string>(?i)^\s*(DIM|PUBLIC|CONST|HASHTBL)\s+</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
@@ -614,25 +612,10 @@
 			</dict>
 			<key>comment</key>
 			<string>変数・定数宣言部</string>
-			<key>end</key>
-			<string>$</string>
+			<key>match</key>
+			<string>(?i)^\s*(DIM|PUBLIC|CONST|HASHTBL)\s+</string>
 			<key>name</key>
 			<string>meta.define.uwsc</string>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>captures</key>
-					<dict>
-						<key>1</key>
-						<dict>
-							<key>name</key>
-							<string>entity.name.function.uwsc</string>
-						</dict>
-					</dict>
-					<key>match</key>
-					<string>([^\s,=]+)(\s*=\s*[^\s,=]+)?</string>
-				</dict>
-			</array>
 		</dict>
 		<dict>
 			<key>captures</key>
@@ -642,16 +625,11 @@
 					<key>name</key>
 					<string>storage.type.define.uwsc</string>
 				</dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.function.uwsc</string>
-				</dict>
 			</dict>
 			<key>comment</key>
 			<string>CALL</string>
 			<key>match</key>
-			<string>(?i)^\s*(CALL)\s+([\w\.\\]+(\.uws)?)</string>
+			<string>(?i)^\s*(CALL)\s+</string>
 			<key>name</key>
 			<string>meta.define.uwsc</string>
 		</dict>
