@@ -307,6 +307,7 @@
 		{ "trigger": "ProgId Shell.Application", "contents": "\"Shell.Application\""},
 		{ "trigger": "ProgId ADODB.Stream", "contents": "\"ADODB.Stream\""},
 		{ "trigger": "ProgId Msxml2.XMLHTTP", "contents": "\"Msxml2.XMLHTTP\""},
+		{ "trigger": "ProgId MSXML2.DOMDocument", "contents": "\"MSXML2.DOMDocument\""},
 		{ "trigger": "ProgId htmlfile", "contents": "\"htmlfile\""},
 		{ "trigger": "ProgId VBScript.RegExp", "contents": "\"VBScript.RegExp\""},
 		{ "trigger": "ProgId WbemScripting.SWbemLocator", "contents": "\"WbemScripting.SWbemLocator\""},
