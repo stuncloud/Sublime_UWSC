@@ -388,6 +388,70 @@
 			}
 		},
 		{
+			"name": "meta.textblock.html.uwsc",
+			"begin": "^\\s*(?i)(\\btextblock\\b)\\s+(([^/]*html[^/]*)(//.*)?|(([^/]+)(//.*html.*)))",
+			"captures": {
+				"1": { "name": "storage.type.textblock.uwsc" },
+				"3": { "name": "entity.name.function.textblock.uwsc"},
+				"4": { "name": "comment.block.uwsc"},
+				"6": { "name": "entity.name.function.textblock.uwsc"},
+				"7": { "name": "comment.block.uwsc"}
+			},
+			"patterns": [
+				{ "include": "text.html.basic" }
+			],
+			"end": "^\\s*(?i)(\\bendtextblock\\b)",
+			"comment": "textblock宣言 HTML"
+		},
+		{
+			"name": "meta.textblock.json.uwsc",
+			"begin": "^\\s*(?i)(\\btextblock\\b)\\s+(([^/]*json[^/]*)(//.*)?|(([^/]+)(//.*json.*)))",
+			"captures": {
+				"1": { "name": "storage.type.textblock.uwsc" },
+				"3": { "name": "entity.name.function.textblock.uwsc"},
+				"4": { "name": "comment.block.uwsc"},
+				"6": { "name": "entity.name.function.textblock.uwsc"},
+				"7": { "name": "comment.block.uwsc"}
+			},
+			"patterns": [
+				{ "include": "source.json" }
+			],
+			"end": "^\\s*(?i)(\\bendtextblock\\b)",
+			"comment": "textblock宣言 JavaScript"
+		},
+		{
+			"name": "meta.textblock.js.uwsc",
+			"begin": "^\\s*(?i)(\\btextblock\\b)\\s+(([^/]*js[^/]*)(//.*)?|(([^/]+)(//.*js.*)))",
+			"captures": {
+				"1": { "name": "storage.type.textblock.uwsc" },
+				"3": { "name": "entity.name.function.textblock.uwsc"},
+				"4": { "name": "comment.block.uwsc"},
+				"6": { "name": "entity.name.function.textblock.uwsc"},
+				"7": { "name": "comment.block.uwsc"}
+			},
+			"patterns": [
+				{ "include": "source.js" }
+			],
+			"end": "^\\s*(?i)(\\bendtextblock\\b)",
+			"comment": "textblock宣言 JavaScript"
+		},
+		{
+			"name": "meta.textblock.vbs.uwsc",
+			"begin": "^\\s*(?i)(\\btextblock\\b)\\s+(([^/]*vbs[^/]*)(//.*)?|(([^/]+)(//.*vbs.*)))",
+			"captures": {
+				"1": { "name": "storage.type.textblock.uwsc" },
+				"3": { "name": "entity.name.function.textblock.uwsc"},
+				"4": { "name": "comment.block.uwsc"},
+				"6": { "name": "entity.name.function.textblock.uwsc"},
+				"7": { "name": "comment.block.uwsc"}
+			},
+			"patterns": [
+				{ "include": "source.vbs" }
+			],
+			"end": "^\\s*(?i)(\\bendtextblock\\b)",
+			"comment": "textblock宣言 JavaScript"
+		},
+		{
 			"name": "meta.textblock.uwsc",
 			"begin": "^\\s*(?i)(\\btextblock\\b)\\s+(\\w+)?",
 			"captures": {
