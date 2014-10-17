@@ -9,9 +9,9 @@
 	<key>settings</key>
 	<dict>
 		<key>decreaseIndentPattern</key>
-		<string>(?i)^\s*(else(if)?|endif|next|wend|until|case|default|selend|except|finally|endtry|fend|endmodule|endclass)</string>
+		<string>(?i)^\s*(else(if)?|endif|next|wend|until|case|default|selend|except|finally|endtry|fend|endmodule|endclass|endwith)</string>
 		<key>increaseIndentPattern</key>
-		<string>(?i)^\s*(ifb?|else(if)?|for|while|repeat|select|case|default|try|except|finally|function|procedure|module|class)\b.*$</string>
+		<string>(?i)^\s*(ifb?|else(if)?|for|while|repeat|select|case|default|try|except|finally|function|procedure|module|class|with)\b.*$</string>
 	</dict>
 </dict>
 </plist>

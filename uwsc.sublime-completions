@@ -17,7 +17,7 @@
 		{ "trigger": "<#TAB>", "contents": "#TAB>"},
 		//制御文等
 		{ "trigger": "print", "contents": "print ${0}"},
-		"if", "else", "elseif", "endif",
+		"if", "ifb", "then", "else", "elseif", "endif",
 		"break", "continue",
 		"exit", "exitexit",
 		"procedure", "function", "result", "fend",
