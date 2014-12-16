@@ -275,6 +275,7 @@
 		{ "trigger": "getdir (keyword)", "contents": "getdir"},
 		{ "trigger": "GETDIR_FILES", "contents": "GETDIR_FILES${2:[${1:}]}${0}"},
 		{ "trigger": "dropfile", "contents": "dropfile(${1:id}, ${2:dir}, ${3:file}${4:, ${5:files...}})${0}"},
+		{ "trigger": "dropfileXY", "contents": "dropfile(${1:id}, ${2:x}, ${3:y}, ${4:dir}, ${5:file}${6:, ${7:files...}})${0}"},
 		{ "trigger": "dropfile (keyword)", "contents": "dropfile"},
 		//INIファイル
 		{ "trigger": "readini", "contents": "readini(${1:section}, ${2:key}${3:, ${4:inifile}})${0}"},
@@ -355,7 +356,7 @@
 		{ "trigger": "xlsheet (keyword)", "contents": "xlsheet"},
 		{ "trigger": "xlgetdata", "contents": "xlgetdata(${1:excel}${2:, ${3:range}${4:, ${5:column}${6:, ${7:sheet}}}})${0}"},
 		{ "trigger": "xlgetdata (keyword)", "contents": "xlgetdata"},
-		{ "trigger": "xlsetdata", "contents": "xlsetdata(${1:excel}, ${2:value}${3:, ${4:cell}${5:, ${6:column}${7:, ${8:sheet}}}})${0}"},
+		{ "trigger": "xlsetdata", "contents": "xlsetdata(${1:excel}, ${2:value}${3:, ${4:cell}${5:, ${6:column}${7:, ${8:sheet}${9:, ${10:fontcolor}${11:, ${12:cellcolor}}}}}})${0}"},
 		{ "trigger": "xlsetdata (keyword)", "contents": "xlsetdata"},
 		//数学関数
 		{ "trigger": "random", "contents": "random(${1:range})${0}"},
@@ -401,6 +402,7 @@
 		"OPTION OPTFINALLY",
 		"OPTION SPECIALCHAR",
 		"OPTION SHORTCIRCUIT",
+		"OPTION NOSTOPHOTKEY",
 		{ "trigger": "OPTION DEFAULTFONT", "contents": "OPTION DEFAULTFONT=\"${1:font}\""},
 		{ "trigger": "OPTION POSITION", "contents": "OPTION POSITION=${1:x}, ${2:y}"},
 		{ "trigger": "OPTION LOGPATH", "contents": "OPTION LOGPATH=\"${1:path}\""},
