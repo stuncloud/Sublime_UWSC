@@ -1,6 +1,15 @@
 {
-	// UWSCのインストールディレクトリ
-	// 例:
-	// "uwsc_path": "C:\\Program Files (x86)\\UWSC"
-	"uwsc_path": ""
+    // UWSCのインストールディレクトリ
+    // 例:
+    // "uwsc_path": "C:\\Program Files (x86)\\UWSC"
+
+    // 配列にすることで複数のパスも指定出来ます
+    // 例:
+    // "uwsc_path":
+    // [
+    //     "C:\\Program Files (x86)\\UWSC",
+    //     "C:\\Program Files\\UWSC",
+    // ]
+    
+    "uwsc_path": ""
 }
