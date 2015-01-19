@@ -65,7 +65,7 @@
 			<key>comment</key>
 			<string>GETID</string>
 			<key>match</key>
-			<string>(?i:\bGET_((ACTIVE|FROMPOINT|THISUWSC|LOGPRINT|FUKIDASI|BALLOON|FORM|SCHEDULE)_WIN|FROMPOINT_OBJ)\b)</string>
+			<string>(?i:\bGET_((ACTIVE|FROMPOINT|THISUWSC|LOGPRINT|FUKIDASI|BALLOON|SCHEDULE)_WIN|FROMPOINT_OBJ|FORM_WIN2?)\b)</string>
 			<key>name</key>
 			<string>constant.other.uwsc</string>
 		</dict>
@@ -281,7 +281,7 @@
 			<key>comment</key>
 			<string>CREATEFORM GETFORMDATA</string>
 			<key>match</key>
-			<string>(?i:\bFOM_(NO(ICON|HIDE|SUBMIT|RESIZE|LUNA)|(MINI|MAXI)MIZE|BROWSER|FORMHIDE|GETVALUE)\b)</string>
+			<string>(?i:\bFOM_(NO(ICON|HIDE|SUBMIT|RESIZE|LUNA)|(MINI|MAXI)MIZE|BROWSER|FORMHIDE|GETVALUE|FORM2)\b)</string>
 			<key>name</key>
 			<string>constant.other.uwsc</string>
 		</dict>
@@ -387,7 +387,7 @@
 			<key>comment</key>
 			<string>文字操作関連</string>
 			<key>match</key>
-			<string>(?i:\b(COPYB?|POSB?|LENGTHB?|CHKNUM|VAL|REPLACE|CHGMOJ|TRIM|FORMAT|CHRB?|ASCB?|ISUNICODE|STRCONV|TOKEN|BETWEENSTR)\b)</string>
+			<string>(?i:\b(COPYB?|POSB?|LENGTH[BS]?|CHKNUM|VAL|REPLACE|CHGMOJ|TRIM|FORMAT|CHRB?|ASCB?|ISUNICODE|STRCONV|TOKEN|BETWEENSTR)\b)</string>
 			<key>name</key>
 			<string>support.function.uwsc</string>
 		</dict>

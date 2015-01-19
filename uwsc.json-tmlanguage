@@ -38,7 +38,7 @@
 		},
 		{
 			"name":  "constant.other.uwsc",
-			"match": "(?i:\\bGET_((ACTIVE|FROMPOINT|THISUWSC|LOGPRINT|FUKIDASI|BALLOON|FORM|SCHEDULE)_WIN|FROMPOINT_OBJ)\\b)",
+			"match": "(?i:\\bGET_((ACTIVE|FROMPOINT|THISUWSC|LOGPRINT|FUKIDASI|BALLOON|SCHEDULE)_WIN|FROMPOINT_OBJ|FORM_WIN2?)\\b)",
 			"comment": "GETID"
 		},
 		{
@@ -173,7 +173,7 @@
 		},
 		{
 			"name":  "constant.other.uwsc",
-			"match": "(?i:\\bFOM_(NO(ICON|HIDE|SUBMIT|RESIZE|LUNA)|(MINI|MAXI)MIZE|BROWSER|FORMHIDE|GETVALUE)\\b)",
+			"match": "(?i:\\bFOM_(NO(ICON|HIDE|SUBMIT|RESIZE|LUNA)|(MINI|MAXI)MIZE|BROWSER|FORMHIDE|GETVALUE|FORM2)\\b)",
 			"comment": "CREATEFORM GETFORMDATA"
 		},
 		{
@@ -241,7 +241,7 @@
 		{
 			"name":  "support.function.uwsc",
 			"comment": "文字操作関連",
-			"match": "(?i:\\b(COPYB?|POSB?|LENGTHB?|CHKNUM|VAL|REPLACE|CHGMOJ|TRIM|FORMAT|CHRB?|ASCB?|ISUNICODE|STRCONV|TOKEN|BETWEENSTR)\\b)"
+			"match": "(?i:\\b(COPYB?|POSB?|LENGTH[BS]?|CHKNUM|VAL|REPLACE|CHGMOJ|TRIM|FORMAT|CHRB?|ASCB?|ISUNICODE|STRCONV|TOKEN|BETWEENSTR)\\b)"
 		},
 		{
 			"name":  "support.function.uwsc",

@@ -52,7 +52,7 @@ class UwscHelpCommand(sublime_plugin.TextCommand):
             reason = u'UwscHelp: {0} が見つかりませんでした'.format(word)
             output(reason)
 
-    # For UWSC version 5.01
+    # For UWSC version 5.1
     keywords = {
         'ACW': '::/_RESOURCE/function.htm#acw',
         'ASC': '::/_RESOURCE/function.htm#asc',
