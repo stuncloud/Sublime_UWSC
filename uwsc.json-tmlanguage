@@ -103,7 +103,7 @@
 		},
 		{
 			"name":  "constant.other.uwsc",
-			"match": "(?i:\\bMON_(HEIGHT|WIDTH|X|Y)\\b)",
+			"match": "(?i:\\bMON_(HEIGHT|WIDTH|X|Y|NAME)\\b)",
 			"comment": "MONITOR"
 		},
 		{
@@ -173,13 +173,18 @@
 		},
 		{
 			"name":  "constant.other.uwsc",
-			"match": "(?i:\\bFOM_(NO(ICON|HIDE|SUBMIT|RESIZE|LUNA)|(MINI|MAXI)MIZE|BROWSER|FORMHIDE|GETVALUE|FORM2)\\b)",
+			"match": "(?i:\\bFOM_(NO(ICON|HIDE|SUBMIT|RESIZE|LUNA|TASKBAR)|(MINI|MAXI)MIZE|BROWSER|FORMHIDE|GETVALUE|FORM2)\\b)",
 			"comment": "CREATEFORM GETFORMDATA"
 		},
 		{
 			"name":  "constant.other.uwsc",
-			"match": "(?i:\\bSNSR_(Biometric_Human(Presense|Proximity)|Electrical_(Capacitance|Resistance|Inductance|Current|Voltage|Power)|Environmental_(Temperature|Pressure|Humidity|WindDirection|WindSpeed)|Light_(Lux|Temperature)|Mechanical_(Force|AbsPressure|GaugePressure|Weight)|Motion_(Acceleration[XYZ]|AngleAccel[XYZ]|Speed)|Scanner_(RFIDTag|BarcodeData)|Orientation_(Tilt[XYZ]|Distance[XYZ]|MagHeading|TrueHeading|CompMagHeading|CompTrueHeading))\\b)",
+			"match": "(?i:\\bSNSR_(Biometric_Human(Presense|Proximity)|Electrical_(Capacitance|Resistance|Inductance|Current|Voltage|Power)|Environmental_(Temperature|Pressure|Humidity|WindDirection|WindSpeed)|Light_(Lux|Temperature)|Mechanical_(Force|AbsPressure|GaugePressure|Weight)|Motion_(Acceleration[XYZ]|AngleAccel[XYZ]|Speed)|Scanner_(RFIDTag|BarcodeData)|Orientation_(Tilt[XYZ]|Distance[XYZ]|MagHeading|TrueHeading|CompMagHeading|CompTrueHeading)|Location_(Altitude|Latitude|Longitude|Speed))\\b)",
 			"comment": "SENSOR"
+		},
+		{
+			"name":  "constant.other.uwsc",
+			"match": "(?i:\\bQSRT_(UNICODE|NATURAL)?[AD]\\b)",
+			"comment": "QSORT"
 		},
 		{
 			"name":  "constant.other.uwsc",
@@ -208,7 +213,7 @@
 		},
 		{
 			"name":  "storage.modifier.uwsc",
-			"match": "(?i)option\\s+(EXPLICIT|SAMESTR|OPTFINALLY|OPTPUBLIC|SPECIALCHAR|SHORTCIRCUIT|DEFAULTFONT|POSITION|LOGPATH|LOGLINES|LOGFILE|DLGTITLE|NOSTOPHOTKEY)"
+			"match": "(?i)option\\s+(EXPLICIT|SAMESTR|OPTFINALLY|OPTPUBLIC|SPECIALCHAR|SHORTCIRCUIT|DEFAULTFONT|POSITION|LOGPATH|LOGLINES|LOGFILE|DLGTITLE|NOSTOPHOTKEY|TOPSTOPFORM)"
 		},
 		{
 			"name":  "storage.type.block.uwsc",

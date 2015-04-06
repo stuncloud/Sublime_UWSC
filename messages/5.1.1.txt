@@ -1,0 +1,26 @@
+Sublime UWSC 5.1.1
+==================
+
+UWSC 5.1.1 に対応しました
+
+更新内容
+--------
+
+- モニター定数追加
+ - MON_NAME
+- センサー定数追加
+ - SNSR_Location_Altitude
+ - SNSR_Location_Latitude
+ - SNSR_Location_Longitude
+ - SNSR_Location_Speed
+- QSORT定数追加
+ - QSRT_A
+ - QSRT_D
+ - QSRT_UNICODEA
+ - QSRT_UNICODED
+ - QSRT_NATURALA
+ - QSRT_NATURALD
+- FORM定数追加
+ - FOM_NOTASKBAR
+- OPTION追加
+ - TOPSTOPFORM

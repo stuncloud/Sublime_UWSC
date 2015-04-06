@@ -1,5 +1,6 @@
 {
     "install": "readme.md",
     "5.0.4": "messages/5.0.4.txt",
-    "5.1.0": "messages/5.1.0.txt"
+    "5.1.0": "messages/5.1.0.txt",
+    "5.1.1": "messages/5.1.1.txt"
 }

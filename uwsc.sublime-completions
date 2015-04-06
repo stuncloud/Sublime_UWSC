@@ -124,7 +124,7 @@
 		{ "trigger": "logprint (keyword)", "contents": "logprint"},
 		{ "trigger": "monitor", "contents": "monitor(${1:${2:number}, MON_${3}})${0}"},
 		{ "trigger": "monitor (keyword)", "contents": "monitor"},
-		"MON_X", "MON_Y", "MON_WIDTH", "MON_HEIGHT",
+		"MON_X", "MON_Y", "MON_WIDTH", "MON_HEIGHT", "MON_NAME",
 		//制御関数関連
 		{ "trigger": "exec", "contents": "exec(${1:exe}${2:, ${3:flg}${4:, ${5:x}${6:, ${7:y}${8:, ${9:w}${10:, ${11:h}}}}}})${0}"},
 		{ "trigger": "exec (keyword)", "contents": "exec"},
@@ -171,6 +171,7 @@
 		"SNSR_Motion_AccelerationX", "SNSR_Motion_AccelerationY", "SNSR_Motion_AccelerationZ", "SNSR_Motion_AngleAccelX", "SNSR_Motion_AngleAccelY", "SNSR_Motion_AngleAccelZ", "SNSR_Motion_Speed",
 		"SNSR_Scanner_RFIDTag", "SNSR_Scanner_BarcodeData",
 		"SNSR_Orientation_TiltX", "SNSR_Orientation_TiltY", "SNSR_Orientation_TiltZ", "SNSR_Orientation_DistanceX", "SNSR_Orientation_DistanceY", "SNSR_Orientation_DistanceZ", "SNSR_Orientation_MagHeading", "SNSR_Orientation_TrueHeading", "SNSR_Orientation_CompMagHeading", "SNSR_Orientation_CompTrueHeading",
+		"SNSR_Location_Altitude", "SNSR_Location_Latitude", "SNSR_Location_Longitude", "SNSR_Location_Speed", 
 		//システム関数関連
 		{ "trigger": "getctlhnd", "contents": "getctlhnd(${1:id}, ${2:item}${3:, ${4:num}})${0}"},
 		{ "trigger": "getctlhnd(menu)", "contents": "getctlhnd(${1:id}, GET_${2:MENU_HND})${0}"},
@@ -257,6 +258,7 @@
 		{ "trigger": "slice (keyword)", "contents": "slice"},
 		{ "trigger": "qsort", "contents": "qsort(${1:array}${2:, ${3:order}${4:, ${5:arrays}${6:, ${7:...}}}})${0}"},
 		{ "trigger": "qsort (keyword)", "contents": "qsort"},
+		"QSRT_A","QSRT_D","QSRT_UNICODEA","QSRT_UNICODED","QSRT_NATURALA","QSRT_NATURALD",
 		//ファイル関連
 		{ "trigger": "fopen", "contents": "fopen(${1:file}${2:, F_${3}})${0}"},
 		{ "trigger": "fopen (keyword)", "contents": "fopen"},
@@ -340,7 +342,7 @@
 		//フォーム画面
 		{ "trigger": "createform", "contents": "createform(${1:html}, ${2:title}${3:, ${4:syncflg}${5:, FOM_${6:}${7:, ${8:w}${9:, ${10:h}${11:, ${12:x}${13:, ${14:y}}}}}}})${0}"},
 		{ "trigger": "createform (keyword)", "contents": "createform"},
-		"FOM_NOICON", "FOM_MINIMIZE", "FOM_MAXIMIZE", "FOM_NOHIDE", "FOM_NOSUBMIT", "FOM_NORESIZE", "FOM_NOLUNA", "FOM_BROWSER", "FOM_FORMHIDE", "FOM_TOPMOST", "FOM_FORM2",
+		"FOM_NOICON", "FOM_MINIMIZE", "FOM_MAXIMIZE", "FOM_NOHIDE", "FOM_NOSUBMIT", "FOM_NORESIZE", "FOM_NOLUNA", "FOM_BROWSER", "FOM_FORMHIDE", "FOM_TOPMOST", "FOM_FORM2", "FOM_NOTASKBAR",
 		{ "trigger": "getformdata", "contents": "getformdata(${1:name}${2:, ${3:atrValue}})${0}"},
 		{ "trigger": "getformdata (keyword)", "contents": "getformdata"},
 		"FOM_GETVALUE",
@@ -405,6 +407,7 @@
 		"OPTION SPECIALCHAR",
 		"OPTION SHORTCIRCUIT",
 		"OPTION NOSTOPHOTKEY",
+		"OPTION TOPSTOPFORM",
 		{ "trigger": "OPTION DEFAULTFONT", "contents": "OPTION DEFAULTFONT=\"${1:font}\""},
 		{ "trigger": "OPTION POSITION", "contents": "OPTION POSITION=${1:x}, ${2:y}"},
 		{ "trigger": "OPTION LOGPATH", "contents": "OPTION LOGPATH=\"${1:path}\""},

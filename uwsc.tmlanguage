@@ -169,7 +169,7 @@
 			<key>comment</key>
 			<string>MONITOR</string>
 			<key>match</key>
-			<string>(?i:\bMON_(HEIGHT|WIDTH|X|Y)\b)</string>
+			<string>(?i:\bMON_(HEIGHT|WIDTH|X|Y|NAME)\b)</string>
 			<key>name</key>
 			<string>constant.other.uwsc</string>
 		</dict>
@@ -281,7 +281,7 @@
 			<key>comment</key>
 			<string>CREATEFORM GETFORMDATA</string>
 			<key>match</key>
-			<string>(?i:\bFOM_(NO(ICON|HIDE|SUBMIT|RESIZE|LUNA)|(MINI|MAXI)MIZE|BROWSER|FORMHIDE|GETVALUE|FORM2)\b)</string>
+			<string>(?i:\bFOM_(NO(ICON|HIDE|SUBMIT|RESIZE|LUNA|TASKBAR)|(MINI|MAXI)MIZE|BROWSER|FORMHIDE|GETVALUE|FORM2)\b)</string>
 			<key>name</key>
 			<string>constant.other.uwsc</string>
 		</dict>
@@ -289,7 +289,15 @@
 			<key>comment</key>
 			<string>SENSOR</string>
 			<key>match</key>
-			<string>(?i:\bSNSR_(Biometric_Human(Presense|Proximity)|Electrical_(Capacitance|Resistance|Inductance|Current|Voltage|Power)|Environmental_(Temperature|Pressure|Humidity|WindDirection|WindSpeed)|Light_(Lux|Temperature)|Mechanical_(Force|AbsPressure|GaugePressure|Weight)|Motion_(Acceleration[XYZ]|AngleAccel[XYZ]|Speed)|Scanner_(RFIDTag|BarcodeData)|Orientation_(Tilt[XYZ]|Distance[XYZ]|MagHeading|TrueHeading|CompMagHeading|CompTrueHeading))\b)</string>
+			<string>(?i:\bSNSR_(Biometric_Human(Presense|Proximity)|Electrical_(Capacitance|Resistance|Inductance|Current|Voltage|Power)|Environmental_(Temperature|Pressure|Humidity|WindDirection|WindSpeed)|Light_(Lux|Temperature)|Mechanical_(Force|AbsPressure|GaugePressure|Weight)|Motion_(Acceleration[XYZ]|AngleAccel[XYZ]|Speed)|Scanner_(RFIDTag|BarcodeData)|Orientation_(Tilt[XYZ]|Distance[XYZ]|MagHeading|TrueHeading|CompMagHeading|CompTrueHeading)|Location_(Altitude|Latitude|Longitude|Speed))\b)</string>
+			<key>name</key>
+			<string>constant.other.uwsc</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>QSORT</string>
+			<key>match</key>
+			<string>(?i:\bQSRT_(UNICODE|NATURAL)?[AD]\b)</string>
 			<key>name</key>
 			<string>constant.other.uwsc</string>
 		</dict>
@@ -335,7 +343,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?i)option\s+(EXPLICIT|SAMESTR|OPTFINALLY|OPTPUBLIC|SPECIALCHAR|SHORTCIRCUIT|DEFAULTFONT|POSITION|LOGPATH|LOGLINES|LOGFILE|DLGTITLE|NOSTOPHOTKEY)</string>
+			<string>(?i)option\s+(EXPLICIT|SAMESTR|OPTFINALLY|OPTPUBLIC|SPECIALCHAR|SHORTCIRCUIT|DEFAULTFONT|POSITION|LOGPATH|LOGLINES|LOGFILE|DLGTITLE|NOSTOPHOTKEY|TOPSTOPFORM)</string>
 			<key>name</key>
 			<string>storage.modifier.uwsc</string>
 		</dict>
