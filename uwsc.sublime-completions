@@ -256,7 +256,7 @@
 		{ "trigger": "join (keyword)", "contents": "join"},
 		{ "trigger": "slice", "contents": "slice(${1:array}${2:, ${3:from}${4:, ${5:to}}})${0}"},
 		{ "trigger": "slice (keyword)", "contents": "slice"},
-		{ "trigger": "qsort", "contents": "qsort(${1:array}${2:, ${3:order}${4:, ${5:arrays}${6:, ${7:...}}}})${0}"},
+		{ "trigger": "qsort", "contents": "qsort(${1:array}${2:, QSRT_${3:}${4:, ${5:arrays}${6:, ${7:...}}}})${0}"},
 		{ "trigger": "qsort (keyword)", "contents": "qsort"},
 		"QSRT_A","QSRT_D","QSRT_UNICODEA","QSRT_UNICODED","QSRT_NATURALA","QSRT_NATURALD",
 		//ファイル関連
