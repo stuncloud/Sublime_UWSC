@@ -408,6 +408,7 @@
 		"OPTION SHORTCIRCUIT",
 		"OPTION NOSTOPHOTKEY",
 		"OPTION TOPSTOPFORM",
+		"OPTION FIXBALLOON",
 		{ "trigger": "OPTION DEFAULTFONT", "contents": "OPTION DEFAULTFONT=\"${1:font}\""},
 		{ "trigger": "OPTION POSITION", "contents": "OPTION POSITION=${1:x}, ${2:y}"},
 		{ "trigger": "OPTION LOGPATH", "contents": "OPTION LOGPATH=\"${1:path}\""},
