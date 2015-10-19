@@ -1,0 +1,16 @@
+Sublime UWSC 5.2.0
+==================
+
+UWSC 5.2.0 に対応しました
+
+更新内容
+--------
+
+- clkitem定数追加
+ - CLK_LINK
+- getitem用定数追加
+ - ITM_LINK
+- btn用定数追加
+ - TOUCH
+- Edge操作用ProgID追加
+ - MSEdge.Application

@@ -73,7 +73,7 @@
 			<key>comment</key>
 			<string>CLKITEM</string>
 			<key>match</key>
-			<string>(?i:\bCLK_(BTN|LIST|TAB|MENU|TREEVEW|TREEVIEW|LSTVEW|LISTVIEW|TOOLBAR|ACC|SHORT|BACK|MUSMOVE|RIGHTCLK|LEFTCLK|DBLCLK|FROMLAST|CONTINUE)\b)</string>
+			<string>(?i:\bCLK_(BTN|LIST|TAB|MENU|TREEVEW|TREEVIEW|LSTVEW|LISTVIEW|TOOLBAR|ACC|SHORT|BACK|MUSMOVE|RIGHTCLK|LEFTCLK|DBLCLK|FROMLAST|CONTINUE|LINK)\b)</string>
 			<key>name</key>
 			<string>constant.other.uwsc</string>
 		</dict>
@@ -97,7 +97,7 @@
 			<key>comment</key>
 			<string>GETITEM</string>
 			<key>match</key>
-			<string>(?i:\bITM_(BTN|LIST|TAB|MENU|TREEVI?EW|LISTVIEW|LSTVEW|EDIT|STATIC|STATUSBAR|TOOLBAR|ACC(CLK2?|TXT|EDIT)|FROMLAST|BACK)\b)</string>
+			<string>(?i:\bITM_(BTN|LIST|TAB|MENU|TREEVI?EW|LISTVIEW|LSTVEW|EDIT|STATIC|STATUSBAR|TOOLBAR|ACC(CLK2?|TXT|EDIT)|FROMLAST|BACK|LINK)\b)</string>
 			<key>name</key>
 			<string>constant.other.uwsc</string>
 		</dict>
@@ -233,7 +233,7 @@
 			<key>comment</key>
 			<string>BTN KBD</string>
 			<key>match</key>
-			<string>(?i:\b(LEFT|RIGHT|MIDDLE|WHEEL|CLICK|DOWN|UP)\b)</string>
+			<string>(?i:\b(LEFT|RIGHT|MIDDLE|WHEEL|CLICK|DOWN|UP|TOUCH)\b)</string>
 			<key>name</key>
 			<string>constant.other.uwsc</string>
 		</dict>

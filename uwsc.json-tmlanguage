@@ -43,7 +43,7 @@
 		},
 		{
 			"name":  "constant.other.uwsc",
-			"match": "(?i:\\bCLK_(BTN|LIST|TAB|MENU|TREEVEW|TREEVIEW|LSTVEW|LISTVIEW|TOOLBAR|ACC|SHORT|BACK|MUSMOVE|RIGHTCLK|LEFTCLK|DBLCLK|FROMLAST|CONTINUE)\\b)",
+			"match": "(?i:\\bCLK_(BTN|LIST|TAB|MENU|TREEVEW|TREEVIEW|LSTVEW|LISTVIEW|TOOLBAR|ACC|SHORT|BACK|MUSMOVE|RIGHTCLK|LEFTCLK|DBLCLK|FROMLAST|CONTINUE|LINK)\\b)",
 			"comment": "CLKITEM"
 		},
 		{
@@ -58,7 +58,7 @@
 		},
 		{
 			"name":  "constant.other.uwsc",
-			"match": "(?i:\\bITM_(BTN|LIST|TAB|MENU|TREEVI?EW|LISTVIEW|LSTVEW|EDIT|STATIC|STATUSBAR|TOOLBAR|ACC(CLK2?|TXT|EDIT)|FROMLAST|BACK)\\b)",
+			"match": "(?i:\\bITM_(BTN|LIST|TAB|MENU|TREEVI?EW|LISTVIEW|LSTVEW|EDIT|STATIC|STATUSBAR|TOOLBAR|ACC(CLK2?|TXT|EDIT)|FROMLAST|BACK|LINK)\\b)",
 			"comment": "GETITEM"
 		},
 		{
@@ -143,7 +143,7 @@
 		},
 		{
 			"name":  "constant.other.uwsc",
-			"match": "(?i:\\b(LEFT|RIGHT|MIDDLE|WHEEL|CLICK|DOWN|UP)\\b)",
+			"match": "(?i:\\b(LEFT|RIGHT|MIDDLE|WHEEL|CLICK|DOWN|UP|TOUCH)\\b)",
 			"comment": "BTN KBD"
 		},
 		{
