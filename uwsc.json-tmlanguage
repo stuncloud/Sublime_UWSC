@@ -340,24 +340,6 @@
 			"comment": "関数宣言部"
 		},
 		{
-			"name": "meta.module.uwsc",
-			"begin": "(?i)^\\s*(module|class)\\s+(\\w+)",
-			"beginCaptures": {
-				"2": { "name": "entity.name.function.module.uwsc"}
-			},
-			"captures": {
-				"1": { "name": "storage.type.module.uwsc" }
-			},
-			"patterns": [
-					{ "include": "$self" },
-					{
-						"name":  "variable.parameter.uwsc",
-						"match": "(?i:\\b(this|global)\\b)"
-					}
-			],
-			"end": "(?i)^\\s*(end(module|class))"
-		},
-		{
 			"name": "meta.define.uwsc",
 			"match": "(?i)^\\s*(DIM|PUBLIC|CONST|HASHTBL)\\s+",
 			"captures": {
@@ -422,7 +404,7 @@
 				{ "include": "source.json" }
 			],
 			"end": "^\\s*(?i)(\\bendtextblock\\b)",
-			"comment": "textblock宣言 JavaScript"
+			"comment": "textblock宣言 json"
 		},
 		{
 			"name": "meta.textblock.js.uwsc",
@@ -454,7 +436,7 @@
 				{ "include": "source.vbs" }
 			],
 			"end": "^\\s*(?i)(\\bendtextblock\\b)",
-			"comment": "textblock宣言 JavaScript"
+			"comment": "textblock宣言 VBScript"
 		},
 		{
 			"name": "meta.textblock.uwsc",
@@ -471,22 +453,23 @@
 			],
 			"end": "^\\s*(?i)(\\bendtextblock\\b)",
 			"comment": "textblock宣言"
-		},
-		{
+		},{
 			"name": "meta.module.uwsc",
-			"begin": "(?i)^\\s*(class|module)\\s+(\\w+)",
+			"begin": "(?i)^\\s*(module|class)\\s+(\\w+)",
+			"beginCaptures": {
+				"2": { "name": "entity.name.function.module.uwsc"}
+			},
 			"captures": {
-				"1": { "name": "storage.type.module.uwsc" },
-				"2": { "name": "entity.name.function.uwsc"}
+				"1": { "name": "storage.type.module.uwsc" }
 			},
 			"patterns": [
-				{ "include": "$self" },
-				{
-					"name":  "variable.parameter.uwsc",
-					"match": "(?i:\\b(GLOBAL|THIS)\\b)"
-				}
+					{ "include": "$self" },
+					{
+						"name":  "variable.parameter.uwsc",
+						"match": "(?i:\\b(this|global)\\b)"
+					}
 			],
-			"end": "(?i)^\\s*end(class|module)"
+			"end": "(?i)^\\s*(end(module|class))"
 		}
 	],
 	"uuid": "0f466014-285a-4612-b00a-32866f2d6e6d"

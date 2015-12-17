@@ -573,43 +573,6 @@
 			</array>
 		</dict>
 		<dict>
-			<key>begin</key>
-			<string>(?i)^\s*(module|class)\s+(\w+)</string>
-			<key>beginCaptures</key>
-			<dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.function.module.uwsc</string>
-				</dict>
-			</dict>
-			<key>captures</key>
-			<dict>
-				<key>1</key>
-				<dict>
-					<key>name</key>
-					<string>storage.type.module.uwsc</string>
-				</dict>
-			</dict>
-			<key>end</key>
-			<string>(?i)^\s*(end(module|class))</string>
-			<key>name</key>
-			<string>meta.module.uwsc</string>
-			<key>patterns</key>
-			<array>
-				<dict>
-					<key>include</key>
-					<string>$self</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>(?i:\b(this|global)\b)</string>
-					<key>name</key>
-					<string>variable.parameter.uwsc</string>
-				</dict>
-			</array>
-		</dict>
-		<dict>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
@@ -761,7 +724,7 @@
 				</dict>
 			</dict>
 			<key>comment</key>
-			<string>textblock宣言 JavaScript</string>
+			<string>textblock宣言 json</string>
 			<key>end</key>
 			<string>^\s*(?i)(\bendtextblock\b)</string>
 			<key>name</key>
@@ -851,7 +814,7 @@
 				</dict>
 			</dict>
 			<key>comment</key>
-			<string>textblock宣言 JavaScript</string>
+			<string>textblock宣言 VBScript</string>
 			<key>end</key>
 			<string>^\s*(?i)(\bendtextblock\b)</string>
 			<key>name</key>
@@ -898,7 +861,15 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>(?i)^\s*(class|module)\s+(\w+)</string>
+			<string>(?i)^\s*(module|class)\s+(\w+)</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.function.module.uwsc</string>
+				</dict>
+			</dict>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
@@ -906,14 +877,9 @@
 					<key>name</key>
 					<string>storage.type.module.uwsc</string>
 				</dict>
-				<key>2</key>
-				<dict>
-					<key>name</key>
-					<string>entity.name.function.uwsc</string>
-				</dict>
 			</dict>
 			<key>end</key>
-			<string>(?i)^\s*end(class|module)</string>
+			<string>(?i)^\s*(end(module|class))</string>
 			<key>name</key>
 			<string>meta.module.uwsc</string>
 			<key>patterns</key>
@@ -924,7 +890,7 @@
 				</dict>
 				<dict>
 					<key>match</key>
-					<string>(?i:\b(GLOBAL|THIS)\b)</string>
+					<string>(?i:\b(this|global)\b)</string>
 					<key>name</key>
 					<string>variable.parameter.uwsc</string>
 				</dict>
