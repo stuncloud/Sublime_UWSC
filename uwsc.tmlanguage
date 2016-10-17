@@ -73,7 +73,7 @@
 			<key>comment</key>
 			<string>CLKITEM</string>
 			<key>match</key>
-			<string>(?i:\bCLK_(BTN|LIST|TAB|MENU|TREEVEW|TREEVIEW|LSTVEW|LISTVIEW|TOOLBAR|ACC|SHORT|BACK|MUSMOVE|RIGHTCLK|LEFTCLK|DBLCLK|FROMLAST|CONTINUE|LINK)\b)</string>
+			<string>(?i:\bCLK_(BTN|LIST|TAB|MENU|TREEVEW|TREEVIEW|LSTVEW|LISTVIEW|TOOLBAR|ACC|SHORT|BACK|MUSMOVE|RIGHTCLK|LEFTCLK|DBLCLK|FROMLAST|CONTINUE|LINK|API|UIA)\b)</string>
 			<key>name</key>
 			<string>constant.other.uwsc</string>
 		</dict>
@@ -427,7 +427,7 @@
 			<key>comment</key>
 			<string>IE操作関連 フォーム画面 Excel操作関連</string>
 			<key>match</key>
-			<string>(?i:\b(IEGETDATA|IESETDATA|IEGETSRC|IESETSRC|IELINK|ENCODE|DECODE|CREATEFORM|GETFORMDATA|SETFORMDATA|XLOPEN|XLCLOSE|XLACTIVATE|XLSHEET|XLGETDATA|XLSETDATA)\b)</string>
+			<string>(?i:\b(IEGETDATA|IESETDATA|IEGETSRC|IESETSRC|IELINK|IEGETFRAME|ENCODE|DECODE|CREATEFORM|GETFORMDATA|SETFORMDATA|XLOPEN|XLCLOSE|XLACTIVATE|XLSHEET|XLGETDATA|XLSETDATA)\b)</string>
 			<key>name</key>
 			<string>support.function.uwsc</string>
 		</dict>
@@ -864,13 +864,20 @@
 			<string>(?i)^\s*(module|class)\s+(\w+)</string>
 			<key>beginCaptures</key>
 			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type.module.uwsc</string>
+				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
 					<string>entity.name.function.module.uwsc</string>
 				</dict>
 			</dict>
-			<key>captures</key>
+			<key>end</key>
+			<string>(?i)^\s*(end(module|class))</string>
+			<key>endCaptures</key>
 			<dict>
 				<key>1</key>
 				<dict>
@@ -878,8 +885,6 @@
 					<string>storage.type.module.uwsc</string>
 				</dict>
 			</dict>
-			<key>end</key>
-			<string>(?i)^\s*(end(module|class))</string>
 			<key>name</key>
 			<string>meta.module.uwsc</string>
 			<key>patterns</key>

@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>name</key>
-	<string>JavaScript Indent</string>
+	<string>UWSC Indent</string>
 	<key>scope</key>
 	<string>source.uwsc</string>
 	<key>settings</key>

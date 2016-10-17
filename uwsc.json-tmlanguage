@@ -43,7 +43,7 @@
 		},
 		{
 			"name":  "constant.other.uwsc",
-			"match": "(?i:\\bCLK_(BTN|LIST|TAB|MENU|TREEVEW|TREEVIEW|LSTVEW|LISTVIEW|TOOLBAR|ACC|SHORT|BACK|MUSMOVE|RIGHTCLK|LEFTCLK|DBLCLK|FROMLAST|CONTINUE|LINK)\\b)",
+			"match": "(?i:\\bCLK_(BTN|LIST|TAB|MENU|TREEVEW|TREEVIEW|LSTVEW|LISTVIEW|TOOLBAR|ACC|SHORT|BACK|MUSMOVE|RIGHTCLK|LEFTCLK|DBLCLK|FROMLAST|CONTINUE|LINK|API|UIA)\\b)",
 			"comment": "CLKITEM"
 		},
 		{
@@ -266,7 +266,7 @@
 		{
 			"name":  "support.function.uwsc",
 			"comment": "IE操作関連 フォーム画面 Excel操作関連",
-			"match": "(?i:\\b(IEGETDATA|IESETDATA|IEGETSRC|IESETSRC|IELINK|ENCODE|DECODE|CREATEFORM|GETFORMDATA|SETFORMDATA|XLOPEN|XLCLOSE|XLACTIVATE|XLSHEET|XLGETDATA|XLSETDATA)\\b)"
+			"match": "(?i:\\b(IEGETDATA|IESETDATA|IEGETSRC|IESETSRC|IELINK|IEGETFRAME|ENCODE|DECODE|CREATEFORM|GETFORMDATA|SETFORMDATA|XLOPEN|XLCLOSE|XLACTIVATE|XLSHEET|XLGETDATA|XLSETDATA)\\b)"
 		},
 		{
 			"name":  "support.function.uwsc",
@@ -457,9 +457,10 @@
 			"name": "meta.module.uwsc",
 			"begin": "(?i)^\\s*(module|class)\\s+(\\w+)",
 			"beginCaptures": {
+				"1": { "name": "storage.type.module.uwsc" },
 				"2": { "name": "entity.name.function.module.uwsc"}
 			},
-			"captures": {
+			"endCaptures": {
 				"1": { "name": "storage.type.module.uwsc" }
 			},
 			"patterns": [

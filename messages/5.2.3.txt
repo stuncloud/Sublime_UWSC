@@ -1,0 +1,13 @@
+Sublime UWSC 5.2.3
+==================
+
+UWSC 5.2.3 に対応しました
+
+更新内容
+--------
+
+- clkitem定数追加
+ - CLK_API
+ - CLK_UIA
+- iegetframe関数追加
+- その他細かな修正
