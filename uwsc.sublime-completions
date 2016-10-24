@@ -32,7 +32,16 @@
 		//関数
 		//ウィンドウ関連
 		{ "trigger": "getid", "contents": "getid(${1:title}${2:, ${3:class}${4:, ${5:wait}${6:, ${7:mdi}}}})${0}"},
-		{ "trigger": "getid(GET_", "contents": "getid(GET_${1:})${0}"},
+		{ "trigger": "getid get_active_win", "contents": "getid(GET_ACTIVE_WIN)${0}"},
+		{ "trigger": "getid get_frompoint_win", "contents": "getid(GET_FROMPOINT_WIN)${0}"},
+		{ "trigger": "getid get_frompoint_obj", "contents": "getid(GET_FROMPOINT_OBJ)${0}"},
+		{ "trigger": "getid get_thisuwsc_win", "contents": "getid(GET_THISUWSC_WIN)${0}"},
+		{ "trigger": "getid get_logprint_win", "contents": "getid(GET_LOGPRINT_WIN)${0}"},
+		{ "trigger": "getid get_balloon_win", "contents": "getid(GET_BALLOON_WIN)${0}"},
+		{ "trigger": "getid get_fukidasi_win", "contents": "getid(GET_FUKIDASI_WIN)${0}"},
+		{ "trigger": "getid get_form_win", "contents": "getid(GET_FORM_WIN)${0}"},
+		{ "trigger": "getid get_form_win2", "contents": "getid(GET_FORM_WIN2)${0}"},
+		{ "trigger": "getid get_schedule_win", "contents": "getid(GET_SCHEDULE_WIN)${0}"},
 		{ "trigger": "getid (keyword)", "contents": "getid" },
 		{ "trigger": "class MSGBOX:TUmsgDlg_uwsc", "contents": "\"TUmsgDlg_uwsc\""},
 		{ "trigger": "class INPUT:TUinpBox_uwsc", "contents": "\"TUinpBox_uwsc\""},
