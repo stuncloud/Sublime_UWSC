@@ -1,0 +1,29 @@
+Sublime UWSC 5.3.0
+==================
+
+補完機能を改善  
+UWSC 5.3.0 の追加要素はありません
+
+更新内容
+--------
+
+- getid()関数の特別なウィンドウ指定を補完するようにした
+    - `getid get_active_win`    → `getid(GET_ACTIVE_WIN)`
+    - `getid get_frompoint_win` → `getid(GET_FROMPOINT_WIN)`
+    - `getid get_frompoint_obj` → `getid(GET_FROMPOINT_OBJ)`
+    - `getid get_thisuwsc_win`  → `getid(GET_THISUWSC_WIN)`
+    - `getid get_logprint_win`  → `getid(GET_LOGPRINT_WIN)`
+    - `getid get_balloon_win`   → `getid(GET_BALLOON_WIN)`
+    - `getid get_fukidasi_win`  → `getid(GET_FUKIDASI_WIN)`
+    - `getid get_form_win`      → `getid(GET_FORM_WIN)`
+    - `getid get_form_win2`     → `getid(GET_FORM_WIN2)`
+    - `getid get_schedule_win`  → `getid(GET_SCHEDULE_WIN)`
+- ダイアログなど特殊なクラス名を補完できるようにした
+    - `class menu_32768`           → `#32768`
+    - `class desktop_window_32769` → `#32769`
+    - `class dialog_32770`         → `#32770`
+    - `class task_switch_32771`    → `#32771`
+    - `class icon_titles_32772`    → `#32772`
+- EXE用のバージョン情報をスニペットにした
+    - `version` で呼び出し
+- msgboxの補完に不要な引数が含まれていたので削除した
