@@ -1,0 +1,13 @@
+<snippet>
+    <content><![CDATA[
+// _EXEVERSION      = ${1:0}.${2:0}.${3:0}.${4:0}
+// _FILEDESCRIPTION = ${5:説明}
+// _PRODUCTNAME     = ${6:製品名}
+// _LEGALCOPYRIGHT  = ${7:著作権}
+
+$0
+]]></content>
+    <tabTrigger>version</tabTrigger>
+    <description>バージョン情報 (EXE用)</description>
+    <scope>source.uwsc</scope>
+</snippet>
