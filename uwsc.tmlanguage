@@ -65,7 +65,7 @@
 			<key>comment</key>
 			<string>GETID</string>
 			<key>match</key>
-			<string>(?i:\bGET_((ACTIVE|FROMPOINT|THISUWSC|LOGPRINT|FUKIDASI|BALLOON|SCHEDULE)_WIN|FROMPOINT_OBJ|FORM_WIN2?)\b)</string>
+			<string>(?i:\bGET_((ACTIVE|FROMPOINT|THISUWSC|LOGPRINT|FUKIDASI|BALLOON|SCHEDULE)_WIN|FROMPOINT_OBJ|FORM_WIN2?|STOPFORM_WIN)\b)</string>
 			<key>name</key>
 			<string>constant.other.uwsc</string>
 		</dict>
@@ -169,7 +169,7 @@
 			<key>comment</key>
 			<string>MONITOR</string>
 			<key>match</key>
-			<string>(?i:\bMON_(HEIGHT|WIDTH|X|Y|NAME)\b)</string>
+			<string>(?i:\bMON_(HEIGHT|WIDTH|X|Y|NAME|ISMAIN|WORK_X|WORK_Y|WORK_WIDTH|WORK_HEIGHT|ALL)\b)</string>
 			<key>name</key>
 			<string>constant.other.uwsc</string>
 		</dict>
@@ -335,9 +335,25 @@
 		</dict>
 		<dict>
 			<key>comment</key>
+			<string>REGEX</string>
+			<key>match</key>
+			<string>(?i:\REGEX_(TEST|MATCH)\b)</string>
+			<key>name</key>
+			<string>constant.other.uwsc</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>KINDOFOS</string>
+			<key>match</key>
+			<string>(?i:\OS_(WIN2000|WINXP|WINSRV2003|WINSRV2003R2|WINVISTA|WINSRV2008|WIN7|WINSRV2008R2|WIN8|WINSRV2012|WIN81|WINSRV2012R2|WIN10|WINSRV2016)|(KIND_OF|IS_64BIT)_OS|OSVER_(MAJOR|MINOR|BUILD|PLATFORM)\b)</string>
+			<key>name</key>
+			<string>constant.other.uwsc</string>
+		</dict>
+		<dict>
+			<key>comment</key>
 			<string>Virtual KeyCode</string>
 			<key>match</key>
-			<string>(?i:\b(VK_([0-9A-Z]|F[1-9]|F1[0-2]|NUMPAD[0-9]|OEM_([1-8]|PA[1-3]|COMMA|JUMP|MINUS|PERIOD|PLUS|RESET)|VOLUME_(DOWN|MUTE|UP)|MEDIA_(NEXT_TRACK|PLAY_PAUSE|PREV_TRACK|STOP)|LAUNCH_(APP1|APP2|MAIL|MEDIA_SELECT)|BROWSER_(BACK|FAVORITES|FORWARD|HOME|REFRESH|SEARCH|STOP)|ACCEPT|ADD|ALT|APPS|BACK|CAPITAL|CLEAR|CONTROL|CONVERT|CTRL|DECIMAL|DELETE|DIVIDE|DOWN|END|ESC|ESCAPE|EXECUTE|FINAL|HELP|HOME|INSERT|KANA|KANJI|LBUTTON|LEFT|MBUTTON|MENU|MODECHANGE|MULTIPLY|NEXT|NONCONVERT|NUMLOCK|PAUSE|PRINT|PRIOR|RBUTTON|RCTRL|RETURN|RIGHT|RSHIFT|SCROLL|SELECT|SEPARATOR|SHIFT|SLEEP|SNAPSHOT|SPACE|START|SUBTRACT|TAB|UP|WIN))\b)</string>
+			<string>(?i:\b(VK_([0-9A-Z]|F[1-9]|F1[0-2]|NUMPAD[0-9]|OEM_([1-8]|PA[1-3]|COMMA|JUMP|MINUS|PERIOD|PLUS|RESET)|VOLUME_(DOWN|MUTE|UP)|MEDIA_(NEXT_TRACK|PLAY_PAUSE|PREV_TRACK|STOP)|LAUNCH_(APP1|APP2|MAIL|MEDIA_SELECT)|BROWSER_(BACK|FAVORITES|FORWARD|HOME|REFRESH|SEARCH|STOP)|ACCEPT|ADD|ALT|APPS|BACK|CAPITAL|CLEAR|CONTROL|CONVERT|CTRL|DECIMAL|DELETE|DIVIDE|DOWN|END|ESC|ESCAPE|EXECUTE|FINAL|HELP|HOME|INSERT|KANA|KANJI|LBUTTON|LEFT|MBUTTON|MENU|MODECHANGE|MULTIPLY|NEXT|NONCONVERT|NUMLOCK|PAUSE|PRINT|PRIOR|RBUTTON|RCTRL|RETURN|RIGHT|RSHIFT|SCROLL|SELECT|SEPARATOR|SHIFT|SLEEP|SNAPSHOT|SPACE|START|SUBTRACT|TAB|UP|WIN|ENTER|RALT|RRETURN|RWIN))\b)</string>
 			<key>name</key>
 			<string>constant.other.uwsc</string>
 		</dict>
@@ -436,6 +452,14 @@
 			<string>数学関数</string>
 			<key>match</key>
 			<string>(?i:\b(RANDOM|ABS|ZCUT|INT|CEIL|ROUND|SQRT|POWER|EXP|LN|LOGN|SIN|COS|TAN|ARCSIN|ARCCOS|ARCTAN)\b)</string>
+			<key>name</key>
+			<string>support.function.uwsc</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>UWSCR</string>
+			<key>match</key>
+			<string>(?i:\b(AS_STRING|NEWRE|REGEX|TESTRE|MATCH|ENV|SHEXEC|LIST_ENV|LIST_MODULE_MEMBER)\b)</string>
 			<key>name</key>
 			<string>support.function.uwsc</string>
 		</dict>
