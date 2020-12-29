@@ -23,6 +23,7 @@
 		"procedure", "function", "result", "fend",
 		"for", "in", "step", "next",
 		"module", "endmodule",
+		"class", "endclass",
 		"repeat", "until",
 		"while", "wend",
 		"select", "case", "default", "selend", 
@@ -33,6 +34,8 @@
 		// UWSCR: 隠し関数
 		{ "trigger": "list_env()", "contents": "list_env()${0}"},
 		{ "trigger": "list_module_member()", "contents": "list_module_member()${0}"},
+		{ "trigger": "name_of()", "contents": "name_of(${1:builtin_const})${0}"},
+		{ "trigger": "assert_equal()", "contents": "assert_equal(${1:value1}, ${2:value2})${0}"},
 		//ウィンドウ関連
 		{ "trigger": "getid()", "contents": "getid(${1:title}${2:, ${3:class}${4:, ${5:wait}${6:, ${7:mdi}}}})${0}"},
 		{ "trigger": "getid(get_active_win)", "contents": "getid(GET_ACTIVE_WIN)${0}"},
@@ -294,7 +297,9 @@
 		{ "trigger": "regex()", "contents": "regex(${1:str}, ${2:regex}${3:, ${4:opt}})${0}"},
 		{ "trigger": "testre()", "contents": "testre(${1:str}, ${2:regex})${0}"},
 		{ "trigger": "match()", "contents": "match(${1:str}, ${2:regex})${0}"},
-		"as_string", "newre", "regex", "testre", "match",
+		{ "trigger": "tojson()", "contents": "tojson(${1:uobject}${2:, ${3:prettify}})${0}"},
+		{ "trigger": "fromjson()", "contents": "fromjson(${1:json})${0}"},
+		"as_string", "newre", "regex", "testre", "match", "tojson", "fromjson",
 		"REGEX_TEST", "REGEX_MATCH",
 		// ↑uwscr↑
 		{ "trigger": "copy()", "contents": "copy(${1:str}, ${2:start}${3:, ${4:len}})${0}"},

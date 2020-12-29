@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+procedure(${1:arguments})
+	$0
+fend
+
+]]></content>
+	<tabTrigger>procedure</tabTrigger>
+	<description>無名procedure</description>
+	<scope>source.uwsc</scope>
+</snippet>

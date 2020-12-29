@@ -26,12 +26,43 @@
 			<key>patterns</key>
 			<array>
 				<dict>
+					<key>captures</key>
+					<dict>
+						<key>1</key>
+						<dict>
+							<key>name</key>
+							<string>comment.interpolated.uwsc</string>
+						</dict>
+						<key>3</key>
+						<dict>
+							<key>name</key>
+							<string>constant.language.interpolated.uwsc</string>
+						</dict>
+						<key>4</key>
+						<dict>
+							<key>name</key>
+							<string>variable.parameter.interpolated.uwsc</string>
+						</dict>
+						<key>5</key>
+						<dict>
+							<key>name</key>
+							<string>comment.interpolated.uwsc</string>
+						</dict>
+					</dict>
 					<key>match</key>
-					<string>(?i)&lt;#(CR|DBL|TAB)&gt;</string>
+					<string>(?i)(&lt;#)((CR|DBL|TAB)|([0-9A-Z_]+))(&gt;)</string>
 					<key>name</key>
 					<string>string.interpolated.uwsc</string>
 				</dict>
 			</array>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>'</string>
+			<key>end</key>
+			<string>'</string>
+			<key>name</key>
+			<string>string.quoted.single.uwsc</string>
 		</dict>
 		<dict>
 			<key>comment</key>
@@ -411,7 +442,7 @@
 			<key>comment</key>
 			<string>文字操作関連</string>
 			<key>match</key>
-			<string>(?i:\b(COPYB?|POSB?|LENGTH[BS]?|CHKNUM|VAL|REPLACE|CHGMOJ|TRIM|FORMAT|CHRB?|ASCB?|ISUNICODE|STRCONV|TOKEN|BETWEENSTR)\b)</string>
+			<string>(?i:\b(COPYB?|POSB?|LENGTH[BS]?|CHKNUM|VAL|REPLACE|CHGMOJ|TRIM|FORMAT|CHRB?|ASCB?|ISUNICODE|STRCONV|TOKEN|BETWEENSTR|TOJSON|FROMJSON)\b)</string>
 			<key>name</key>
 			<string>support.function.uwsc</string>
 		</dict>
@@ -459,15 +490,21 @@
 			<key>comment</key>
 			<string>UWSCR</string>
 			<key>match</key>
-			<string>(?i:\b(AS_STRING|NEWRE|REGEX|TESTRE|MATCH|ENV|SHEXEC|LIST_ENV|LIST_MODULE_MEMBER)\b)</string>
+			<string>(?i:\b(ASSERT_EQUAL|AS_STRING|NEWRE|REGEX|TESTRE|MATCH|ENV|SHEXEC|LIST_ENV|LIST_MODULE_MEMBER|NAME_OF)\b)</string>
 			<key>name</key>
 			<string>support.function.uwsc</string>
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?i:\b(COM_ERR_IGN|COM_ERR_RET|EXIT|EXITEXIT|PRINT|THREAD|VAR)\b)</string>
+			<string>(?i:\b(COM_ERR_IGN|COM_ERR_RET|EXIT|EXITEXIT|PRINT|THREAD|VAR|REF|PRMS|ARGS)\b)</string>
 			<key>name</key>
 			<string>keyword.control.uwsc</string>
+		</dict>
+		<dict>
+			<key>match</key>
+			<string>(?i:\b(continue|break)\b)</string>
+			<key>name</key>
+			<string>variable.parameter.uwsc</string>
 		</dict>
 		<dict>
 			<key>begin</key>
@@ -489,12 +526,6 @@
 				<dict>
 					<key>include</key>
 					<string>$self</string>
-				</dict>
-				<dict>
-					<key>match</key>
-					<string>(?i:\b(break|continue)\b)</string>
-					<key>name</key>
-					<string>variable.parameter.uwsc</string>
 				</dict>
 			</array>
 		</dict>
@@ -582,6 +613,37 @@
 			<string>(?i)^\s*(fend)</string>
 			<key>name</key>
 			<string>meta.function.uwsc</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>match</key>
+					<string>(?i:\b(RESULT)\b)</string>
+					<key>name</key>
+					<string>variable.parameter.uwsc</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>$self</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>(?i)\b(function|procedure)\b\(</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type.function.uwsc</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>関数宣言部</string>
+			<key>end</key>
+			<string>(?i)^\s*(fend)</string>
+			<key>name</key>
+			<string>meta.anonfunc.uwsc</string>
 			<key>patterns</key>
 			<array>
 				<dict>

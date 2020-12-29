@@ -1,0 +1,14 @@
+<snippet>
+	<content><![CDATA[
+class ${1:name}
+	procedure ${1:name}
+		$2
+	fend
+	$0
+endclass
+
+]]></content>
+	<tabTrigger>class</tabTrigger>
+	<description>class宣言</description>
+	<scope>source.uwsc</scope>
+</snippet>

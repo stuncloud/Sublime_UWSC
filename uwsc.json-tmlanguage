@@ -14,9 +14,20 @@
 			"patterns": [
 				{
 					"name": "string.interpolated.uwsc",
-					"match": "(?i)<#(CR|DBL|TAB)>"
+					"match": "(?i)(<#)((CR|DBL|TAB)|([0-9A-Z_]+))(>)",
+					"captures": {
+						"1": { "name": "comment.interpolated.uwsc" },
+						"3": { "name": "constant.language.interpolated.uwsc" },
+						"4": { "name": "variable.parameter.interpolated.uwsc" },
+						"5": { "name": "comment.interpolated.uwsc" }
+					}
 				}
 			]
+		},
+		{
+			"name": "string.quoted.single.uwsc",
+			"begin": "'",
+			"end":"'"
 		},
 		{
 			"match": "\\b\\d+(\\.\\d+)?\\b",
@@ -256,7 +267,7 @@
 		{
 			"name":  "support.function.uwsc",
 			"comment": "文字操作関連",
-			"match": "(?i:\\b(COPYB?|POSB?|LENGTH[BS]?|CHKNUM|VAL|REPLACE|CHGMOJ|TRIM|FORMAT|CHRB?|ASCB?|ISUNICODE|STRCONV|TOKEN|BETWEENSTR)\\b)"
+			"match": "(?i:\\b(COPYB?|POSB?|LENGTH[BS]?|CHKNUM|VAL|REPLACE|CHGMOJ|TRIM|FORMAT|CHRB?|ASCB?|ISUNICODE|STRCONV|TOKEN|BETWEENSTR|TOJSON|FROMJSON)\\b)"
 		},
 		{
 			"name":  "support.function.uwsc",
@@ -286,11 +297,15 @@
 		{
 			"name":  "support.function.uwsc",
 			"comment": "UWSCR",
-			"match": "(?i:\\b(AS_STRING|NEWRE|REGEX|TESTRE|MATCH|ENV|SHEXEC|LIST_ENV|LIST_MODULE_MEMBER)\\b)"
+			"match": "(?i:\\b(ASSERT_EQUAL|AS_STRING|NEWRE|REGEX|TESTRE|MATCH|ENV|SHEXEC|LIST_ENV|LIST_MODULE_MEMBER|NAME_OF)\\b)"
 		},
 		{
 			"name":  "keyword.control.uwsc",
-			"match": "(?i:\\b(COM_ERR_IGN|COM_ERR_RET|EXIT|EXITEXIT|PRINT|THREAD|VAR)\\b)"
+			"match": "(?i:\\b(COM_ERR_IGN|COM_ERR_RET|EXIT|EXITEXIT|PRINT|THREAD|VAR|REF|PRMS|ARGS)\\b)"
+		},
+		{
+			"name":  "variable.parameter.uwsc",
+			"match": "(?i:\\b(continue|break)\\b)"
 		},
 		{
 			"name": "meta.loop.uwsc",
@@ -299,11 +314,7 @@
 				"1": { "name": "storage.type.loop.uwsc" }
 			},
 			"patterns": [
-				{ "include": "$self" },
-				{
-					"name":  "variable.parameter.uwsc",
-					"match": "(?i:\\b(break|continue)\\b)"
-				}
+				{ "include": "$self" }
 			],
 			"end": "(?i)^\\s*\\b(next|wend|until)\\b"
 		},
@@ -343,6 +354,22 @@
 			"captures": {
 				"1": { "name": "storage.type.function.uwsc" },
 				"2": { "name": "entity.name.function.function.uwsc"}
+			},
+			"patterns": [
+					{
+						"name":  "variable.parameter.uwsc",
+						"match": "(?i:\\b(RESULT)\\b)"
+					},
+					{ "include": "$self" }
+			],
+			"end": "(?i)^\\s*(fend)",
+			"comment": "関数宣言部"
+		},
+		{
+			"name": "meta.anonfunc.uwsc",
+			"begin": "(?i)\\b(function|procedure)\\b\\(",
+			"captures": {
+				"1": { "name": "storage.type.function.uwsc" }
 			},
 			"patterns": [
 					{
