@@ -1,7 +1,7 @@
 {
 	"name": "UWSC",
 	"scopeName": "source.uwsc",
-	"fileTypes": ["uws"],
+	"fileTypes": ["uws", "uwsr"],
 	"patterns": [
 		{
 			"name": "comment.line.uwsc",
@@ -204,7 +204,7 @@
 		},
 		{
 			"name":  "constant.other.uwsc",
-			"match": "(?i:\\b(GET_((WIN|SYS|CUR|APPDATA|UWSC)_DIR|UWSC_(VER|PRO|NAME))|G_(MOUSE_[XY]|SCREEN_[WHC]))\\b)",
+			"match": "(?i:\\b(GET_((WIN|SYS|CUR|APPDATA|UWSCR?)_DIR|UWSC_PRO|UWSCR?_(VER|NAME))|G_(MOUSE_[XY]|SCREEN_[WHC]))\\b)",
 			"comment": "特殊変数"
 		},
 		{
@@ -410,7 +410,7 @@
 					"match": "(?i)\\b(int|long|bool|uint|hwnd|string|Wstring|float|double|word|dword|byte|char|pchar|Wchar|pWchar|boolean|longlong|Extended|SafeArray)\\b"
 				}
 			],
-			"end": "\\)(\\s*:\\s*(?i)(int|long|bool|uint|hwnd|string|Wstring|float|double|word|dword|byte|char|pchar|Wchar|pWchar|boolean|longlong|Extended|SafeArray))?\\s*:\\s*((\\w+)(\\.dll)?)",
+			"end": "\\)(\\s*:\\s*(?i)(int|long|bool|uint|hwnd|string|Wstring|float|double|word|dword|byte|char|pchar|Wchar|pWchar|boolean|longlong|Extended|SafeArray)?)?\\s*:\\s*((\\w+)(?i:\\.dll)?)",
 			"endCaptures": {
 				"2": { "name": "constant.language.dll.uwsc" },
 				"3": { "name": "storage.type.dllfile.uwsc"}
@@ -418,13 +418,13 @@
 		},
 		{
 			"name": "meta.textblock.html.uwsc",
-			"begin": "^\\s*(?i)(\\btextblock\\b)\\s+(([^/]*html[^/]*)(//.*)?|(([^/]+)(//.*html.*)))",
+			"begin": "^\\s*(?i)(\\btextblock(ex)?\\b)\\s+(([^/]*html[^/]*)(//.*)?|(([^/]+)(//.*html.*)))",
 			"captures": {
 				"1": { "name": "storage.type.textblock.uwsc" },
-				"3": { "name": "entity.name.function.textblock.uwsc"},
-				"4": { "name": "comment.block.uwsc"},
-				"6": { "name": "entity.name.function.textblock.uwsc"},
-				"7": { "name": "comment.block.uwsc"}
+				"4": { "name": "entity.name.function.textblock.uwsc"},
+				"5": { "name": "comment.block.uwsc"},
+				"7": { "name": "entity.name.function.textblock.uwsc"},
+				"8": { "name": "comment.block.uwsc"}
 			},
 			"patterns": [
 				{ "include": "text.html.basic" }
@@ -434,13 +434,13 @@
 		},
 		{
 			"name": "meta.textblock.json.uwsc",
-			"begin": "^\\s*(?i)(\\btextblock\\b)\\s+(([^/]*json[^/]*)(//.*)?|(([^/]+)(//.*json.*)))",
+			"begin": "^\\s*(?i)(\\btextblock(ex)?\\b)\\s+(([^/]*json[^/]*)(//.*)?|(([^/]+)(//.*json.*)))",
 			"captures": {
 				"1": { "name": "storage.type.textblock.uwsc" },
-				"3": { "name": "entity.name.function.textblock.uwsc"},
-				"4": { "name": "comment.block.uwsc"},
-				"6": { "name": "entity.name.function.textblock.uwsc"},
-				"7": { "name": "comment.block.uwsc"}
+				"4": { "name": "entity.name.function.textblock.uwsc"},
+				"5": { "name": "comment.block.uwsc"},
+				"7": { "name": "entity.name.function.textblock.uwsc"},
+				"8": { "name": "comment.block.uwsc"}
 			},
 			"patterns": [
 				{ "include": "source.json" }
@@ -450,13 +450,13 @@
 		},
 		{
 			"name": "meta.textblock.js.uwsc",
-			"begin": "^\\s*(?i)(\\btextblock\\b)\\s+(([^/]*js[^/]*)(//.*)?|(([^/]+)(//.*js.*)))",
+			"begin": "^\\s*(?i)(\\btextblock(ex)?\\b)\\s+(([^/]*js[^/]*)(//.*)?|(([^/]+)(//.*js.*)))",
 			"captures": {
 				"1": { "name": "storage.type.textblock.uwsc" },
-				"3": { "name": "entity.name.function.textblock.uwsc"},
-				"4": { "name": "comment.block.uwsc"},
-				"6": { "name": "entity.name.function.textblock.uwsc"},
-				"7": { "name": "comment.block.uwsc"}
+				"4": { "name": "entity.name.function.textblock.uwsc"},
+				"5": { "name": "comment.block.uwsc"},
+				"7": { "name": "entity.name.function.textblock.uwsc"},
+				"8": { "name": "comment.block.uwsc"}
 			},
 			"patterns": [
 				{ "include": "source.js" }
@@ -466,13 +466,13 @@
 		},
 		{
 			"name": "meta.textblock.vbs.uwsc",
-			"begin": "^\\s*(?i)(\\btextblock\\b)\\s+(([^/]*vbs[^/]*)(//.*)?|(([^/]+)(//.*vbs.*)))",
+			"begin": "^\\s*(?i)(\\btextblock(ex)?\\b)\\s+(([^/]*vbs[^/]*)(//.*)?|(([^/]+)(//.*vbs.*)))",
 			"captures": {
 				"1": { "name": "storage.type.textblock.uwsc" },
-				"3": { "name": "entity.name.function.textblock.uwsc"},
-				"4": { "name": "comment.block.uwsc"},
-				"6": { "name": "entity.name.function.textblock.uwsc"},
-				"7": { "name": "comment.block.uwsc"}
+				"4": { "name": "entity.name.function.textblock.uwsc"},
+				"5": { "name": "comment.block.uwsc"},
+				"7": { "name": "entity.name.function.textblock.uwsc"},
+				"8": { "name": "comment.block.uwsc"}
 			},
 			"patterns": [
 				{ "include": "source.vbs" }
@@ -482,10 +482,10 @@
 		},
 		{
 			"name": "meta.textblock.uwsc",
-			"begin": "^\\s*(?i)(\\btextblock\\b)\\s+(\\w+)?",
+			"begin": "^\\s*(?i)(\\btextblock(ex)?\\b)\\s+(\\w+)?",
 			"captures": {
 				"1": { "name": "storage.type.textblock.uwsc" },
-				"2": { "name": "entity.name.function.textblock.uwsc"}
+				"3": { "name": "entity.name.function.textblock.uwsc"}
 			},
 			"patterns": [
 				{
@@ -513,6 +513,14 @@
 					}
 			],
 			"end": "(?i)^\\s*(end(module|class))"
+		},{
+			"name": "meta.uobject.uwsc",
+			"begin": "{{",
+			"patterns": [
+				{ "include": "source.js" }
+			],
+			"end": "}}",
+			"comment": "UObject"
 		}
 	],
 	"uuid": "0f466014-285a-4612-b00a-32866f2d6e6d"

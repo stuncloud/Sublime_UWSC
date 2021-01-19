@@ -7,7 +7,7 @@ finally
 endtry
 
 ]]></content>
-	<tabTrigger>try</tabTrigger>
+	<tabTrigger>tryfinally</tabTrigger>
 	<description>try-finally構文</description>
 	<scope>source.uwsc</scope>
 </snippet>

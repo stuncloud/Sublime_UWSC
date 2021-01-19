@@ -1,10 +1,15 @@
 <snippet>
 	<content><![CDATA[
 class ${1:name}
-	procedure ${1:name}
-		$2
+	// constructor
+	procedure ${1:name}()
+		$0
 	fend
-	$0
+
+${2:	// destructor (optional)
+	procedure _${1:name}_()
+		
+	fend}
 endclass
 
 ]]></content>

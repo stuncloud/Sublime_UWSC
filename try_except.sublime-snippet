@@ -7,7 +7,7 @@ except
 endtry
 
 ]]></content>
-	<tabTrigger>try</tabTrigger>
+	<tabTrigger>tryexcept</tabTrigger>
 	<description>try-except構文</description>
 	<scope>source.uwsc</scope>
 </snippet>

@@ -5,6 +5,7 @@
 	<key>fileTypes</key>
 	<array>
 		<string>uws</string>
+		<string>uwsr</string>
 	</array>
 	<key>name</key>
 	<string>UWSC</string>
@@ -344,7 +345,7 @@
 			<key>comment</key>
 			<string>特殊変数</string>
 			<key>match</key>
-			<string>(?i:\b(GET_((WIN|SYS|CUR|APPDATA|UWSC)_DIR|UWSC_(VER|PRO|NAME))|G_(MOUSE_[XY]|SCREEN_[WHC]))\b)</string>
+			<string>(?i:\b(GET_((WIN|SYS|CUR|APPDATA|UWSCR?)_DIR|UWSC_PRO|UWSCR?_(VER|NAME))|G_(MOUSE_[XY]|SCREEN_[WHC]))\b)</string>
 			<key>name</key>
 			<string>constant.other.uwsc</string>
 		</dict>
@@ -707,7 +708,7 @@
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>\)(\s*:\s*(?i)(int|long|bool|uint|hwnd|string|Wstring|float|double|word|dword|byte|char|pchar|Wchar|pWchar|boolean|longlong|Extended|SafeArray))?\s*:\s*((\w+)(\.dll)?)</string>
+			<string>\)(\s*:\s*(?i)(int|long|bool|uint|hwnd|string|Wstring|float|double|word|dword|byte|char|pchar|Wchar|pWchar|boolean|longlong|Extended|SafeArray)?)?\s*:\s*((\w+)(?i:\.dll)?)</string>
 			<key>endCaptures</key>
 			<dict>
 				<key>2</key>
@@ -735,7 +736,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>^\s*(?i)(\btextblock\b)\s+(([^/]*html[^/]*)(//.*)?|(([^/]+)(//.*html.*)))</string>
+			<string>^\s*(?i)(\btextblock(ex)?\b)\s+(([^/]*html[^/]*)(//.*)?|(([^/]+)(//.*html.*)))</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
@@ -743,22 +744,22 @@
 					<key>name</key>
 					<string>storage.type.textblock.uwsc</string>
 				</dict>
-				<key>3</key>
+				<key>4</key>
 				<dict>
 					<key>name</key>
 					<string>entity.name.function.textblock.uwsc</string>
 				</dict>
-				<key>4</key>
+				<key>5</key>
 				<dict>
 					<key>name</key>
 					<string>comment.block.uwsc</string>
 				</dict>
-				<key>6</key>
+				<key>7</key>
 				<dict>
 					<key>name</key>
 					<string>entity.name.function.textblock.uwsc</string>
 				</dict>
-				<key>7</key>
+				<key>8</key>
 				<dict>
 					<key>name</key>
 					<string>comment.block.uwsc</string>
@@ -780,7 +781,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>^\s*(?i)(\btextblock\b)\s+(([^/]*json[^/]*)(//.*)?|(([^/]+)(//.*json.*)))</string>
+			<string>^\s*(?i)(\btextblock(ex)?\b)\s+(([^/]*json[^/]*)(//.*)?|(([^/]+)(//.*json.*)))</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
@@ -788,22 +789,22 @@
 					<key>name</key>
 					<string>storage.type.textblock.uwsc</string>
 				</dict>
-				<key>3</key>
+				<key>4</key>
 				<dict>
 					<key>name</key>
 					<string>entity.name.function.textblock.uwsc</string>
 				</dict>
-				<key>4</key>
+				<key>5</key>
 				<dict>
 					<key>name</key>
 					<string>comment.block.uwsc</string>
 				</dict>
-				<key>6</key>
+				<key>7</key>
 				<dict>
 					<key>name</key>
 					<string>entity.name.function.textblock.uwsc</string>
 				</dict>
-				<key>7</key>
+				<key>8</key>
 				<dict>
 					<key>name</key>
 					<string>comment.block.uwsc</string>
@@ -825,7 +826,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>^\s*(?i)(\btextblock\b)\s+(([^/]*js[^/]*)(//.*)?|(([^/]+)(//.*js.*)))</string>
+			<string>^\s*(?i)(\btextblock(ex)?\b)\s+(([^/]*js[^/]*)(//.*)?|(([^/]+)(//.*js.*)))</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
@@ -833,22 +834,22 @@
 					<key>name</key>
 					<string>storage.type.textblock.uwsc</string>
 				</dict>
-				<key>3</key>
+				<key>4</key>
 				<dict>
 					<key>name</key>
 					<string>entity.name.function.textblock.uwsc</string>
 				</dict>
-				<key>4</key>
+				<key>5</key>
 				<dict>
 					<key>name</key>
 					<string>comment.block.uwsc</string>
 				</dict>
-				<key>6</key>
+				<key>7</key>
 				<dict>
 					<key>name</key>
 					<string>entity.name.function.textblock.uwsc</string>
 				</dict>
-				<key>7</key>
+				<key>8</key>
 				<dict>
 					<key>name</key>
 					<string>comment.block.uwsc</string>
@@ -870,7 +871,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>^\s*(?i)(\btextblock\b)\s+(([^/]*vbs[^/]*)(//.*)?|(([^/]+)(//.*vbs.*)))</string>
+			<string>^\s*(?i)(\btextblock(ex)?\b)\s+(([^/]*vbs[^/]*)(//.*)?|(([^/]+)(//.*vbs.*)))</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
@@ -878,22 +879,22 @@
 					<key>name</key>
 					<string>storage.type.textblock.uwsc</string>
 				</dict>
-				<key>3</key>
+				<key>4</key>
 				<dict>
 					<key>name</key>
 					<string>entity.name.function.textblock.uwsc</string>
 				</dict>
-				<key>4</key>
+				<key>5</key>
 				<dict>
 					<key>name</key>
 					<string>comment.block.uwsc</string>
 				</dict>
-				<key>6</key>
+				<key>7</key>
 				<dict>
 					<key>name</key>
 					<string>entity.name.function.textblock.uwsc</string>
 				</dict>
-				<key>7</key>
+				<key>8</key>
 				<dict>
 					<key>name</key>
 					<string>comment.block.uwsc</string>
@@ -915,7 +916,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>^\s*(?i)(\btextblock\b)\s+(\w+)?</string>
+			<string>^\s*(?i)(\btextblock(ex)?\b)\s+(\w+)?</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
@@ -923,7 +924,7 @@
 					<key>name</key>
 					<string>storage.type.textblock.uwsc</string>
 				</dict>
-				<key>2</key>
+				<key>3</key>
 				<dict>
 					<key>name</key>
 					<string>entity.name.function.textblock.uwsc</string>
@@ -984,6 +985,23 @@
 					<string>(?i:\b(this|global)\b)</string>
 					<key>name</key>
 					<string>variable.parameter.uwsc</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>{{</string>
+			<key>comment</key>
+			<string>UObject</string>
+			<key>end</key>
+			<string>}}</string>
+			<key>name</key>
+			<string>meta.uobject.uwsc</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>source.js</string>
 				</dict>
 			</array>
 		</dict>
