@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+textblockex ${1:name}
+	$0
+endtextblock
+
+]]></content>
+	<tabTrigger>textblockex</tabTrigger>
+	<description>展開可能textblock</description>
+	<scope>source.uwsc</scope>
+</snippet>
