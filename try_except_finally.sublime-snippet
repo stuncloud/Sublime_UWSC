@@ -1,0 +1,15 @@
+<snippet>
+	<content><![CDATA[
+try
+	$1
+except
+	$2
+finally
+	$3
+endtry
+
+]]></content>
+	<tabTrigger>tryexceptfinally</tabTrigger>
+	<description>try-except-finally構文</description>
+	<scope>source.uwsc</scope>
+</snippet>

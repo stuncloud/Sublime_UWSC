@@ -36,6 +36,8 @@
 		{ "trigger": "list_module_member()", "contents": "list_module_member()${0}"},
 		{ "trigger": "name_of()", "contents": "name_of(${1:builtin_const})${0}"},
 		{ "trigger": "assert_equal()", "contents": "assert_equal(${1:value1}, ${2:value2})${0}"},
+		{ "trigger": "raise()", "contents": "raise(${1:message}${2:, ${3:title}})${0}"},
+		"raise",
 		//ウィンドウ関連
 		{ "trigger": "getid()", "contents": "getid(${1:title}${2:, ${3:class}${4:, ${5:wait}${6:, ${7:mdi}}}})${0}"},
 		{ "trigger": "getid(get_active_win)", "contents": "getid(GET_ACTIVE_WIN)${0}"},

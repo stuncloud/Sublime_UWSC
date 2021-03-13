@@ -491,7 +491,7 @@
 			<key>comment</key>
 			<string>UWSCR</string>
 			<key>match</key>
-			<string>(?i:\b(ASSERT_EQUAL|AS_STRING|NEWRE|REGEX|TESTRE|MATCH|ENV|SHEXEC|LIST_ENV|LIST_MODULE_MEMBER|NAME_OF)\b)</string>
+			<string>(?i:\b(ASSERT_EQUAL|AS_STRING|NEWRE|REGEX|TESTRE|MATCH|ENV|SHEXEC|LIST_ENV|LIST_MODULE_MEMBER|NAME_OF|RAISE)\b)</string>
 			<key>name</key>
 			<string>support.function.uwsc</string>
 		</dict>
