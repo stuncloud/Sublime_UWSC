@@ -49,8 +49,8 @@ class UwscHelpCommand(sublime_plugin.TextCommand):
             args = '{0} {1}'.format(help_path, url)
             subprocess.Popen(['hh.exe', args], shell=False)
         else:
-            reason = u'UwscHelp: {0} が見つかりませんでした'.format(word)
-            output(reason)
+            args = '{0}'.format(help_path)
+            subprocess.Popen(['hh.exe', args], shell=False)
 
     # For UWSC version 5.12
     keywords = {
