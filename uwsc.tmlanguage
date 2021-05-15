@@ -145,7 +145,7 @@
 			<key>comment</key>
 			<string>STATUS</string>
 			<key>match</key>
-			<string>(?i:\bST_(TITLE|CLASS|X|Y|WIDTH|HEIGHT|CLX|CLY|CLWIDTH|CLHEIGHT|PARENT|ICON|MAXIMIZED|VISIBLE|ACTIVE|BUSY|ISID|WIN64|PATH|PROCESS|MONITOR)\b)</string>
+			<string>(?i:\bST_(ALL|TITLE|CLASS|X|Y|WIDTH|HEIGHT|CLX|CLY|CLWIDTH|CLHEIGHT|PARENT|ICON|MAXIMIZED|VISIBLE|ACTIVE|BUSY|ISID|WIN64|PATH|PROCESS|MONITOR)\b)</string>
 			<key>name</key>
 			<string>constant.other.uwsc</string>
 		</dict>
