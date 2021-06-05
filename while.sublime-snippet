@@ -1,11 +1,11 @@
 <snippet>
 	<content><![CDATA[
-while ${1:expression}
+enum ${1:identifier}
 	$0
-wend
+endenum
 
 ]]></content>
-	<tabTrigger>while</tabTrigger>
-	<description>while構文</description>
+	<tabTrigger>enum</tabTrigger>
+	<description>enum構文</description>
 	<scope>source.uwsc</scope>
 </snippet>

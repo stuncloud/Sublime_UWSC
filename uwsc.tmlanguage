@@ -499,7 +499,7 @@
 			<key>comment</key>
 			<string>UWSCR</string>
 			<key>match</key>
-			<string>(?i:\b(ASSERT_EQUAL|AS_STRING|NEWRE|REGEX|TESTRE|MATCH|ENV|SHEXEC|LIST_ENV|LIST_MODULE_MEMBER|NAME_OF|RAISE|TYPE_OF)\b)</string>
+			<string>(?i:\b(ASSERT_EQUAL|AS_STRING|NEWRE|REGEX|TESTRE|MATCH|ENV|SHEXEC|LIST_ENV|LIST_MODULE_MEMBER|NAME_OF|RAISE|TYPE_OF|GET_SETTINGS)\b)</string>
 			<key>name</key>
 			<string>support.function.uwsc</string>
 		</dict>
@@ -564,6 +564,37 @@
 					<string>(?i:\b(case|default)\b)</string>
 					<key>name</key>
 					<string>variable.parameter.uwsc</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>(?i)^\s*(enum)\s+(\w+)</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.enum.uwsc</string>
+				</dict>
+			</dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type.enum.uwsc</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(?i)^\s*\b(endenum)\b</string>
+			<key>name</key>
+			<string>meta.enum.uwsc</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#enummembers</string>
 				</dict>
 			</array>
 		</dict>
@@ -998,15 +1029,19 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>{{</string>
+			<string>@</string>
 			<key>comment</key>
 			<string>UObject</string>
 			<key>end</key>
-			<string>}}</string>
+			<string>@</string>
 			<key>name</key>
 			<string>meta.uobject.uwsc</string>
 			<key>patterns</key>
 			<array>
+				<dict>
+					<key>include</key>
+					<string>#expandable</string>
+				</dict>
 				<dict>
 					<key>include</key>
 					<string>source.js</string>
@@ -1014,6 +1049,55 @@
 			</array>
 		</dict>
 	</array>
+	<key>repository</key>
+	<dict>
+		<key>enummembers</key>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>variable.parameter.uwsc</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>constant.numeric.uwsc</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(?i)^\s*(\w+)(\s+=\s+([0-9]+))?</string>
+		</dict>
+		<key>expandable</key>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>comment.interpolated.uwsc</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>constant.language.interpolated.uwsc</string>
+				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>variable.parameter.interpolated.uwsc</string>
+				</dict>
+				<key>5</key>
+				<dict>
+					<key>name</key>
+					<string>comment.interpolated.uwsc</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(?i)(&lt;#)((CR|DBL|TAB)|([0-9A-Z_]+))(&gt;)</string>
+		</dict>
+	</dict>
 	<key>scopeName</key>
 	<string>source.uwsc</string>
 	<key>uuid</key>

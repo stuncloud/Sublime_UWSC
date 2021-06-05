@@ -32,11 +32,12 @@
 		"with", "endwith",
 		//関数,
 		// UWSCR: 隠し関数
-		{ "trigger": "list_env()", "contents": "list_env()${0}"},
-		{ "trigger": "list_module_member()", "contents": "list_module_member()${0}"},
-		{ "trigger": "name_of()", "contents": "name_of(${1:builtin_const})${0}"},
-		{ "trigger": "assert_equal()", "contents": "assert_equal(${1:value1}, ${2:value2})${0}"},
+		{ "trigger": "list_env()", "contents": "list_env()${0}", "annotation": "list items in local scope",},
+		{ "trigger": "list_module_member()", "contents": "list_module_member()${0}", "annotation": "list module member",},
+		{ "trigger": "name_of()", "contents": "name_of(${1:builtin_const})${0}", "annotation": "constant to string",},
+		{ "trigger": "assert_equal()", "contents": "assert_equal(${1:value1}, ${2:value2})${0}", "annotation": "raise error if 2 values are not equal",},
 		{ "trigger": "raise()", "contents": "raise(${1:message}${2:, ${3:title}})${0}"},
+		{ "trigger": "get_settings()", "contents": "get_settings()${0}", "annotation": "get current settings in json"},
 		"raise",
 		//ウィンドウ関連
 		{ "trigger": "getid()", "contents": "getid(${1:title}${2:, ${3:class}${4:, ${5:wait}${6:, ${7:mdi}}}})${0}"},

@@ -302,7 +302,7 @@
 		{
 			"name":  "support.function.uwsc",
 			"comment": "UWSCR",
-			"match": "(?i:\\b(ASSERT_EQUAL|AS_STRING|NEWRE|REGEX|TESTRE|MATCH|ENV|SHEXEC|LIST_ENV|LIST_MODULE_MEMBER|NAME_OF|RAISE|TYPE_OF)\\b)"
+			"match": "(?i:\\b(ASSERT_EQUAL|AS_STRING|NEWRE|REGEX|TESTRE|MATCH|ENV|SHEXEC|LIST_ENV|LIST_MODULE_MEMBER|NAME_OF|RAISE|TYPE_OF|GET_SETTINGS)\\b)"
 		},
 		{
 			"name":  "keyword.control.uwsc",
@@ -337,6 +337,20 @@
 				}
 			],
 			"end": "(?i)^\\s*\\b(selend)\\b"
+		},
+		{
+			"name": "meta.enum.uwsc",
+			"begin": "(?i)^\\s*(enum)\\s+(\\w+)",
+			"beginCaptures": {
+				"2": { "name": "entity.name.enum.uwsc"}
+			},
+			"captures": {
+				"1": { "name": "storage.type.enum.uwsc" }
+			},
+			"patterns": [
+				{ "include": "#enummembers" }
+			],
+			"end": "(?i)^\\s*\\b(endenum)\\b"
 		},
 		{
 			"name": "meta.procedure.uwsc",
@@ -520,13 +534,32 @@
 			"end": "(?i)^\\s*(end(module|class))"
 		},{
 			"name": "meta.uobject.uwsc",
-			"begin": "{{",
+			"begin": "@",
 			"patterns": [
+				{ "include": "#expandable" },
 				{ "include": "source.js" }
 			],
-			"end": "}}",
+			"end": "@",
 			"comment": "UObject"
 		}
 	],
+	"repository": {
+		"expandable": {
+			"match": "(?i)(<#)((CR|DBL|TAB)|([0-9A-Z_]+))(>)",
+			"captures": {
+				"1": { "name": "comment.interpolated.uwsc" },
+				"3": { "name": "constant.language.interpolated.uwsc" },
+				"4": { "name": "variable.parameter.interpolated.uwsc" },
+				"5": { "name": "comment.interpolated.uwsc" }
+			}
+		},
+		"enummembers": {
+			"match": "(?i)^\\s*(\\w+)(\\s+=\\s+([0-9]+))?",
+			"captures": {
+				"1": { "name": "variable.parameter.uwsc" },
+				"3": { "name": "constant.numeric.uwsc" }
+			}
+		}
+	},
 	"uuid": "0f466014-285a-4612-b00a-32866f2d6e6d"
 }
