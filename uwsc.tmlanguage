@@ -443,7 +443,7 @@
 			<key>comment</key>
 			<string>システム関数関連 ウィンドウ関数低レベル</string>
 			<key>match</key>
-			<string>(?i:\b(GETCTLHND|IDTOHND|HNDTOID|VARTYPE|MMV|BTN|KBD|ACW)\b)</string>
+			<string>(?i:\b(GETCTLHND|IDTOHND|HNDTOID|VARTYPE|MMV|BTN|KBD|ACW|TASK|WAITTASK)\b)</string>
 			<key>name</key>
 			<string>support.function.uwsc</string>
 		</dict>
@@ -505,7 +505,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?i:\b(COM_ERR_IGN|COM_ERR_RET|EXIT|EXITEXIT|PRINT|THREAD|VAR|REF|PRMS|ARGS)\b)</string>
+			<string>(?i:\b(COM_ERR_IGN|COM_ERR_RET|EXIT|EXITEXIT|PRINT|THREAD|AWAIT|VAR|REF|PRMS|ARGS)\b)</string>
 			<key>name</key>
 			<string>keyword.control.uwsc</string>
 		</dict>
@@ -600,16 +600,30 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>(?i)^\s*(procedure)\s+(\w+)</string>
+			<string>(?i)^\s*(async\s+)?(procedure)\s+(\w+)</string>
 			<key>beginCaptures</key>
 			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.uwsc</string>
+				</dict>
 				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type.procedure.uwsc</string>
+				</dict>
+				<key>3</key>
 				<dict>
 					<key>name</key>
 					<string>entity.name.function.procedure.uwsc</string>
 				</dict>
 			</dict>
-			<key>captures</key>
+			<key>comment</key>
+			<string>関数宣言部</string>
+			<key>end</key>
+			<string>(?i)^\s*(fend)</string>
+			<key>endCaptures</key>
 			<dict>
 				<key>1</key>
 				<dict>
@@ -617,10 +631,6 @@
 					<string>storage.type.procedure.uwsc</string>
 				</dict>
 			</dict>
-			<key>comment</key>
-			<string>関数宣言部</string>
-			<key>end</key>
-			<string>(?i)^\s*(fend)</string>
 			<key>name</key>
 			<string>meta.procedure.uwsc</string>
 			<key>patterns</key>
@@ -633,37 +643,50 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>(?i)^\s*(function)\s+(\w+)\(</string>
-			<key>captures</key>
+			<string>(?i)^\s*(async\s+)?(function)\s+(\w+)\(</string>
+			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
 				<dict>
 					<key>name</key>
-					<string>storage.type.function.uwsc</string>
+					<string>keyword.control.uwsc</string>
 				</dict>
 				<key>2</key>
 				<dict>
 					<key>name</key>
-					<string>entity.name.function.function.uwsc</string>
+					<string>storage.type.procedure.uwsc</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.function.procedure.uwsc</string>
 				</dict>
 			</dict>
 			<key>comment</key>
 			<string>関数宣言部</string>
 			<key>end</key>
 			<string>(?i)^\s*(fend)</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type.procedure.uwsc</string>
+				</dict>
+			</dict>
 			<key>name</key>
 			<string>meta.function.uwsc</string>
 			<key>patterns</key>
 			<array>
 				<dict>
+					<key>include</key>
+					<string>$self</string>
+				</dict>
+				<dict>
 					<key>match</key>
 					<string>(?i:\b(RESULT)\b)</string>
 					<key>name</key>
 					<string>variable.parameter.uwsc</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>$self</string>
 				</dict>
 			</array>
 		</dict>
@@ -687,14 +710,14 @@
 			<key>patterns</key>
 			<array>
 				<dict>
+					<key>include</key>
+					<string>$self</string>
+				</dict>
+				<dict>
 					<key>match</key>
 					<string>(?i:\b(RESULT)\b)</string>
 					<key>name</key>
 					<string>variable.parameter.uwsc</string>
-				</dict>
-				<dict>
-					<key>include</key>
-					<string>$self</string>
 				</dict>
 			</array>
 		</dict>

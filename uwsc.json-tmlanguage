@@ -267,7 +267,7 @@
 		{
 			"name":  "support.function.uwsc",
 			"comment": "システム関数関連 ウィンドウ関数低レベル",
-			"match": "(?i:\\b(GETCTLHND|IDTOHND|HNDTOID|VARTYPE|MMV|BTN|KBD|ACW)\\b)"
+			"match": "(?i:\\b(GETCTLHND|IDTOHND|HNDTOID|VARTYPE|MMV|BTN|KBD|ACW|TASK|WAITTASK)\\b)"
 		},
 		{
 			"name":  "support.function.uwsc",
@@ -306,7 +306,7 @@
 		},
 		{
 			"name":  "keyword.control.uwsc",
-			"match": "(?i:\\b(COM_ERR_IGN|COM_ERR_RET|EXIT|EXITEXIT|PRINT|THREAD|VAR|REF|PRMS|ARGS)\\b)"
+			"match": "(?i:\\b(COM_ERR_IGN|COM_ERR_RET|EXIT|EXITEXIT|PRINT|THREAD|AWAIT|VAR|REF|PRMS|ARGS)\\b)"
 		},
 		{
 			"name":  "variable.parameter.uwsc",
@@ -354,34 +354,40 @@
 		},
 		{
 			"name": "meta.procedure.uwsc",
-			"begin": "(?i)^\\s*(procedure)\\s+(\\w+)",
+			"begin": "(?i)^\\s*(async\\s+)?(procedure)\\s+(\\w+)",
 			"beginCaptures": {
-				"2": { "name": "entity.name.function.procedure.uwsc"}
-			},
-			"captures": {
-				"1": { "name": "storage.type.procedure.uwsc" }
+				"1": { "name": "keyword.control.uwsc" },
+				"2": { "name": "storage.type.procedure.uwsc" },
+				"3": { "name": "entity.name.function.procedure.uwsc"}
 			},
 			"patterns": [
 					{ "include": "$self" }
 			],
 			"end": "(?i)^\\s*(fend)",
+			"endCaptures": {
+				"1": { "name": "storage.type.procedure.uwsc"}
+			},
 			"comment": "関数宣言部"
 		},
 		{
 			"name": "meta.function.uwsc",
-			"begin": "(?i)^\\s*(function)\\s+(\\w+)\\(",
-			"captures": {
-				"1": { "name": "storage.type.function.uwsc" },
-				"2": { "name": "entity.name.function.function.uwsc"}
+			"begin": "(?i)^\\s*(async\\s+)?(function)\\s+(\\w+)\\(",
+			"beginCaptures": {
+				"1": { "name": "keyword.control.uwsc" },
+				"2": { "name": "storage.type.procedure.uwsc" },
+				"3": { "name": "entity.name.function.procedure.uwsc"}
 			},
 			"patterns": [
+					{ "include": "$self" },
 					{
 						"name":  "variable.parameter.uwsc",
 						"match": "(?i:\\b(RESULT)\\b)"
-					},
-					{ "include": "$self" }
+					}
 			],
 			"end": "(?i)^\\s*(fend)",
+			"endCaptures": {
+				"1": { "name": "storage.type.procedure.uwsc"}
+			},
 			"comment": "関数宣言部"
 		},
 		{
@@ -391,11 +397,11 @@
 				"1": { "name": "storage.type.function.uwsc" }
 			},
 			"patterns": [
+					{ "include": "$self" },
 					{
 						"name":  "variable.parameter.uwsc",
 						"match": "(?i:\\b(RESULT)\\b)"
-					},
-					{ "include": "$self" }
+					}
 			],
 			"end": "(?i)^\\s*(fend)",
 			"comment": "関数宣言部"

@@ -17,6 +17,7 @@
 		{ "trigger": "<#TAB>", "contents": "#TAB>"},
 		//制御文等
 		{ "trigger": "print", "contents": "print ${0}"},
+		{ "trigger": "thread", "contents": "thread ${1:func}(${0})"},
 		"if", "ifb", "then", "else", "elseif", "endif",
 		"break", "continue",
 		"exit", "exitexit",
@@ -247,6 +248,9 @@
 		"TYPE_VERSION",
 		"TYPE_THIS",
 		"TYPE_OTHER",
+		{ "trigger": "task()", "contents": "task(${1:func}${2:, ${3:arguments...}})${0}", "details": "argumentsは20個まで"},
+		{ "trigger": "waittask()", "contents": "waittask(${1:task})${0}"},
+		"task", "waittask",
 		// ↑uwscr↑
 		{ "trigger": "exec()", "contents": "exec(${1:exe}${2:, ${3:flg}${4:, ${5:x}${6:, ${7:y}${8:, ${9:w}${10:, ${11:h}}}}}})${0}"},
 		"exec",
