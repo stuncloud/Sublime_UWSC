@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+async procedure ${1:name}(${2:variables})
+	$0
+fend
+
+]]></content>
+	<tabTrigger>asyncprocedure</tabTrigger>
+	<description>async procedure宣言</description>
+	<scope>source.uwsc</scope>
+</snippet>

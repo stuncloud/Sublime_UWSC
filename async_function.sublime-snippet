@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+async function ${1:name}(${2:variables})
+	result = ${0:0}
+fend
+
+]]></content>
+	<tabTrigger>asyncfunction</tabTrigger>
+	<description>async function宣言</description>
+	<scope>source.uwsc</scope>
+</snippet>
