@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+enum ${1:identifier}
+	$0
+endenum
+
+]]></content>
+	<tabTrigger>enum</tabTrigger>
+	<description>enum構文</description>
+	<scope>source.uwsc</scope>
+</snippet>
