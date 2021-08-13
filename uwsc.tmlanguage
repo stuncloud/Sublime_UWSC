@@ -411,7 +411,7 @@
 		</dict>
 		<dict>
 			<key>match</key>
-			<string>(?i:\b(mod|and|or|xor)\b)</string>
+			<string>(?i:\b(mod|(and|or|xor)[lb]?)\b)</string>
 			<key>name</key>
 			<string>keyword.operator.uwsc</string>
 		</dict>
@@ -600,6 +600,37 @@
 		</dict>
 		<dict>
 			<key>begin</key>
+			<string>(?i)^\s*(struct)\s+(\w+)</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.struct.uwsc</string>
+				</dict>
+			</dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type.struct.uwsc</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(?i)^\s*\b(endstruct)\b</string>
+			<key>name</key>
+			<string>meta.struct.uwsc</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#structmembers</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>begin</key>
 			<string>(?i)^\s*(async\s+)?(procedure)\s+(\w+)</string>
 			<key>beginCaptures</key>
 			<dict>
@@ -770,7 +801,7 @@
 				</dict>
 			</dict>
 			<key>end</key>
-			<string>\)(\s*:\s*(?i)(int|long|bool|uint|hwnd|string|Wstring|float|double|word|dword|byte|char|pchar|Wchar|pWchar|boolean|longlong|Extended|SafeArray)?)?\s*:\s*((\w+)(?i:\.dll)?)</string>
+			<string>\)(\s*:\s*(?i)(int|long|bool|uint|hwnd|string|Wstring|float|double|word|dword|byte|char|pchar|Wchar|pWchar|boolean|longlong|Extended|SafeArray|pointer|struct)?)?\s*:\s*((\w+)(?i:\.dll)?)</string>
 			<key>endCaptures</key>
 			<dict>
 				<key>2</key>
@@ -790,9 +821,15 @@
 			<array>
 				<dict>
 					<key>match</key>
-					<string>(?i)\b(int|long|bool|uint|hwnd|string|Wstring|float|double|word|dword|byte|char|pchar|Wchar|pWchar|boolean|longlong|Extended|SafeArray)\b</string>
+					<string>(?i)\b(int|long|bool|uint|hwnd|string|Wstring|float|double|word|dword|byte|char|pchar|Wchar|pWchar|boolean|longlong|Extended|SafeArray|pointer|struct)\b</string>
 					<key>name</key>
 					<string>constant.language.dll.uwsc</string>
+				</dict>
+				<dict>
+					<key>match</key>
+					<string>(?i)\b(var|ref)\b</string>
+					<key>name</key>
+					<string>keyword.control.uwsc</string>
 				</dict>
 			</array>
 		</dict>
@@ -928,6 +965,51 @@
 				<dict>
 					<key>include</key>
 					<string>source.js</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>^\s*(?i)(\btextblock(ex)?\b)\s+(([^/]*powershell[^/]*)(//.*)?|(([^/]+)(//.*powershell.*)))</string>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type.textblock.uwsc</string>
+				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.function.textblock.uwsc</string>
+				</dict>
+				<key>5</key>
+				<dict>
+					<key>name</key>
+					<string>comment.block.uwsc</string>
+				</dict>
+				<key>7</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.function.textblock.uwsc</string>
+				</dict>
+				<key>8</key>
+				<dict>
+					<key>name</key>
+					<string>comment.block.uwsc</string>
+				</dict>
+			</dict>
+			<key>comment</key>
+			<string>textblock宣言 C#</string>
+			<key>end</key>
+			<string>^\s*(?i)(\bendtextblock\b)</string>
+			<key>name</key>
+			<string>meta.textblock.powershell.uwsc</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>source.powershell</string>
 				</dict>
 			</array>
 		</dict>
@@ -1119,6 +1201,29 @@
 			</dict>
 			<key>match</key>
 			<string>(?i)(&lt;#)((CR|DBL|TAB)|([0-9A-Z_]+))(&gt;)</string>
+		</dict>
+		<key>structmembers</key>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>variable.parameter.uwsc</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>constant.language.types.uwsc</string>
+				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>markup.italic.uwsc</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(?i)^\s*(\w+)\s*:\s*((int|long|bool|uint|hwnd|string|Wstring|float|double|word|dword|byte|char|pchar|Wchar|pWchar|boolean|longlong|pointer)|(\w+))</string>
 		</dict>
 	</dict>
 	<key>scopeName</key>

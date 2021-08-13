@@ -1,0 +1,11 @@
+<snippet>
+	<content><![CDATA[
+struct ${1:identifier}
+	${2:name}: ${3:type}
+endstruct
+
+]]></content>
+	<tabTrigger>struct</tabTrigger>
+	<description>struct構文</description>
+	<scope>source.uwsc</scope>
+</snippet>

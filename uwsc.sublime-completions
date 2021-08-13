@@ -31,6 +31,18 @@
 		"textblock", "endtextblock",
 		"try", "except", "finally", "endtry",
 		"with", "endwith",
+		"enum", "endenum",
+		"struct", "endstruct",
+		{ "trigger": "and", "contents": "and", "details": "論理演算またはビット演算", "annotation": "and",},
+		{ "trigger": "andl", "contents": "andl", "details": "and論理演算", "annotation": "and logical operator",},
+		{ "trigger": "andb", "contents": "andb", "details": "andビット演算", "annotation": "and bit operator",},
+		{ "trigger": "or", "contents": "or", "details": "論理演算またはビット演算", "annotation": "or",},
+		{ "trigger": "orl", "contents": "orl", "details": "or論理演算", "annotation": "or logical operator",},
+		{ "trigger": "orb", "contents": "orb", "details": "orビット演算", "annotation": "or bit operator",},
+		{ "trigger": "xor", "contents": "xor", "details": "論理演算またはビット演算", "annotation": "xor",},
+		{ "trigger": "xorl", "contents": "xorl", "details": "xor論理演算", "annotation": "xor logical operator",},
+		{ "trigger": "xorb", "contents": "xorb", "details": "xorビット演算", "annotation": "xor bit operator",},
+
 		//関数,
 		// UWSCR: 隠し関数
 		{ "trigger": "list_env()", "contents": "list_env()${0}", "annotation": "list items in local scope",},

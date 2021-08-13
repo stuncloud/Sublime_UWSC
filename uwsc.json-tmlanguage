@@ -247,7 +247,7 @@
 		},
 		{
 			"name":  "keyword.operator.uwsc",
-			"match": "(?i:\\b(mod|and|or|xor)\\b)"
+			"match": "(?i:\\b(mod|(and|or|xor)[lb]?)\\b)"
 		},
 		{
 			"name":  "support.function.uwsc",
@@ -353,6 +353,20 @@
 			"end": "(?i)^\\s*\\b(endenum)\\b"
 		},
 		{
+			"name": "meta.struct.uwsc",
+			"begin": "(?i)^\\s*(struct)\\s+(\\w+)",
+			"beginCaptures": {
+				"2": { "name": "entity.name.struct.uwsc"}
+			},
+			"captures": {
+				"1": { "name": "storage.type.struct.uwsc" }
+			},
+			"patterns": [
+				{ "include": "#structmembers" }
+			],
+			"end": "(?i)^\\s*\\b(endstruct)\\b"
+		},
+		{
 			"name": "meta.procedure.uwsc",
 			"begin": "(?i)^\\s*(async\\s+)?(procedure)\\s+(\\w+)",
 			"beginCaptures": {
@@ -432,10 +446,14 @@
 			"patterns": [
 				{
 					"name":  "constant.language.dll.uwsc",
-					"match": "(?i)\\b(int|long|bool|uint|hwnd|string|Wstring|float|double|word|dword|byte|char|pchar|Wchar|pWchar|boolean|longlong|Extended|SafeArray)\\b"
+					"match": "(?i)\\b(int|long|bool|uint|hwnd|string|Wstring|float|double|word|dword|byte|char|pchar|Wchar|pWchar|boolean|longlong|Extended|SafeArray|pointer|struct)\\b"
+				},
+				{
+					"name": "keyword.control.uwsc",
+					"match": "(?i)\\b(var|ref)\\b"
 				}
 			],
-			"end": "\\)(\\s*:\\s*(?i)(int|long|bool|uint|hwnd|string|Wstring|float|double|word|dword|byte|char|pchar|Wchar|pWchar|boolean|longlong|Extended|SafeArray)?)?\\s*:\\s*((\\w+)(?i:\\.dll)?)",
+			"end": "\\)(\\s*:\\s*(?i)(int|long|bool|uint|hwnd|string|Wstring|float|double|word|dword|byte|char|pchar|Wchar|pWchar|boolean|longlong|Extended|SafeArray|pointer|struct)?)?\\s*:\\s*((\\w+)(?i:\\.dll)?)",
 			"endCaptures": {
 				"2": { "name": "constant.language.dll.uwsc" },
 				"3": { "name": "storage.type.dllfile.uwsc"}
@@ -488,6 +506,22 @@
 			],
 			"end": "^\\s*(?i)(\\bendtextblock\\b)",
 			"comment": "textblock宣言 JavaScript"
+		},
+		{
+			"name": "meta.textblock.powershell.uwsc",
+			"begin": "^\\s*(?i)(\\btextblock(ex)?\\b)\\s+(([^/]*powershell[^/]*)(//.*)?|(([^/]+)(//.*powershell.*)))",
+			"captures": {
+				"1": { "name": "storage.type.textblock.uwsc" },
+				"4": { "name": "entity.name.function.textblock.uwsc"},
+				"5": { "name": "comment.block.uwsc"},
+				"7": { "name": "entity.name.function.textblock.uwsc"},
+				"8": { "name": "comment.block.uwsc"}
+			},
+			"patterns": [
+				{ "include": "source.powershell" }
+			],
+			"end": "^\\s*(?i)(\\bendtextblock\\b)",
+			"comment": "textblock宣言 C#"
 		},
 		{
 			"name": "meta.textblock.vbs.uwsc",
@@ -564,6 +598,14 @@
 			"captures": {
 				"1": { "name": "variable.parameter.uwsc" },
 				"3": { "name": "constant.numeric.uwsc" }
+			}
+		},
+		"structmembers": {
+			"match": "(?i)^\\s*(\\w+)\\s*:\\s*((int|long|bool|uint|hwnd|string|Wstring|float|double|word|dword|byte|char|pchar|Wchar|pWchar|boolean|longlong|pointer)|(\\w+))",
+			"captures": {
+				"1": { "name": "variable.parameter.uwsc" },
+				"3": { "name": "constant.language.types.uwsc" },
+				"4": { "name": "markup.italic.uwsc" }
 			}
 		}
 	},
