@@ -322,6 +322,7 @@
 		"vartype",
 		"VAR_EMPTY", "VAR_NULL", "VAR_SMALLINT", "VAR_INTEGER", "VAR_SINGLE", "VAR_DOUBLE", "VAR_CURRENCY", "VAR_DATE", "VAR_BSTR", "VAR_DISPATCH",
 		"VAR_ERROR", "VAR_BOOLEAN", "VAR_VARIANT", "VAR_UNKNOWN", "VAR_BYTE", "VAR_SBYTE", "VAR_WORD", "VAR_DWORD", "VAR_INT64", "VAR_ASTR", "VAR_USTR", "VAR_ARRAY",
+		"VAR_UWSCR",
 		//ウィンドウ関数低レベル
 		{ "trigger": "mmv()", "contents": "mmv(${1:x}, ${2:y}${3:, ${4:ms}})${0}"},
 		"mmv",
