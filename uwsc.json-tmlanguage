@@ -238,6 +238,11 @@
 			"comment": "type_of"
 		},
 		{
+			"name":  "constant.other.uwsc",
+			"match": "(?i:\\bBC_(CHROME|MSEDGE|UNKNOWN)\\b)",
+			"comment": "ブラウザ操作"
+		},
+		{
 			"name":  "storage.modifier.uwsc",
 			"match": "(?i)option\\s+(EXPLICIT|SAMESTR|OPTFINALLY|OPTPUBLIC|SPECIALCHAR|SHORTCIRCUIT|DEFAULTFONT|POSITION|LOGPATH|LOGLINES|LOGFILE|DLGTITLE|NOSTOPHOTKEY|TOPSTOPFORM|FIXBALLOON|__ALLOW_IE_OBJECT__)"
 		},
@@ -298,6 +303,11 @@
 			"name":  "support.function.uwsc",
 			"comment": "数学関数",
 			"match": "(?i:\\b(RANDOM|ABS|ZCUT|INT|CEIL|ROUND|SQRT|POWER|EXP|LN|LOGN|SIN|COS|TAN|ARCSIN|ARCCOS|ARCTAN|ISNAN)\\b)"
+		},
+		{
+			"name":  "support.function.uwsc",
+			"comment": "ブラウザ操作",
+			"match": "(?i:\\b(BROWSERCONTROL)\\b)"
 		},
 		{
 			"name":  "support.function.uwsc",

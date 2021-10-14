@@ -398,6 +398,14 @@
 			<string>constant.other.uwsc</string>
 		</dict>
 		<dict>
+			<key>comment</key>
+			<string>ブラウザ操作</string>
+			<key>match</key>
+			<string>(?i:\bBC_(CHROME|MSEDGE|UNKNOWN)\b)</string>
+			<key>name</key>
+			<string>constant.other.uwsc</string>
+		</dict>
+		<dict>
 			<key>match</key>
 			<string>(?i)option\s+(EXPLICIT|SAMESTR|OPTFINALLY|OPTPUBLIC|SPECIALCHAR|SHORTCIRCUIT|DEFAULTFONT|POSITION|LOGPATH|LOGLINES|LOGFILE|DLGTITLE|NOSTOPHOTKEY|TOPSTOPFORM|FIXBALLOON|__ALLOW_IE_OBJECT__)</string>
 			<key>name</key>
@@ -492,6 +500,14 @@
 			<string>数学関数</string>
 			<key>match</key>
 			<string>(?i:\b(RANDOM|ABS|ZCUT|INT|CEIL|ROUND|SQRT|POWER|EXP|LN|LOGN|SIN|COS|TAN|ARCSIN|ARCCOS|ARCTAN|ISNAN)\b)</string>
+			<key>name</key>
+			<string>support.function.uwsc</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>ブラウザ操作</string>
+			<key>match</key>
+			<string>(?i:\b(BROWSERCONTROL)\b)</string>
 			<key>name</key>
 			<string>support.function.uwsc</string>
 		</dict>

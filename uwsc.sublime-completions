@@ -777,6 +777,10 @@
 		"VK_ENTER",
 		"VK_RALT",
 		"VK_RRETURN",
-		"VK_RWIN"
+		"VK_RWIN",
+		// ブラウザ操作
+		{ "trigger": "browsercontrol()", "contents": "browsercontrol(BC_${1:}${2:, ${3:filter}, ${4:port}, ${5:headless}})${0}"},
+		{ "trigger": "BC_CHROME", "contents": "BC_CHROME", "annotation": "Google Chrome",},
+		{ "trigger": "BC_MSEDGE", "contents": "BC_MSEDGE", "annotation": "Microsoft Edge",},
 	]
 }
