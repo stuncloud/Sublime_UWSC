@@ -312,7 +312,7 @@
 		{
 			"name":  "support.function.uwsc",
 			"comment": "UWSCR",
-			"match": "(?i:\\b(ASSERT_EQUAL|AS_STRING|NEWRE|REGEX|TESTRE|MATCH|ENV|SHEXEC|WMI|LIST_ENV|LIST_MODULE_MEMBER|NAME_OF|RAISE|TYPE_OF|GET_SETTINGS)\\b)"
+			"match": "(?i:\\b(ASSERT_EQUAL|AS_STRING|NEWRE|REGEX|TESTRE|MATCH|ENV|SHEXEC|WMI|PWSH|LIST_ENV|LIST_MODULE_MEMBER|NAME_OF|RAISE|TYPE_OF|GET_SETTINGS)\\b)"
 		},
 		{
 			"name":  "keyword.control.uwsc",
