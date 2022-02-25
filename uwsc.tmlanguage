@@ -1150,11 +1150,27 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>@</string>
+			<string>\b@</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>markup.uobject.uwsc</string>
+				</dict>
+			</dict>
 			<key>comment</key>
 			<string>UObject</string>
 			<key>end</key>
-			<string>@</string>
+			<string>@\b</string>
+			<key>endCaptures</key>
+			<dict>
+				<key>0</key>
+				<dict>
+					<key>name</key>
+					<string>markup.uobject.uwsc</string>
+				</dict>
+			</dict>
 			<key>name</key>
 			<string>meta.uobject.uwsc</string>
 			<key>patterns</key>

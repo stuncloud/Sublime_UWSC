@@ -584,12 +584,18 @@
 			"end": "(?i)^\\s*(end(module|class))"
 		},{
 			"name": "meta.uobject.uwsc",
-			"begin": "@",
+			"begin": "\\b@",
+			"beginCaptures": {
+				"0": {"name": "markup.uobject.uwsc"}
+			},
 			"patterns": [
 				{ "include": "#expandable" },
 				{ "include": "source.js" }
 			],
-			"end": "@",
+			"end": "@\\b",
+			"endCaptures": {
+				"0": {"name": "markup.uobject.uwsc"}
+			},
 			"comment": "UObject"
 		}
 	],
