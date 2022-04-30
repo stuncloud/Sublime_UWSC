@@ -174,7 +174,7 @@
 		},
 		{
 			"name":  "constant.other.uwsc",
-			"match": "(?i:\\bF_(READ|WRITE(8B?|16?)?|EXISTS|EXCLUSIVE|TAB|NOCR|LINECOUNT|ALLTEXT|INSERT)\\b)",
+			"match": "(?i:\\bF_(READ|WRITE(8B?|16?)?|APPEND|EXISTS|EXCLUSIVE|TAB|NOCR|LINECOUNT|ALLTEXT|INSERT)\\b)",
 			"comment": "FOPEN FGET FPUT"
 		},
 		{
@@ -287,7 +287,7 @@
 		{
 			"name":  "support.function.uwsc",
 			"comment": "ファイル関連 INIファイル",
-			"match": "(?i:\\b(FOPEN|FGET|FPUT|FDELLINE|FCLOSE|GETDIR|DROPFILE|READINI|WRITEINI|DELETEINI|DELETEFILE)\\b)"
+			"match": "(?i:\\b(FOPEN|FGET|FPUT|FDELLINE|FCLOSE|GETDIR|DROPFILE|READINI|WRITEINI|DELETEINI|DELETEFILE|ZIP|UNZIP|ZIPITEMS)\\b)"
 		},
 		{
 			"name":  "support.function.uwsc",
@@ -347,6 +347,21 @@
 				}
 			],
 			"end": "(?i)^\\s*\\b(selend)\\b"
+		},
+		{
+			"name": "meta.hash.uwsc",
+			"begin": "(?i)^\\s*(hash)(\\s+public)?\\s+(\\w+)",
+			"beginCaptures": {
+				"2": { "name": "keyword.control.uwsc"},
+				"3": { "name": "entity.name.enum.uwsc"}
+			},
+			"patterns": [
+				{ "include": "#hashmembers" }
+			],
+			"end": "(?i)^\\s*\\b(endhash)\\b",
+			"captures": {
+				"1": { "name": "storage.type.enum.uwsc" }
+			}
 		},
 		{
 			"name": "meta.enum.uwsc",
@@ -440,9 +455,12 @@
 		},
 		{
 			"name": "meta.define.uwsc",
-			"match": "(?i)^\\s*(CALL)\\s+",
+			"match": "(?i)^\\s*(CALL)\\s+((url\\[\\s*([^\\[\\]]+)\\s*\\])|([^\\(]+))",
 			"captures": {
-				"1": { "name": "storage.type.define.uwsc" }
+				"1": { "name": "storage.type.define.uwsc" },
+				"3": { "name": "constant.language.url.uwsc" },
+				"4": { "name": "variable.parameter.url.uwsc" },
+				"5": { "name": "variable.parameter.path.uwsc" }
 			},
 			"comment": "CALL"
 		},
@@ -609,8 +627,16 @@
 				"5": { "name": "comment.interpolated.uwsc" }
 			}
 		},
+		"hashmembers": {
+			"match": "(?i)^\\s*(\\w+|\"\\w+\"|'\\w+')(\\s*=\\s*(([0-9]+|\\$[0-9A-F]+)|(\".+\"|'.+')|(.+)))",
+			"captures": {
+				"1": { "name": "variable.parameter.uwsc" },
+				"4": { "name": "constant.numeric.uwsc" },
+				"5": { "name": "string.uwsc" }
+			}
+		},
 		"enummembers": {
-			"match": "(?i)^\\s*(\\w+)(\\s+=\\s+([0-9]+))?",
+			"match": "(?i)^\\s*(\\w+)(\\s*=\\s*([0-9]+|\\$[0-9A-F]+))?",
 			"captures": {
 				"1": { "name": "variable.parameter.uwsc" },
 				"3": { "name": "constant.numeric.uwsc" }

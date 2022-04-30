@@ -297,7 +297,7 @@
 			<key>comment</key>
 			<string>FOPEN FGET FPUT</string>
 			<key>match</key>
-			<string>(?i:\bF_(READ|WRITE(8B?|16?)?|EXISTS|EXCLUSIVE|TAB|NOCR|LINECOUNT|ALLTEXT|INSERT)\b)</string>
+			<string>(?i:\bF_(READ|WRITE(8B?|16?)?|APPEND|EXISTS|EXCLUSIVE|TAB|NOCR|LINECOUNT|ALLTEXT|INSERT)\b)</string>
 			<key>name</key>
 			<string>constant.other.uwsc</string>
 		</dict>
@@ -475,7 +475,7 @@
 			<key>comment</key>
 			<string>ファイル関連 INIファイル</string>
 			<key>match</key>
-			<string>(?i:\b(FOPEN|FGET|FPUT|FDELLINE|FCLOSE|GETDIR|DROPFILE|READINI|WRITEINI|DELETEINI|DELETEFILE)\b)</string>
+			<string>(?i:\b(FOPEN|FGET|FPUT|FDELLINE|FCLOSE|GETDIR|DROPFILE|READINI|WRITEINI|DELETEINI|DELETEFILE|ZIP|UNZIP|ZIPITEMS)\b)</string>
 			<key>name</key>
 			<string>support.function.uwsc</string>
 		</dict>
@@ -580,6 +580,42 @@
 					<string>(?i:\b(case|default)\b)</string>
 					<key>name</key>
 					<string>variable.parameter.uwsc</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>begin</key>
+			<string>(?i)^\s*(hash)(\s+public)?\s+(\w+)</string>
+			<key>beginCaptures</key>
+			<dict>
+				<key>2</key>
+				<dict>
+					<key>name</key>
+					<string>keyword.control.uwsc</string>
+				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>entity.name.enum.uwsc</string>
+				</dict>
+			</dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>storage.type.enum.uwsc</string>
+				</dict>
+			</dict>
+			<key>end</key>
+			<string>(?i)^\s*\b(endhash)\b</string>
+			<key>name</key>
+			<string>meta.hash.uwsc</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>#hashmembers</string>
 				</dict>
 			</array>
 		</dict>
@@ -792,11 +828,26 @@
 					<key>name</key>
 					<string>storage.type.define.uwsc</string>
 				</dict>
+				<key>3</key>
+				<dict>
+					<key>name</key>
+					<string>constant.language.url.uwsc</string>
+				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>variable.parameter.url.uwsc</string>
+				</dict>
+				<key>5</key>
+				<dict>
+					<key>name</key>
+					<string>variable.parameter.path.uwsc</string>
+				</dict>
 			</dict>
 			<key>comment</key>
 			<string>CALL</string>
 			<key>match</key>
-			<string>(?i)^\s*(CALL)\s+</string>
+			<string>(?i)^\s*(CALL)\s+((url\[\s*([^\[\]]+)\s*\])|([^\(]+))</string>
 			<key>name</key>
 			<string>meta.define.uwsc</string>
 		</dict>
@@ -1204,7 +1255,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>(?i)^\s*(\w+)(\s+=\s+([0-9]+))?</string>
+			<string>(?i)^\s*(\w+)(\s*=\s*([0-9]+|\$[0-9A-F]+))?</string>
 		</dict>
 		<key>expandable</key>
 		<dict>
@@ -1233,6 +1284,29 @@
 			</dict>
 			<key>match</key>
 			<string>(?i)(&lt;#)((CR|DBL|TAB)|([0-9A-Z_]+))(&gt;)</string>
+		</dict>
+		<key>hashmembers</key>
+		<dict>
+			<key>captures</key>
+			<dict>
+				<key>1</key>
+				<dict>
+					<key>name</key>
+					<string>variable.parameter.uwsc</string>
+				</dict>
+				<key>4</key>
+				<dict>
+					<key>name</key>
+					<string>constant.numeric.uwsc</string>
+				</dict>
+				<key>5</key>
+				<dict>
+					<key>name</key>
+					<string>string.uwsc</string>
+				</dict>
+			</dict>
+			<key>match</key>
+			<string>(?i)^\s*(\w+|"\w+"|'\w+')(\s*=\s*(([0-9]+|\$[0-9A-F]+)|(".+"|'.+')|(.+)))</string>
 		</dict>
 		<key>structmembers</key>
 		<dict>

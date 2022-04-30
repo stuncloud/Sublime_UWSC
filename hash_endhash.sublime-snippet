@@ -1,0 +1,12 @@
+<snippet>
+    <content><![CDATA[
+hash ${1:public }${2:name}${3: = HASH_${4:*}}
+    ${5:key} = ${6:value}
+    ${0}
+endhash
+
+]]></content>
+    <tabTrigger>hash</tabTrigger>
+    <description>hash-endhash</description>
+    <scope>source.uwsc</scope>
+</snippet>
