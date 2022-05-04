@@ -1,0 +1,448 @@
+%YAML 1.2
+
+---
+
+name: UWSC
+file_extensions: [uws, uwsr]
+scope: source.uwsc
+
+contexts:
+  main:
+    - match: //
+      push: line_comment
+    - match: '"'
+      push: double_quote_string
+    - match: "'"
+      push: single_quote_string
+    - match: \b\d+(\.\d+)?|\$[0-9A-Fa-f]+\b
+      scope: constant.numeric.uwsc
+    - match: (?i)\b(TRUE|FALSE|NULL|EMPTY|NOTHING|NAN)\b
+      scope: constant.language.uwsc
+    - match: (?i:\b(EVENT_PRM|PARAM_STR|ALL_ITEM_LIST|ALL_OLE_ITEM|ALL_WIN_ID|ALL_IMG_[XY]|GETDIR_FILES)\b)
+      scope: variable.parameter.uwsc
+    - match: (?i:\bGET_((ACTIVE|FROMPOINT|THISUWSC|LOGPRINT|FUKIDASI|BALLOON|SCHEDULE)_WIN|FROMPOINT_OBJ|FORM_WIN2?|STOPFORM_WIN)\b)
+      scope: constant.other.getid.uwsc
+    - match: (?i:\bCLK_(BTN|LIST|TAB|MENU|TREEVEW|TREEVIEW|LSTVEW|LISTVIEW|TOOLBAR|ACC|SHORT|BACK|MUSMOVE|RIGHTCLK|LEFTCLK|DBLCLK|FROMLAST|CONTINUE|LINK|API|UIA)\b)
+      scope: constant.other.clkitem.uwsc
+    - match: (?i:\b(ACTIVATE|CLOSE2?|HIDE|SHOW|MIN|MAX|NORMAL|(NO)?TOPMOST|TOPMOST|TOPNOACTV)\b)
+      scope: constant.other.ctrlwin.uwsc
+    - match: (?i:\bSTR_(ACC_EDIT|ACC_STATIC|EDIT|STATIC|STATUS|ACC_CELL)\b)
+      scope: constant.other.getstr.uwsc
+    - match: (?i:\bITM_(BTN|LIST|TAB|MENU|TREEVI?EW|LISTVIEW|LSTVEW|EDIT|STATIC|STATUSBAR|TOOLBAR|ACC(CLK2?|TXT|EDIT)|FROMLAST|BACK|LINK)\b)
+      scope: constant.other.getitem.uwsc
+    - match: (?i:\b(SLD_(POS|MIN|MAX|PAGE|BAR|X|Y)|GET_SLIDER)\b)
+      scope: constant.other.getslider.uwsc
+    - match: (?i:\bST_(ALL|TITLE|CLASS|X|Y|WIDTH|HEIGHT|CLX|CLY|CLWIDTH|CLHEIGHT|PARENT|ICON|MAXIMIZED|VISIBLE|ACTIVE|BUSY|ISID|WIN64|PATH|PROCESS|MONITOR)\b)
+      scope: constant.other.status.uwsc
+    - match: (?i:\bCOL_([RGB]|RGB)\b)
+      scope: constant.other.peekcolor.uwsc
+    - match: (?i:\b(G_IMG_[XY]|IMG_MSK_([BGR]|BGR)[1-4]|IMG_(FORE|BACK))\b)
+      scope: constant.other.saveimg.uwsc
+    - match: (?i:\bCUR_(APPSTARTING|ARROW|CROSS|HAND|HELP|IBEAM|NO|SIZEALL|SIZENESW|SIZENS|SIZENWSE|SIZEWE|UPARROW|WAIT)\b)
+      scope: constant.other.muscur.uwsc
+    - match: (?i:\bACC_(ACC|API|DESCRIPTION|LOCATION|NAME|ROLE|STATE|VALUE|BACK)\b)
+      scope: constant.other.posacc.uwsc
+    - match: (?i:\bBTN_(YES|NO|OK|CANCEL|ABORT|RETRY|IGNORE)\b)
+      scope: constant.other.msgbox.uwsc
+    - match: (?i:\bSLCT_([1-9]|[12][0-9]|3[01]|BTN|CHK|CMB|LST|NUM|RDO|STR)\b)
+      scope: constant.other.slctbox.uwsc
+    - match: (?i:\bMON_(HEIGHT|WIDTH|X|Y|NAME|PRIMARY|ISMAIN|WORK_X|WORK_Y|WORK_WIDTH|WORK_HEIGHT|ALL)\b)
+      scope: constant.other.monitor.uwsc
+    - match: (?i:\bG_TIME_((DD|HH|MM|NN|SS|ZZ|YY)2?|WW|YY4)\b)
+      scope: constant.other.gettime.uwsc
+    - match: (?i:\bP_(FORCE|LOGOFF|MONIPOWER[23]?|POWEROFF|REBOOT|SCREENSAVE|SHUTDOWN|SUSPEND2?|UWSC_REEXEC)\b)
+      scope: constant.other.poff.uwsc
+    - match: (?i:\bTGL_(CAPSLOCK|IME|KANALOCK|NUMLOCK|SCROLLLOCK)\b)
+      scope: constant.other.getkeystate.uwsc
+    - match: (?i:\b(HOTKEY_(MOD|VK)|MOD_(ALT|CONTROL|SHIFT|WIN))\b)
+      scope: constant.other.sethotkey.uwsc
+    - match: (?i:\bLOCK_(KEYBOARD|MOUSE)\b)
+      scope: constant.other.lockhardex.uwsc
+    - match: (?i:\bGET_(SYS)?MENU_HND\b)
+      scope: constant.other.getctlhnd.uwsc
+    - match: (?i:\bVAR_(EMPTY|NULL|SMALLINT|INTEGER|SINGLE|DOUBLE|CURRENCY|DATE|DISPATCH|ERROR|BOOLEAN|VARIANT|UNKNOWN|S?BYTE|D?WORD|INT64|[BAU]STR|ARRAY|UWSCR)\b)
+      scope: constant.other.vartype.uwsc
+    - match: (?i:\b(LEFT|RIGHT|MIDDLE|WHEEL|CLICK|DOWN|UP|TOUCH)\b)
+      scope: constant.other.btn.keyboard.uwsc
+    - match: (?i:\b(ERR_VALUE|COM_ERR_FLG)\b)
+      scope: constant.other.error.uwsc
+    - match: (?i:\bSC_((FULL|HALF)WIDTH|HIRAGANA|KATAKANA|(LOWER|UPPER)CASE)\b)
+      scope: constant.other.strconv.uwsc
+    - match: (?i:\bCALC_(ADD|MIN|MAX|AVR)\b)
+      scope: constant.other.calcarray.uwsc
+    - match: (?i:\bF_(READ|WRITE(8B?|16?)?|APPEND|EXISTS|EXCLUSIVE|TAB|NOCR|LINECOUNT|ALLTEXT|INSERT)\b)
+      scope: constant.other.fopen.uwsc
+    - match: (?i:\bFOM_(NO(ICON|HIDE|SUBMIT|RESIZE|LUNA|TASKBAR)|(MINI|MAXI)MIZE|BROWSER|FORMHIDE|GETVALUE|FORM2)\b)
+      scope: constant.other.createform.uwsc
+    - match: (?i:\bSNSR_(Biometric_Human(Presense|Proximity)|Electrical_(Capacitance|Resistance|Inductance|Current|Voltage|Power)|Environmental_(Temperature|Pressure|Humidity|WindDirection|WindSpeed)|Light_(Lux|Temperature)|Mechanical_(Force|AbsPressure|GaugePressure|Weight)|Motion_(Acceleration[XYZ]|AngleAccel[XYZ]|Speed)|Scanner_(RFIDTag|BarcodeData)|Orientation_(Tilt[XYZ]|Distance[XYZ]|MagHeading|TrueHeading|CompMagHeading|CompTrueHeading)|Location_(Altitude|Latitude|Longitude|Speed))\b)
+      scope: constant.other.sensor.uwsc
+    - match: (?i:\bQSRT_(UNICODE|NATURAL)?[AD]\b)
+      scope: constant.other.qsort.uwsc
+    - match: (?i:\bXL_(NEW|BOOK|OOOC)\b)
+      scope: constant.other.xlopen.uwsc
+    - match: (?i:\b(GET_((WIN|SYS|CUR|APPDATA|UWSCR?)_DIR|UWSC_PRO|UWSCR?_(VER|NAME))|G_(MOUSE_[XY]|SCREEN_[WHC]))\b)
+      scope: constant.other.specialvars.uwsc
+    - match: (?i:\bHASH_(CASECARE|EXISTS|KEY|REMOVE(ALL)?|SORT|VAL)\b)
+      scope: constant.other.hashtbl.uwsc
+    - match: (?i:\bTRY_ERR(LINE|MSG)\b)
+      scope: constant.other.try.uwsc
+    - match: (?i:\bREGEX_(TEST|MATCH)\b)
+      scope: constant.other.regex.uwsc
+    - match: (?i:\bOS_(WIN2000|WINXP|WINSRV2003|WINSRV2003R2|WINVISTA|WINSRV2008|WIN7|WINSRV2008R2|WIN8|WINSRV2012|WIN81|WINSRV2012R2|WIN10|WINSRV2016|WIN11)|(KIND_OF|IS_64BIT)_OS|OSVER_(MAJOR|MINOR|BUILD|PLATFORM)\b)
+      scope: constant.other.kindofos.uwsc
+    - match: (?i:\b(VK_([0-9A-Z]|F[1-9]|F1[0-2]|NUMPAD[0-9]|OEM_([1-8]|PA[1-3]|COMMA|JUMP|MINUS|PERIOD|PLUS|RESET)|VOLUME_(DOWN|MUTE|UP)|MEDIA_(NEXT_TRACK|PLAY_PAUSE|PREV_TRACK|STOP)|LAUNCH_(APP1|APP2|MAIL|MEDIA_SELECT)|BROWSER_(BACK|FAVORITES|FORWARD|HOME|REFRESH|SEARCH|STOP)|ACCEPT|ADD|ALT|APPS|BACK|CAPITAL|CLEAR|CONTROL|CONVERT|CTRL|DECIMAL|DELETE|DIVIDE|DOWN|END|ESC|ESCAPE|EXECUTE|FINAL|HELP|HOME|INSERT|KANA|KANJI|LBUTTON|LEFT|MBUTTON|MENU|MODECHANGE|MULTIPLY|NEXT|NONCONVERT|NUMLOCK|PAUSE|PRINT|PRIOR|RBUTTON|RCTRL|RETURN|RIGHT|RSHIFT|SCROLL|SELECT|SEPARATOR|SHIFT|SLEEP|SNAPSHOT|SPACE|START|SUBTRACT|TAB|UP|WIN|ENTER|RALT|RRETURN|RWIN))\b)
+      scope: constant.other.vk.uwsc
+    - match: (?i:\bTYPE_(NUMBER|STRING|BOOL|ARRAY|HASHTBL|ANONYMOUS_FUNCTION|FUNCTION|BUILTIN_FUNCTION|MODULE|CLASS|CLASS_INSTANCE|NULL|EMPTY|NOTHING|HWND|REGEX|UOBJECT|VERSION|THIS|OTHER)\b)
+      scope: constant.other.typeof.uwsc
+    - match: (?i:\bBC_(CHROME|MSEDGE|UNKNOWN)\b)
+      scope: constant.other.browsercontrol.uwsc
+    - match: (?i)option\s+(EXPLICIT|SAMESTR|OPTFINALLY|OPTPUBLIC|SPECIALCHAR|SHORTCIRCUIT|DEFAULTFONT|POSITION|LOGPATH|LOGLINES|LOGFILE|DLGTITLE|NOSTOPHOTKEY|TOPSTOPFORM|FIXBALLOON|__ALLOW_IE_OBJECT__)
+      scope: storage.modifier.option.uwsc
+    - match: (?i:\b(mod|(and|or|xor)[lb]?)\b)
+      scope: keyword.operator.uwsc
+    - match: (?i:\b(GETID|CLKITEM|CHKBTN|CTRLWIN|SENDSTR|GETSTR|GETITEM|GETSLCTLST|SETSLIDER|GETSLIDER|SCKEY|GETALLWIN|STATUS|MOUSEORG|PEEKCOLOR|CHKIMG|SAVEIMG|MUSCUR|POSACC)\b)
+      scope: support.function.windowcontrol.uwsc
+    - match: (?i:\b(INPUT|MSGBOX|SLCTBOX|POPUPMENU|BALLOON|FUKIDASI|STOPFORM|LOGPRINT|MONITOR)\b)
+      scope: support.function.dialog.uwsc
+    - match: (?i:\b(EXEC|SLEEP|DOSCMD|POWERSHELL|SOUND|GETTIME|POFF|KINDOFOS|CPUUSERATE|GETKEYSTATE|SETHOTKEY|LOCKHARD|LOCKHARDEX|EVAL|SENSOR)\b)
+      scope: support.function.systemcontrol.uwsc
+    - match: (?i:\b(GETCTLHND|IDTOHND|HNDTOID|VARTYPE|MMV|BTN|KBD|ACW|TASK|WAITTASK)\b)
+      scope: support.function.system.uwsc
+    - match: (?i:\b(COPYB?|POSB?|LENGTH[BS]?|CHKNUM|VAL|REPLACE|CHGMOJ|TRIM|FORMAT|CHRB?|ASCB?|ISUNICODE|STRCONV|TOKEN|BETWEENSTR|TOJSON|FROMJSON)\b)
+      scope: support.function.textcontrol.uwsc
+    - match: (?i:\b(RESIZE|SETCLEAR|SHIFTARRAY|CALCARRAY|SPLIT|JOIN|SLICE|QSORT)\b)
+      scope: support.function.arraycontrol.uwsc
+    - match: (?i:\b(FOPEN|FGET|FPUT|FDELLINE|FCLOSE|GETDIR|DROPFILE|READINI|WRITEINI|DELETEINI|DELETEFILE|ZIP|UNZIP|ZIPITEMS)\b)
+      scope: support.function.filecontrol.uwsc
+    - match: (?i:\b(CREATEOLEOBJ|GETACTIVEOLEOBJ|GETOLEITEM|OLEEVENT|SAFEARRAY|SPEAK|RECOSTATE|DICTATE)\b)
+      scope: support.function.comobject.uwsc
+    - match: (?i:\b(IEGETDATA|IESETDATA|IEGETSRC|IESETSRC|IELINK|IEGETFRAME|ENCODE|DECODE|CREATEFORM|GETFORMDATA|SETFORMDATA|XLOPEN|XLCLOSE|XLACTIVATE|XLSHEET|XLGETDATA|XLSETDATA)\b)
+      scope: support.function.pro.uwsc
+    - match: (?i:\b(RANDOM|ABS|ZCUT|INT|CEIL|ROUND|SQRT|POWER|EXP|LN|LOGN|SIN|COS|TAN|ARCSIN|ARCCOS|ARCTAN|ISNAN)\b)
+      scope: support.function.math.uwsc
+    - match: (?i:\b(BROWSERCONTROL)\b)
+      scope: support.function.browsercontrol.uwsc
+    - match: (?i:\b(ASSERT_EQUAL|AS_STRING|NEWRE|REGEX|TESTRE|MATCH|ENV|SHEXEC|WMI|PWSH|LIST_ENV|LIST_MODULE_MEMBER|NAME_OF|RAISE|TYPE_OF|GET_SETTINGS)\b)
+      scope: support.function.uwscr.uwsc
+    - match: (?i:\b(COM_ERR_IGN|COM_ERR_RET|EXIT|EXITEXIT|PRINT|THREAD|AWAIT)\b)
+      scope: keyword.control.uwsc
+    - match: (?i:\b(FOR|TO|IN|STEP|NEXT|IFB?|THEN|ELSE(IF)?|ENDIF|TRY|EXCEPT|FINALLY|ENDTRY|WITH|ENDWITH)\b)
+      scope: storage.type.block.uwsc
+    - match: (?i)^\s*\b(for|while|repeat)\b
+      captures:
+        1: storage.type.loop.uwsc
+      push: loop
+    - match: (?i)^\s*\b(select)\b
+      captures:
+        1: storage.type.loop.uwsc
+      push: select
+    - match: (?i)^\s*(hash)(\s+public)?\s+(\w+)
+      captures:
+        1: storage.type.hash.uwsc
+        2: keyword.control.uwsc
+        3: entity.name.hash.uwsc
+      push: hash
+    - match: (?i)^\s*(enum)\s+(\w+)
+      captures:
+        1: storage.type.enum.uwsc
+        2: entity.name.enum.uwsc
+      push: enum
+    - match: (?i)^\s*(struct)\s+(\w+)
+      captures:
+        1: storage.type.struct.uwsc
+        2: entity.name.struct.uwsc
+      push: struct
+    - match: (?i)^\s*(async\s+)?(procedure) #\s+(\w+)
+      captures:
+        1: keyword.control.async.uwsc
+        2: storage.type.procedure.uwsc
+        # 3: entity.name.procedure.uwsc
+      push: 
+        - procedure
+        - func_identifier
+    - match: (?i)^\s*(async\s+)?(function) #\s+(\w+)
+      captures:
+        1: keyword.control.async.uwsc
+        2: storage.type.function.uwsc
+        # 3: entity.name.procedure.uwsc
+      push: 
+        - function
+        - func_identifier
+    - match: (?i)\b(function|procedure)\b\s*\(
+      captures:
+        1: storage.type.anonfunc.uwsc
+      push: 
+        - function
+        - params
+    - match: (?i)^\s*(DIM|PUBLIC|CONST|HASHTBL)\s+
+      captures: 
+        1: storage.type.definition.uwsc
+    - match: (?i)^\s*(CALL)\s+((url\[\s*([^\[\]]+)\s*\])|([^\(]+))
+      captures:
+        1: storage.type.define.uwsc
+        3: constant.language.url.uwsc
+        4: variable.parameter.url.uwsc
+        5: variable.parameter.path.uwsc
+    - match: (?i)^\s*(def_dll)\s+(\w+)\(
+      captures:
+        1: storage.type.def_dll.uwsc
+        2: entity.name.identifier.uwsc
+      push: def_dll
+    - match: (?i)^\s*(textblock)\s*(\b[0-9A-Z_]+\b)
+      captures:
+        1: storage.type.textblock.uwsc
+        2: entity.name.identifier.uwsc
+      push: textblock
+    - match: (?i)^\s*(textblockex)\s*(\b[0-9A-Z_]+\b)
+      captures:
+        1: storage.type.textblock.uwsc
+        2: entity.name.identifier.uwsc
+      push: textblockex
+    - match: (?i)^\s*(textblock)\s*
+      captures:
+        1: storage.type.textblock.uwsc
+      push: textblock_comment
+    - match: (?i)^\s*(module)\s+(\w+)
+      captures: 
+        1: storage.type.module.uwsc
+        2: entity.name.module.uwsc
+      push: module
+    - match: (?i)^\s*(class)\s+(\w+)
+      captures: 
+        1: storage.type.class.uwsc
+        2: entity.name.class.uwsc
+      push: class
+    - match: \@
+      captures: 
+        0: variable.parameter.uobject.start.uwsc
+      embed: scope:source.json
+      embed_scope: meta.uobject.json.uwsc
+      escape: \@
+      escape_captures:
+        0: variable.parameter.uobject.end.uwsc
+      # push: uobject
+
+  line_comment:
+    - meta_scope: comment.line.uwsc
+    - match: \n
+      pop: true
+
+  double_quote_string:
+    - meta_scope: string.quoted.double.uwsc
+    - match: '"'
+      pop: true
+    - include: interpolated
+
+  single_quote_string:
+    - meta_scope: string.quoted.single.uwsc
+    - match: "'"
+      pop: true
+
+  loop:
+    - meta_scope: meta.loop.uwsc
+    - include: main
+    - match: (?i:\b(continue|break)\b)
+      scope: variable.parameter.loop.uwsc
+    - match: (?i)^\s*\b(next|wend|until)\b
+      captures:
+        1: storage.type.loop.uwsc
+      pop: true
+
+  select:
+    - meta_scope: meta.select.uwsc
+    - include: main
+    - match: (?i:\b(case|default)\b)
+      scope: variable.parameter.select.uwsc
+    - match: (?i)^\s*\b(selend)\b
+      captures:
+        1: storage.type.select.uwsc
+      pop: true
+
+  hash:
+    - meta_scope: meta.hash.uwsc
+    - match: (?i)^\s*\b(endhash)\b
+      captures:
+        1: storage.type.hash.uwsc
+      pop: true
+    - match: (?i)^\s*(\w+|\"\w+\"|'\w+')(\s*=)
+      captures: 
+        1: variable.parameter.uwsc
+    - include: main
+
+  enum:
+    - meta_scope: meta.enum.uwsc
+    - match: (?i)^\s*\b(endenum)\b
+      captures:
+        1: storage.type.enum.uwsc
+      pop: true
+    - match: (?i)^\s*(\w+)(\s*=\s*([0-9]+|\$[0-9A-F]+))?
+      captures: 
+        1: variable.parameter.uwsc
+        3: constant.numeric.uwsc
+
+  struct:
+    - meta_scope: meta.struct.uwsc
+    - match: (?i)^\s*\b(endstruct)\b
+      captures:
+        1: storage.type.struct.uwsc
+      pop: true
+    - match: (?i)^\s*(\w+)\s*:\s*((int|long|bool|uint|hwnd|string|Wstring|float|double|word|dword|byte|char|pchar|Wchar|pWchar|boolean|longlong|pointer)|(\w+))
+      captures: 
+        1: variable.parameter.uwsc
+        3: constant.numeric.uwsc
+        4: entity.name.function.uwsc
+
+  func_identifier:
+    - match: \b[a-z0-9_]+\b
+      scope: entity.name.func_identifier.uwsc
+    - match: \(
+      set: params
+    - match: .
+      pop: true
+
+  params:
+    - meta_scope: meta.function.params
+    - clear_scopes: 1
+    - match: (?i)\b((VAR|REF|PRMS|ARGS)\s+)?([a-z0-9_]+)(\s*:\s*((string|number|bool|array|hash|func|uobject)|([a-z0-9_]+)))?\b
+      captures:
+        2: keyword.control.uwsc
+        3: variable.parameter.uwsc
+        6: constant.language.dll.uwsc
+        7: entity.name.function.uwsc
+    - match: \)
+      pop: 1
+
+  procedure:
+    - meta_scope: meta.procedure.uwsc
+    - match: (?i)^\s*\b(fend)\b
+      captures:
+        1: storage.type.proc_end.uwsc
+      pop: true
+    - include: main
+
+  function:
+    - meta_scope: meta.function.uwsc
+    - include: main
+    - match: (?i)^\s*\b(fend)\b
+      captures:
+        1: storage.type.func_end.uwsc
+      pop: true
+    - match: (?i:\b(result)\b)
+      scope: variable.parameter.result.uwsc
+
+  def_dll:
+    - meta_scope: meta.def_dll.uwsc
+    - match: (?i)\b(int|long|bool|uint|hwnd|string|Wstring|float|double|word|dword|byte|char|pchar|Wchar|pWchar|boolean|longlong|Extended|SafeArray|pointer|struct|void)\b
+      scope: constant.language.dlltype.uwsc
+    - match: (?i)\b(var|ref)\b
+      scope: keyword.control.uwsc
+    - match: '\)\s*:\s*'
+      push: def_dll_rettype
+
+  def_dll_rettype:
+    - meta_scope: meta.dllrettype.uwsc
+    - match: int|long|bool|uint|hwnd|string|Wstring|float|double|word|dword|byte|char|pchar|Wchar|pWchar|boolean|longlong|Extended|SafeArray|pointer|struct|void
+      scope: constant.language.dllrettype.uwsc
+      pop: 2
+    - match: '.'
+      pop: 2
+
+  textblock:
+    - meta_scope: meta.textblock.uwsc
+    # json syntax highlight
+    - match: (?i)(//.*)(json)(.*)$
+      captures: 
+        0: comment.uwsc
+        2: variable.parameter.language.json.uwsc
+      embed: scope:source.json
+      embed_scope: meta.textblock.json.uwsc
+      escape: (?i:^\s*endtextblock)
+      escape_captures:
+        0: storage.type.textblock.uwsc
+      pop: 2
+    # javascript syntax highlight
+    - match: (?i)(//.*)(js|javascript|jscript)(.*)$
+      captures: 
+        0: comment.uwsc
+        2: variable.parameter.language.js.uwsc
+      embed: scope:source.js
+      embed_scope: meta.textblock.js.uwsc
+      escape: (?i:^\s*endtextblock)
+      escape_captures:
+        0: storage.type.textblock.uwsc
+      pop: 2
+    # vbscript syntax highlight
+    - match: (?i)(//.*)(vbs|vbscript)(.*)$
+      captures: 
+        0: comment.uwsc
+        2: variable.parameter.language.vbs.uwsc
+      embed: scope:source.vbs
+      embed_scope: meta.textblock.vbs.uwsc
+      escape: (?i:^\s*endtextblock)
+      escape_captures:
+        0: storage.type.textblock.uwsc
+      pop: 2
+    # powershell syntax highlight
+    - match: (?i)(//.*)(posh|pwsh|powershell|ps)(.*)$
+      captures: 
+        0: comment.uwsc
+        2: variable.parameter.language.powershell.uwsc
+      embed: scope:source.powershell
+      embed_scope: meta.textblock.powershell.uwsc
+      escape: (?i:^\s*endtextblock)
+      escape_captures:
+        0: storage.type.textblock.uwsc
+      pop: 2
+    # default
+    - match: $
+      push: textblock_body
+    - include: main
+  textblock_body:
+    - meta_scope: meta.textblock.body.uwsc
+    - meta_content_scope: string.textblock.uwsc
+    - match: (?i:^\s*endtextblock)
+      scope: storage.type.textblock.uwsc
+      pop: 2
+
+  textblockex:
+    - meta_scope: meta.textblockex.uwsc
+    - include: main
+    - match: $
+      push: textblockex_body
+  textblockex_body:
+    - meta_scope: meta.textblockex.body.uwsc
+    - meta_content_scope: string.textblockex.uwsc
+    - match: (?i:^\s*endtextblock)
+      scope: storage.type.textblock.uwsc
+      pop: 2
+    - include: interpolated
+
+  textblock_comment:
+    - meta_scope: meta.textblock.comment.uwsc
+    - meta_content_scope: comment.textblock.uwsc
+    - match: (?i:^\s*endtextblock)
+      scope: storage.type.textblock.uwsc
+      pop: true
+
+  module:
+    - meta_scope: meta.module.uwsc
+    - match: (?i)^\s*(endmodule)
+      scope: storage.type.endmodule.uwsc
+      pop: true
+    - include: main
+
+  class:
+    - meta_scope: meta.class.uwsc
+    - match: (?i)^\s*(endclass)
+      scope: storage.type.endclass.uwsc
+      pop: true
+    - include: main
+
+  interpolated:
+    - meta_scope: string.interpolated.uwsc
+    - match: (?i)(<#)((CR|DBL|TAB)|([0-9A-Z_]+))(>)
+      captures:
+        1: comment.interpolated.start.uwsc
+        3: constant.language.interpolated.uwsc
+        4: variable.parameter.interpolated.uwsc
+        5: comment.interpolated.end.uwsc
