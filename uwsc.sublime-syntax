@@ -152,19 +152,17 @@ contexts:
         1: storage.type.struct.uwsc
         2: entity.name.struct.uwsc
       push: struct
-    - match: (?i)^\s*(async\s+)?(procedure) #\s+(\w+)
+    - match: (?i)^\s*(async\s+)?(procedure)
       captures:
         1: keyword.control.async.uwsc
         2: storage.type.procedure.uwsc
-        # 3: entity.name.procedure.uwsc
       push: 
         - procedure
         - func_identifier
-    - match: (?i)^\s*(async\s+)?(function) #\s+(\w+)
+    - match: (?i)^\s*(async\s+)?(function)
       captures:
         1: keyword.control.async.uwsc
         2: storage.type.function.uwsc
-        # 3: entity.name.procedure.uwsc
       push: 
         - function
         - func_identifier
@@ -293,12 +291,13 @@ contexts:
         4: entity.name.function.uwsc
 
   func_identifier:
-    - match: \b[a-z0-9_]+\b
+    - match: \b[a-zA-Z0-9_#\\]+\b
       scope: entity.name.func_identifier.uwsc
-    - match: \(
-      set: params
-    - match: .
-      pop: true
+      set: 
+        - match: \(
+          set: params
+        - match: .
+          pop: true
 
   params:
     - meta_scope: meta.function.params
@@ -310,7 +309,7 @@ contexts:
         6: constant.language.dll.uwsc
         7: entity.name.function.uwsc
     - match: \)
-      pop: 1
+      pop: true
 
   procedure:
     - meta_scope: meta.procedure.uwsc
