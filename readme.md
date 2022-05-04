@@ -19,6 +19,27 @@ UWSC・[UWSCR](https://github.com/stuncloud/UWSCR)向けの入力補完および
 
 `.uws`ファイルに書かれたスクリプトに色付けを行います
 
+## textblock内での多言語ハイライト
+
+
+textblock行のコメントに以下のキーワードが含まれている場合、対応したシンタックスハイライトが行われます
+
+- json
+- javascript/js/jscript
+- vbs/vbscript
+     - 要VBScriptパッケージ
+- powershell/posh/pwsh/ps
+     - 要PowerShellパッケージ
+
+```
+// 例: javascriptとしてハイライトされる
+
+textblock js // javascript
+const hoge = 1;
+console.log(hoge);
+endtextblock
+```
+
 ヘルプ参照 (UWSCのみ)
 ----------
 
