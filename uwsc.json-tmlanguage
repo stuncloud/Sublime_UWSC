@@ -169,6 +169,11 @@
 		},
 		{
 			"name":  "constant.other.uwsc",
+			"match": "(?i:\\BFMT_(DEFAULT|ZERO|RIGHT|ZEROR)\\b)",
+			"comment": "FORMAT"
+		},
+		{
+			"name":  "constant.other.uwsc",
 			"match": "(?i:\\bCALC_(ADD|MIN|MAX|AVR)\\b)",
 			"comment": "CALCARRAY"
 		},
@@ -179,7 +184,7 @@
 		},
 		{
 			"name":  "constant.other.uwsc",
-			"match": "(?i:\\bCODE_(URL|UTF8|ANSI|BYTEARRAYW?|HTML)\\b)",
+			"match": "(?i:\\bCODE_(URL|UTF8|ANSI|BYTEARRAY[WU]?|HTML)\\b)",
 			"comment": "ENCODE DECODE"
 		},
 		{

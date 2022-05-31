@@ -68,10 +68,14 @@ contexts:
       scope: constant.other.error.uwsc
     - match: (?i:\bSC_((FULL|HALF)WIDTH|HIRAGANA|KATAKANA|(LOWER|UPPER)CASE)\b)
       scope: constant.other.strconv.uwsc
+    - match: (?i:\bFMT_(DEFAULT|ZERO|RIGHT|ZEROR)\b)
+      scope: constant.other.format.uwsc
     - match: (?i:\bCALC_(ADD|MIN|MAX|AVR)\b)
       scope: constant.other.calcarray.uwsc
     - match: (?i:\bF_(READ|WRITE(8B?|16?)?|APPEND|EXISTS|EXCLUSIVE|TAB|NOCR|LINECOUNT|ALLTEXT|INSERT)\b)
       scope: constant.other.fopen.uwsc
+    - match: (?i:\bCODE_(URL|UTF8|ANSI|BYTEARRAY[WU]?|HTML)\b)
+      scope: constant.other.encode.uwsc
     - match: (?i:\bFOM_(NO(ICON|HIDE|SUBMIT|RESIZE|LUNA|TASKBAR)|(MINI|MAXI)MIZE|BROWSER|FORMHIDE|GETVALUE|FORM2)\b)
       scope: constant.other.createform.uwsc
     - match: (?i:\bSNSR_(Biometric_Human(Presense|Proximity)|Electrical_(Capacitance|Resistance|Inductance|Current|Voltage|Power)|Environmental_(Temperature|Pressure|Humidity|WindDirection|WindSpeed)|Light_(Lux|Temperature)|Mechanical_(Force|AbsPressure|GaugePressure|Weight)|Motion_(Acceleration[XYZ]|AngleAccel[XYZ]|Speed)|Scanner_(RFIDTag|BarcodeData)|Orientation_(Tilt[XYZ]|Distance[XYZ]|MagHeading|TrueHeading|CompMagHeading|CompTrueHeading)|Location_(Altitude|Latitude|Longitude|Speed))\b)
@@ -108,7 +112,7 @@ contexts:
       scope: support.function.systemcontrol.uwsc
     - match: (?i:\b(GETCTLHND|IDTOHND|HNDTOID|VARTYPE|MMV|BTN|KBD|ACW|TASK|WAITTASK)\b)
       scope: support.function.system.uwsc
-    - match: (?i:\b(COPYB?|POSB?|LENGTH[BS]?|CHKNUM|VAL|REPLACE|CHGMOJ|TRIM|FORMAT|CHRB?|ASCB?|ISUNICODE|STRCONV|TOKEN|BETWEENSTR|TOJSON|FROMJSON)\b)
+    - match: (?i:\b(COPYB?|POSB?|LENGTH[BUS]?|CHKNUM|VAL|REPLACE|CHGMOJ|TRIM|FORMAT|CHRB?|ASCB?|ISUNICODE|STRCONV|TOKEN|BETWEENSTR|TOJSON|FROMJSON)\b)
       scope: support.function.textcontrol.uwsc
     - match: (?i:\b(RESIZE|SETCLEAR|SHIFTARRAY|CALCARRAY|SPLIT|JOIN|SLICE|QSORT)\b)
       scope: support.function.arraycontrol.uwsc
