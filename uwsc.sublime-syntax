@@ -114,7 +114,7 @@ contexts:
       scope: support.function.system.uwsc
     - match: (?i:\b(COPYB?|POSB?|LENGTH[BUS]?|CHKNUM|VAL|REPLACE|CHGMOJ|TRIM|FORMAT|CHRB?|ASCB?|ISUNICODE|STRCONV|TOKEN|BETWEENSTR|TOJSON|FROMJSON)\b)
       scope: support.function.textcontrol.uwsc
-    - match: (?i:\b(RESIZE|SETCLEAR|SHIFTARRAY|CALCARRAY|SPLIT|JOIN|SLICE|QSORT)\b)
+    - match: (?i:\b(RESIZE|SETCLEAR|SHIFTARRAY|CALCARRAY|SPLIT|JOIN|SLICE|QSORT|REVERSE)\b)
       scope: support.function.arraycontrol.uwsc
     - match: (?i:\b(FOPEN|FGET|FPUT|FDELLINE|FCLOSE|GETDIR|DROPFILE|READINI|WRITEINI|DELETEINI|DELETEFILE|ZIP|UNZIP|ZIPITEMS)\b)
       scope: support.function.filecontrol.uwsc
