@@ -1,0 +1,13 @@
+<snippet>
+	<content><![CDATA[
+for ${1:i} = ${2:0} to ${3:0}
+	$4
+else
+	$0
+endfor
+
+]]></content>
+	<tabTrigger>forelse</tabTrigger>
+	<scope>source.uwsc</scope>
+	<description>for-elseループ</description>
+</snippet>

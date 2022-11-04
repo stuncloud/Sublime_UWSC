@@ -1,0 +1,12 @@
+<snippet>
+	<content><![CDATA[
+for ${1:i} in ${2:arr}
+	$4
+else
+	$0
+endfor
+]]></content>
+	<tabTrigger>forinelse</tabTrigger>
+	<scope>source.uwsc</scope>
+	<description>forin-else</description>
+</snippet>

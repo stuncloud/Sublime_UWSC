@@ -22,7 +22,7 @@ contexts:
       scope: variable.parameter.uwsc
     - match: (?i:\bGET_((ACTIVE|FROMPOINT|THISUWSC|LOGPRINT|FUKIDASI|BALLOON|SCHEDULE)_WIN|FROMPOINT_OBJ|FORM_WIN2?|STOPFORM_WIN)\b)
       scope: constant.other.getid.uwsc
-    - match: (?i:\bCLK_(BTN|LIST|TAB|MENU|TREEVEW|TREEVIEW|LSTVEW|LISTVIEW|TOOLBAR|ACC|SHORT|BACK|MUSMOVE|RIGHTCLK|LEFTCLK|DBLCLK|FROMLAST|CONTINUE|LINK|API|UIA)\b)
+    - match: (?i:\bCLK_(BTN|LIST|TAB|MENU|TREEVEW|TREEVIEW|LSTVEW|LISTVIEW|TOOLBAR|ACC|SHORT|BACK|MUSMOVE|MOUSEMOVE|RIGHTCLK|LEFTCLK|DBLCLK|FROMLAST|CONTINUE|LINK|API|UIA)\b)
       scope: constant.other.clkitem.uwsc
     - match: (?i:\b(ACTIVATE|CLOSE2?|HIDE|SHOW|MIN|MAX|NORMAL|(NO)?TOPMOST|TOPMOST|TOPNOACTV)\b)
       scope: constant.other.ctrlwin.uwsc
@@ -130,12 +130,16 @@ contexts:
       scope: support.function.uwscr.uwsc
     - match: (?i:\b(COM_ERR_IGN|COM_ERR_RET|EXIT|EXITEXIT|PRINT|THREAD|AWAIT)\b)
       scope: keyword.control.uwsc
-    - match: (?i:\b(FOR|TO|IN|STEP|NEXT|IFB?|THEN|ELSE(IF)?|ENDIF|TRY|EXCEPT|FINALLY|ENDTRY|WITH|ENDWITH)\b)
-      scope: storage.type.block.uwsc
-    - match: (?i)^\s*\b(for|while|repeat)\b
+    - match: (?i)^\s*\b(for)\b
+      captures:
+        1: storage.type.for.uwsc
+      push: for
+    - match: (?i)^\s*\b(while|repeat)\b
       captures:
         1: storage.type.loop.uwsc
       push: loop
+    - match: (?i:\b(TO|IN|STEP|IFB?|THEN|ELSE|ELSEIF|ENDIF|TRY|EXCEPT|FINALLY|ENDTRY|WITH|ENDWITH|ENDFOR)\b)
+      scope: storage.type.block.uwsc
     - match: (?i)^\s*\b(select)\b
       captures:
         1: storage.type.loop.uwsc
@@ -240,6 +244,22 @@ contexts:
     - match: "'"
       pop: true
 
+  if:
+    - meta_scope: meta.if.uwsc
+    - include: main
+    - match: (?i:\b(else|elseif|endif)\b)
+      captures:
+        1: storage.type.if.uwsc
+      pop: true
+
+  for:
+    - meta_scope: meta.for.uwsc
+    - match: (?i:\b(continue|break)\b)
+      scope: variable.parameter.loop.uwsc
+    - match: (?i)^\s*\b(next|else)\b
+      scope: storage.type.for.uwsc
+      pop: true
+    - include: main
   loop:
     - meta_scope: meta.loop.uwsc
     - include: main
