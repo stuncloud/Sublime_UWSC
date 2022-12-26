@@ -156,7 +156,7 @@
 		"MORG_CLIENT", "MORG_DIRECT", "MORG_FORE", "MORG_BACK",
 		{ "trigger": "peekcolor()", "contents": "peekcolor(${1:x}, ${2:y}${3:, ${4:COL_${5:}}${6:, ${7:clipboard}}})${0}"},
 		"peekcolor",
-		"COL_RGB", "COL_R", "COL_G", "COL_B",
+		"COL_BGR", "COL_RGB", "COL_R", "COL_G", "COL_B",
 		{ "trigger": "chkimg()", "annotation": "UWSCR", "contents": "chkimg(${1:${2:path}${3:, ${4:score}${5:, ${6:count}${7:, ${8:x1}${9:, ${10:y1}${11:, ${12:x2}${13:, ${14:y2}}}}}}}})${0}"},
 		{ "trigger": "chkimg()", "annotation": "UWSC", "contents": "chkimg(${1:${2:img}${3:, ${4:trans}${5:, ${6:x1}${7:, ${8:y1}${9:, ${10:x2}${11:, ${12:y2}${13:, ${14:number}${15:, IMG_MSK_${16:}}}}}}}}})${0}"},
 		"chkimg",
@@ -214,6 +214,8 @@
 		"MON_WORK_WIDTH",
 		"MON_WORK_HEIGHT",
 		"MON_ALL",
+		"MON_DPI",
+		"MON_SCALING",
 		//制御関数、システム関数関連
 		// uwscr
 		{ "trigger": "env()", "contents": "env(${1:env_var})${0}"},

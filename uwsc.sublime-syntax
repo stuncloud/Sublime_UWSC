@@ -34,7 +34,7 @@ contexts:
       scope: constant.other.getslider.uwsc
     - match: (?i:\bST_(ALL|TITLE|CLASS|X|Y|WIDTH|HEIGHT|CLX|CLY|CLWIDTH|CLHEIGHT|PARENT|ICON|MAXIMIZED|VISIBLE|ACTIVE|BUSY|ISID|WIN64|PATH|PROCESS|MONITOR)\b)
       scope: constant.other.status.uwsc
-    - match: (?i:\bCOL_([RGB]|RGB)\b)
+    - match: (?i:\bCOL_([RGB]|RGB|BGR)\b)
       scope: constant.other.peekcolor.uwsc
     - match: (?i:\b(G_IMG_[XY]|IMG_MSK_([BGR]|BGR)[1-4]|IMG_(FORE|BACK))\b)
       scope: constant.other.saveimg.uwsc
@@ -46,7 +46,7 @@ contexts:
       scope: constant.other.msgbox.uwsc
     - match: (?i:\bSLCT_([1-9]|[12][0-9]|3[01]|BTN|CHK|CMB|LST|NUM|RDO|STR)\b)
       scope: constant.other.slctbox.uwsc
-    - match: (?i:\bMON_(HEIGHT|WIDTH|X|Y|NAME|PRIMARY|ISMAIN|WORK_X|WORK_Y|WORK_WIDTH|WORK_HEIGHT|ALL)\b)
+    - match: (?i:\bMON_(HEIGHT|WIDTH|X|Y|NAME|PRIMARY|ISMAIN|WORK_X|WORK_Y|WORK_WIDTH|WORK_HEIGHT|ALL|DPI|SCALING)\b)
       scope: constant.other.monitor.uwsc
     - match: (?i:\bG_TIME_((DD|HH|MM|NN|SS|ZZ|YY)2?|WW|YY4)\b)
       scope: constant.other.gettime.uwsc
