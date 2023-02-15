@@ -108,7 +108,7 @@
 		"sendstr",
 		{ "trigger": "getstr()", "contents": "getstr(${1:id}${2:, ${3:number}${4:, STR_${5:}${6:, ${7:mouse}}}})${0}"},
 		"getstr",
-		"STR_ACC_EDIT", "STR_ACC_STATIC", "STR_EDIT", "STR_STATIC", "STR_STATUS", "STR_ACC_CELL",
+		"STR_ACC_EDIT", "STR_ACC_STATIC", "STR_EDIT", "STR_STATIC", "STR_STATUS", "STR_ACC_CELL", "STR_UIA",
 		{ "trigger": "getitem()", "contents": "getitem(${1:id}, ITM_${2}${3:, ${4:number}${5:, ${6:column}${7:, ${8:disable}}${9:, ${10:max}}}})${0}"},
 		"getitem",
 		{ "trigger": "ALL_ITEM_LIST", "contents": "ALL_ITEM_LIST${2:[${1:}]}"},
@@ -219,7 +219,7 @@
 		//制御関数、システム関数関連
 		// uwscr
 		{ "trigger": "env()", "contents": "env(${1:env_var})${0}"},
-		{ "trigger": "shexec()", "contents": "shexec(${1:env_var})${0}"},
+		{ "trigger": "shexec()", "contents": "shexec(${1:command})${0}"},
 		{ "trigger": "wmi()", "contents": "wmi(${1:wql}${2:, ${3:namespace}})${0}"},
 		"env", 
 		"shexec", 

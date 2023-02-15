@@ -26,7 +26,7 @@ contexts:
       scope: constant.other.clkitem.uwsc
     - match: (?i:\b(ACTIVATE|CLOSE2?|HIDE|SHOW|MIN|MAX|NORMAL|(NO)?TOPMOST|TOPMOST|TOPNOACTV)\b)
       scope: constant.other.ctrlwin.uwsc
-    - match: (?i:\bSTR_(ACC_EDIT|ACC_STATIC|EDIT|STATIC|STATUS|ACC_CELL)\b)
+    - match: (?i:\bSTR_(ACC_EDIT|ACC_STATIC|EDIT|STATIC|STATUS|ACC_CELL|UIA)\b)
       scope: constant.other.getstr.uwsc
     - match: (?i:\bITM_(BTN|LIST|TAB|MENU|TREEVI?EW|LISTVIEW|LSTVEW|EDIT|STATIC|STATUSBAR|TOOLBAR|ACC(CLK2?|TXT|EDIT)|FROMLAST|BACK|LINK)\b)
       scope: constant.other.getitem.uwsc
