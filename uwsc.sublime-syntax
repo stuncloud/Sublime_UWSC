@@ -48,15 +48,15 @@ contexts:
       scope: constant.other.slctbox.uwsc
     - match: (?i:\bMON_(HEIGHT|WIDTH|X|Y|NAME|PRIMARY|ISMAIN|WORK_X|WORK_Y|WORK_WIDTH|WORK_HEIGHT|ALL|DPI|SCALING)\b)
       scope: constant.other.monitor.uwsc
-    - match: (?i:\bG_TIME_((DD|HH|MM|NN|SS|ZZ|YY)2?|WW|YY4)\b)
+    - match: (?i:\bG_(WEEKDAY_(SUN|MON|TUE|WED|THU|FRI|SAT)|OFFSET_(DAYS|HOURS|MINUTES|SECONDS|MILLIS)|TIME_((DD|HH|MM|NN|SS|ZZ|YY)2?|WW|YY4))\b)
       scope: constant.other.gettime.uwsc
-    - match: (?i:\bP_(FORCE|LOGOFF|MONIPOWER[23]?|POWEROFF|REBOOT|SCREENSAVE|SHUTDOWN|SUSPEND2?|UWSC_REEXEC)\b)
+    - match: (?i:\bP_(FORCE|LOGOFF|MONIPOWER[23]?|POWEROFF|REBOOT|SCREENSAVE|SHUTDOWN|SUSPEND2?|UWSC_REEXEC|HIBERNATE|SLEEP|MONITOR_POWERSAVE|MONITOR_OFF|MONITOR_ON|SIGNOUT)\b)
       scope: constant.other.poff.uwsc
     - match: (?i:\bTGL_(CAPSLOCK|IME|KANALOCK|NUMLOCK|SCROLLLOCK)\b)
       scope: constant.other.getkeystate.uwsc
     - match: (?i:\b(HOTKEY_(MOD|VK)|MOD_(ALT|CONTROL|SHIFT|WIN))\b)
       scope: constant.other.sethotkey.uwsc
-    - match: (?i:\bLOCK_(KEYBOARD|MOUSE)\b)
+    - match: (?i:\bLOCK_(KEYBOARD|MOUSE|ALL)\b)
       scope: constant.other.lockhardex.uwsc
     - match: (?i:\bGET_(SYS)?MENU_HND\b)
       scope: constant.other.getctlhnd.uwsc
@@ -84,7 +84,7 @@ contexts:
       scope: constant.other.qsort.uwsc
     - match: (?i:\bXL_(NEW|BOOK|OOOC)\b)
       scope: constant.other.xlopen.uwsc
-    - match: (?i:\b(GET_((WIN|SYS|CUR|APPDATA|UWSCR?)_DIR|UWSC_PRO|UWSCR?_(VER|NAME))|G_(MOUSE_[XY]|SCREEN_[WHC]))\b)
+    - match: (?i:\b(GET_((WIN|SYS|CUR|APPDATA|UWSCR?)_DIR|UWSC_PRO|UWSCR?_(VER|NAME)|FUNC_NAME)|G_(MOUSE_[XY]|SCREEN_[WHC]))\b)
       scope: constant.other.specialvars.uwsc
     - match: (?i:\bHASH_(CASECARE|EXISTS|KEY|REMOVE(ALL)?|SORT|VAL)\b)
       scope: constant.other.hashtbl.uwsc
@@ -110,7 +110,7 @@ contexts:
       scope: support.function.windowcontrol.uwsc
     - match: (?i:\b(INPUT|MSGBOX|SLCTBOX|POPUPMENU|BALLOON|FUKIDASI|STOPFORM|LOGPRINT|MONITOR)\b)
       scope: support.function.dialog.uwsc
-    - match: (?i:\b(EXEC|SLEEP|DOSCMD|POWERSHELL|SOUND|GETTIME|POFF|KINDOFOS|CPUUSERATE|GETKEYSTATE|SETHOTKEY|LOCKHARD|LOCKHARDEX|EVAL|SENSOR)\b)
+    - match: (?i:\b(EXEC|SLEEP|DOSCMD|POWERSHELL|SOUND|BEEP|GETTIME|POFF|KINDOFOS|CPUUSERATE|GETKEYSTATE|SETHOTKEY|LOCKHARD|LOCKHARDEX|EVAL|SENSOR)\b)
       scope: support.function.systemcontrol.uwsc
     - match: (?i:\b(GETCTLHND|IDTOHND|HNDTOID|VARTYPE|MMV|BTN|KBD|ACW|TASK|WAITTASK)\b)
       scope: support.function.system.uwsc
