@@ -498,7 +498,7 @@
 		"speak",
 		{ "trigger": "recostate()", "contents": "recostate(${1:flg}${2:, ${3:phrases...}})${0}"},
 		"recostate",
-		{ "trigger": "dictate()", "contents": "dictate(${1:flg})${0}"},
+		{ "trigger": "dictate()", "contents": "dictate(${1:flg${2:, ${3:timeout}}})${0}"},
 		"dictate",
 		//IE操作関連
 		{ "trigger": "iegetdata()", "contents": "iegetdata(${1:IE}, ${2:name}${3:, ${4:value}${5:, ${6:num}}})${0}"},
