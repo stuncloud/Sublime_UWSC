@@ -126,7 +126,7 @@ contexts:
       scope: support.function.pro.uwsc
     - match: (?i:\b(RANDOM|ABS|ZCUT|INT|CEIL|ROUND|SQRT|POWER|EXP|LN|LOGN|SIN|COS|TAN|ARCSIN|ARCCOS|ARCTAN|ISNAN)\b)
       scope: support.function.math.uwsc
-    - match: (?i:\b(BROWSERCONTROL)\b)
+    - match: (?i:\b(BROWSERCONTROL|BROWSERBUILDER|CONVERTFROMREMOTEOBJECT)\b)
       scope: support.function.browsercontrol.uwsc
     - match: (?i:\b(ASSERT_EQUAL|AS_STRING|NEWRE|REGEX|TESTRE|MATCH|ENV|SHEXEC|WMI|PWSH|LIST_ENV|LIST_MODULE_MEMBER|NAME_OF|RAISE|TYPE_OF|GET_SETTINGS)\b)
       scope: support.function.uwscr.uwsc

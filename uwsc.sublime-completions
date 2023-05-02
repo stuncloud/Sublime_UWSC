@@ -807,7 +807,9 @@
 		"VK_RRETURN",
 		"VK_RWIN",
 		// ブラウザ操作
-		{ "trigger": "BrowserControl()", "contents": "BrowserControl(BC_${1:}${2:, ${3:filter}, ${4:port}, ${5:headless}})${0}"},
+		{ "trigger": "BrowserControl()", "contents": "BrowserControl(BC_${1:}${2:, ${3:port}})${0}", "annotation": "BrowserControl(ブラウザ低数, [ポート])", "details": "Browserオブジェクトを返す"},
+		{ "trigger": "BrowserBuilder()", "contents": "BrowserBuilder(BC_${1:})${0}", "annotation": "BrowserBuilder(ブラウザ低数)", "details": "BrowserBuilderオブジェクトを返す"},
+		{ "trigger": "ConvertFromRemoteObject()", "contents": "ConvertFromRemoteObject(${1:remote})${0}", "annotation": "ConvertFromRemoteObject(RemoteObject)"},
 		{ "trigger": "BC_CHROME", "contents": "BC_CHROME", "annotation": "Google Chrome",},
 		{ "trigger": "BC_MSEDGE", "contents": "BC_MSEDGE", "annotation": "Microsoft Edge",},
 	]
