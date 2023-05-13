@@ -809,7 +809,8 @@
 		// ブラウザ操作
 		{ "trigger": "BrowserControl()", "contents": "BrowserControl(BC_${1:}${2:, ${3:port}})${0}", "annotation": "BrowserControl(ブラウザ低数, [ポート])", "details": "Browserオブジェクトを返す"},
 		{ "trigger": "BrowserBuilder()", "contents": "BrowserBuilder(BC_${1:})${0}", "annotation": "BrowserBuilder(ブラウザ低数)", "details": "BrowserBuilderオブジェクトを返す"},
-		{ "trigger": "ConvertFromRemoteObject()", "contents": "ConvertFromRemoteObject(${1:remote})${0}", "annotation": "ConvertFromRemoteObject(RemoteObject)"},
+		{ "trigger": "ConvertFromRemoteObject()", "contents": "ConvertFromRemoteObject(${1:remote})${0}", "annotation": "ConvertFromRemoteObject(RemoteObject)", "details": "RemoteObjectを値型に変換する",},
+		{ "trigger": "RemoteObjectType()", "contents": "RemoteObjectType(${1:remote})${0}", "annotation": "RemoteObjectType(RemoteObject)", "details": "RemoteObjectの型情報を得る",},
 		{ "trigger": "BC_CHROME", "contents": "BC_CHROME", "annotation": "Google Chrome",},
 		{ "trigger": "BC_MSEDGE", "contents": "BC_MSEDGE", "annotation": "Microsoft Edge",},
 	]
