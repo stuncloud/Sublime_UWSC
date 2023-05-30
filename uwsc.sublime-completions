@@ -809,9 +809,22 @@
 		// ブラウザ操作
 		{ "trigger": "BrowserControl()", "contents": "BrowserControl(BC_${1:}${2:, ${3:port}})${0}", "annotation": "BrowserControl(ブラウザ低数, [ポート])", "details": "Browserオブジェクトを返す"},
 		{ "trigger": "BrowserBuilder()", "contents": "BrowserBuilder(BC_${1:})${0}", "annotation": "BrowserBuilder(ブラウザ低数)", "details": "BrowserBuilderオブジェクトを返す"},
-		{ "trigger": "ConvertFromRemoteObject()", "contents": "ConvertFromRemoteObject(${1:remote})${0}", "annotation": "ConvertFromRemoteObject(RemoteObject)", "details": "RemoteObjectを値型に変換する",},
 		{ "trigger": "RemoteObjectType()", "contents": "RemoteObjectType(${1:remote})${0}", "annotation": "RemoteObjectType(RemoteObject)", "details": "RemoteObjectの型情報を得る",},
 		{ "trigger": "BC_CHROME", "contents": "BC_CHROME", "annotation": "Google Chrome",},
 		{ "trigger": "BC_MSEDGE", "contents": "BC_MSEDGE", "annotation": "Microsoft Edge",},
+		{ "trigger": "WebRequest()", "contents": "WebRequest(${1:url})${0}", "annotation": "WebRequest(url)", "details": "GETリクエストを送る",},
+		{ "trigger": "WebRequestBuilder()", "contents": "WebRequestBuilder()${0}", "annotation": "WebRequestBuilder()", "details": "WebRequestオブジェクトを返す",},
+		{ "trigger": "ParseHTML()", "contents": "ParseHTML(${1:html})${0}", "annotation": "ParseHTML(html)", "details": "HTMLをパースする",},
+		{ "trigger": "BRGetData()", "contents": "BRGetData(${1:tab}, ${2:name}${3:, ${4:value}${5:, ${6:nth}}})${0}", "annotation": "BRGetData(tab, name, [value, nth])", "details": "ページ上の値を得る: name指定",},
+		{ "trigger": "BRGetData()", "contents": "BRGetData(${1:tab}, \"tag=${2:*}\"${3:, ${4:nth}})${0}", "annotation": "BRGetData(tab, \"tag=name\", [nth])", "details": "ページ上の値を得る: タグ名指定",},
+		{ "trigger": "BRGetData()", "contents": "BRGetData(${1:tab}, \"tag=${2:*}\"${3:, \"${4:prop}=${5:val}\"${6:, ${7:nth}}})${0}", "annotation": "BRGetData(tab, \"tag=*\", \"*=*\", [nth])", "details": "ページ上の値を得る: タグ+プロパティ指定",},
+		{ "trigger": "BRGetData()", "contents": "BRGetData(${1:tab}, \"tag=table\"${2:, ${3:nth}${4:, ${5:row}${6:, ${7:col}}}})${0}", "annotation": "BRGetData(tab, \"tag=table\", [nth, row, col])", "details": "ページ上の値を得る: テーブル行列指定",},
+		{ "trigger": "BRSetData()", "contents": "BRSetData(${1:tab}, ${2:new}, ${3:name}${4:, ${5:value}${6:, ${7:nth}}})${0}", "annotation": "BRSetData(tab, new, name, [value, nth])", "details": "ページ上の値を変更する",},
+		{ "trigger": "BRSetData()", "contents": "BRSetData(${1:tab}, TRUE, ${2:name}${3:, ${4:value}${5:, ${6:nth}}})${0}", "annotation": "BRSetData(tab, TRUE, name, [value, nth])", "details": "ページ上の要素をクリックする: name指定",},
+		{ "trigger": "BRSetData()", "contents": "BRSetData(${1:tab}, TRUE, \"tag=${2:*}\"${3:, ${4:nth}})${0}", "annotation": "BRSetData(tab, TRUE, \"tag=*\", [nth])", "details": "ページ上の要素をクリックする: タグ名指定",},
+		{ "trigger": "BRSetData()", "contents": "BRSetData(${1:tab}, TRUE, \"tag=${2:*}\"${3:, \"${4:prop}=${5:val}\"${6:, ${7:nth}}})${0}", "annotation": "BRSetData(tab, TRUE, \"tag=*\", \"*=*\", [nth])", "details": "ページ上の要素をクリックする: タグ+プロパティ指定",},
+		{ "trigger": "BRSetData()", "contents": "BRSetData(${1:tab}, TRUE, \"tag=img\"${2:, ${3:src}${4:, ${5:nth}}})${0}", "annotation": "BRSetData(tab, TRUE, \"tag=img\", [src, nth])", "details": "ページ上の画像をクリックする",},
+		{ "trigger": "BRGetSrc()", "contents": "BRGetSrc(${1:tab}, ${2:tag}${3:, ${4:nth}})${0}", "annotation": "BRGetSrc(tab, tag, [nth])", "details": "ページのソースを得る",},
+		{ "trigger": "BRLink()", "contents": "BRLink(${1:tab}, ${2:link}${3:, ${4:nth}${5:, ${6:exact}}})${0}", "annotation": "BRLink(tab, link, [nth, exact])", "details": "リンクをクリックする",},
 	]
 }
