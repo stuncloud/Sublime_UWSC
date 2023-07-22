@@ -82,7 +82,7 @@ contexts:
       scope: constant.other.sensor.uwsc
     - match: (?i:\bQSRT_(UNICODE|NATURAL)?[AD]\b)
       scope: constant.other.qsort.uwsc
-    - match: (?i:\bXL_(NEW|BOOK|OOOC)\b)
+    - match: (?i:\bXL_(NEW|BOOK|OOOC|DEFAULT)\b)
       scope: constant.other.xlopen.uwsc
     - match: (?i:\b(GET_((WIN|SYS|CUR|APPDATA|UWSCR?)_DIR|UWSC_PRO|UWSCR?_(VER|NAME)|FUNC_NAME)|G_(MOUSE_[XY]|SCREEN_[WHC]))\b)
       scope: constant.other.specialvars.uwsc

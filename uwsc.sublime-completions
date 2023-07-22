@@ -530,7 +530,7 @@
 		//Excel操作関連
 		{ "trigger": "xlopen()", "contents": "xlopen(${1:${2:file}${3:, ${4:XL_${5}}${6:, ${7:params...}}}})${0}"},
 		"xlopen",
-		"XL_NEW", "XL_BOOK", "XL_OOOC",
+		"XL_NEW", "XL_BOOK", "XL_OOOC", "XL_DEFAULT",
 		{ "trigger": "xlclose()", "contents": "xlclose(${1:excel}${2:, ${3:file}})${0}"},
 		"xlclose",
 		{ "trigger": "xlactivate()", "contents": "xlactivate(${1:excel}, ${2:sheet}${3:, ${4:book}})${0}"},
