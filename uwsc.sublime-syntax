@@ -114,7 +114,7 @@ contexts:
       scope: support.function.systemcontrol.uwsc
     - match: (?i:\b(GETCTLHND|IDTOHND|HNDTOID|VARTYPE|MMV|BTN|KBD|ACW|TASK|WAITTASK)\b)
       scope: support.function.system.uwsc
-    - match: (?i:\b(COPYB?|POSB?|LENGTH[BUS]?|CHKNUM|VAL|REPLACE|CHGMOJ|TRIM|FORMAT|CHRB?|ASCB?|ISUNICODE|STRCONV|TOKEN|BETWEENSTR|TOJSON|FROMJSON)\b)
+    - match: (?i:\b(COPYB?|POSB?|LENGTH[BUSW]?|CHKNUM|VAL|REPLACE|CHGMOJ|TRIM|FORMAT|CHRB?|ASCB?|ISUNICODE|STRCONV|TOKEN|BETWEENSTR|TOJSON|FROMJSON)\b)
       scope: support.function.textcontrol.uwsc
     - match: (?i:\b(RESIZE|SETCLEAR|SHIFTARRAY|CALCARRAY|SPLIT|JOIN|SLICE|QSORT|REVERSE)\b)
       scope: support.function.arraycontrol.uwsc
@@ -258,7 +258,9 @@ contexts:
     - meta_scope: meta.for.uwsc
     - match: (?i:\b(continue|break)\b)
       scope: variable.parameter.loop.uwsc
-    - match: (?i)^\s*\b(next|else)\b
+    - match: (?i)^\s*\b(else)\b
+      scope: storage.type.for.uwsc
+    - match: (?i)^\s*\b(next|endfor)\b
       scope: storage.type.for.uwsc
       pop: true
     - include: main
@@ -306,11 +308,13 @@ contexts:
 
   struct:
     - meta_scope: meta.struct.uwsc
+    - match: //
+      push: line_comment
     - match: (?i)^\s*\b(endstruct)\b
       captures:
         1: storage.type.struct.uwsc
       pop: true
-    - match: (?i)^\s*(\w+)\s*:\s*((int|long|bool|uint|hwnd|string|Wstring|float|double|word|dword|byte|char|pchar|Wchar|pWchar|boolean|longlong|pointer)|(\w+))
+    - match: (?i)^\s*(\w+)\s*:\s*((int|long|bool|uint|hwnd|string|Wstring|float|double|word|dword|byte|char|pchar|Wchar|pWchar|boolean|longlong|pointer|size|handle|void)|(\w+))
       captures: 
         1: variable.parameter.uwsc
         3: constant.numeric.uwsc
@@ -357,7 +361,7 @@ contexts:
 
   def_dll:
     - meta_scope: meta.def_dll.uwsc
-    - match: (?i)\b(int|long|bool|uint|hwnd|string|Wstring|float|double|word|dword|byte|char|pchar|Wchar|pWchar|boolean|longlong|Extended|SafeArray|pointer|struct|void)\b
+    - match: (?i)\b(int|long|bool|uint|hwnd|string|Wstring|float|double|word|dword|byte|char|pchar|Wchar|pWchar|boolean|longlong|Extended|SafeArray|handle|pointer|size|struct|void)\b
       scope: constant.language.dlltype.uwsc
     - match: (?i)\b(var|ref)\b
       scope: keyword.control.uwsc
@@ -366,7 +370,7 @@ contexts:
 
   def_dll_rettype:
     - meta_scope: meta.dllrettype.uwsc
-    - match: int|long|bool|uint|hwnd|string|Wstring|float|double|word|dword|byte|char|pchar|Wchar|pWchar|boolean|longlong|Extended|SafeArray|pointer|struct|void
+    - match: (?i)\b(int|long|bool|uint|hwnd|string|Wstring|float|double|word|dword|byte|char|pchar|Wchar|pWchar|boolean|longlong|Extended|SafeArray|handle|pointer|size|struct|void)
       scope: constant.language.dllrettype.uwsc
       pop: 2
     - match: '.'
