@@ -191,10 +191,11 @@ contexts:
         3: constant.language.url.uwsc
         4: variable.parameter.url.uwsc
         5: variable.parameter.path.uwsc
-    - match: (?i)^\s*(def_dll)\s+(\w+)\(
+    - match: (?i)^\s*(def_dll)\s+(\w+)(:(\w+))?\(
       captures:
         1: storage.type.def_dll.uwsc
         2: entity.name.identifier.uwsc
+        4: entity.name.identifier.uwsc
       push: def_dll
     - match: (?i)^\s*(textblock)\s*(\b[0-9A-Z_]+\b)
       captures:
@@ -314,11 +315,12 @@ contexts:
       captures:
         1: storage.type.struct.uwsc
       pop: true
-    - match: (?i)^\s*(\w+)\s*:\s*((int|long|bool|uint|hwnd|string|Wstring|float|double|word|dword|byte|char|pchar|Wchar|pWchar|boolean|longlong|pointer|size|handle|void)|(\w+))
+    - match: (?i)^\s*(\w+)\s*:\s*(var|ref)?\s*((int|long|bool|uint|hwnd|string|Wstring|float|double|word|dword|byte|char|pchar|Wchar|pWchar|boolean|longlong|pointer|size|handle|void)|(\w+))
       captures: 
         1: variable.parameter.uwsc
-        3: constant.numeric.uwsc
-        4: entity.name.function.uwsc
+        2: keyword.control.uwsc
+        4: constant.numeric.uwsc
+        5: entity.name.function.uwsc
 
   func_identifier:
     - match: \b[a-zA-Z0-9_#\\]+\b
@@ -365,6 +367,9 @@ contexts:
       scope: constant.language.dlltype.uwsc
     - match: (?i)\b(var|ref)\b
       scope: keyword.control.uwsc
+    - match: (?i)\b(callback)\b
+      scope: entity.name.identifier.uwsc
+      push: callback
     - match: '\)\s*:\s*'
       push: def_dll_rettype
 
@@ -375,6 +380,14 @@ contexts:
       pop: 2
     - match: '.'
       pop: 2
+  callback:
+    - meta_scope: meta.callback.uwsc
+    - match: (?i)\b(int|long|bool|uint|dword|float|double|word|byte|boolean|longlong|hwnd|handle|pointer|void)
+      scope: constant.language.dlltype.uwsc
+    - match: '(?i)\)(\s*:\s*\b(int|long|bool|uint|dword|float|double|word|byte|boolean|longlong|hwnd|handle|pointer|void))'
+      captures:
+        2: constant.language.dlltype.uwsc
+      pop: 1
 
   textblock:
     - meta_scope: meta.textblock.uwsc
