@@ -20,7 +20,7 @@ contexts:
       scope: constant.language.uwsc
     - match: (?i:\b(EVENT_PRM|PARAM_STR|ALL_ITEM_LIST|ALL_OLE_ITEM|ALL_WIN_ID|ALL_IMG_[XY]|GETDIR_FILES)\b)
       scope: variable.parameter.uwsc
-    - match: (?i:\bGET_((ACTIVE|FROMPOINT|THISUWSC|LOGPRINT|FUKIDASI|BALLOON|SCHEDULE)_WIN|FROMPOINT_OBJ|FORM_WIN2?|STOPFORM_WIN)\b)
+    - match: (?i:\bGET_((ACTIVE|FROMPOINT|THISUWSC|CONSOLE|LOGPRINT|FUKIDASI|BALLOON|SCHEDULE)_WIN|FROMPOINT_OBJ|FORM_WIN2?|STOPFORM_WIN)\b)
       scope: constant.other.getid.uwsc
     - match: (?i:\bCLK_(BTN|LIST|TAB|MENU|TREEVEW|TREEVIEW|LSTVEW|LISTVIEW|TOOLBAR|ACC|SHORT|BACK|MUSMOVE|MOUSEMOVE|RIGHTCLK|LEFTCLK|DBLCLK|FROMLAST|CONTINUE|LINK|API|UIA)\b)
       scope: constant.other.clkitem.uwsc
@@ -46,6 +46,8 @@ contexts:
       scope: constant.other.msgbox.uwsc
     - match: (?i:\bSLCT_([1-9]|[12][0-9]|3[01]|BTN|CHK|CMB|LST|NUM|RDO|STR)\b)
       scope: constant.other.slctbox.uwsc
+    - match: (?i:\bFUKI_(DEFAULT|UP|DOWN|LEFT|RIGHT|ROUND|POINT)\b)
+      scope: constant.other.balloon.uwsc
     - match: (?i:\bMON_(HEIGHT|WIDTH|X|Y|NAME|PRIMARY|ISMAIN|WORK_X|WORK_Y|WORK_WIDTH|WORK_HEIGHT|ALL|DPI|SCALING)\b)
       scope: constant.other.monitor.uwsc
     - match: (?i:\bG_(WEEKDAY_(SUN|MON|TUE|WED|THU|FRI|SAT)|OFFSET_(DAYS|HOURS|MINUTES|SECONDS|MILLIS)|TIME_((DD|HH|MM|NN|SS|ZZ|YY)2?|WW|YY4))\b)
@@ -76,7 +78,7 @@ contexts:
       scope: constant.other.fopen.uwsc
     - match: (?i:\bCODE_(URL|UTF8|ANSI|BYTEARRAY[WU]?|HTML)\b)
       scope: constant.other.encode.uwsc
-    - match: (?i:\bFOM_(NO(ICON|HIDE|SUBMIT|RESIZE|LUNA|TASKBAR)|(MINI|MAXI)MIZE|BROWSER|FORMHIDE|GETVALUE|FORM2)\b)
+    - match: (?i:\bFOM_(NO(ICON|HIDE|SUBMIT|RESIZE|LUNA|TASKBAR)|(MINI|MAXI)MIZE|BROWSER|FORMHIDE|GETVALUE|FORM2|TOPMOST|DEFAULT)\b)
       scope: constant.other.createform.uwsc
     - match: (?i:\bSNSR_(Biometric_Human(Presense|Proximity)|Electrical_(Capacitance|Resistance|Inductance|Current|Voltage|Power)|Environmental_(Temperature|Pressure|Humidity|WindDirection|WindSpeed)|Light_(Lux|Temperature)|Mechanical_(Force|AbsPressure|GaugePressure|Weight)|Motion_(Acceleration[XYZ]|AngleAccel[XYZ]|Speed)|Scanner_(RFIDTag|BarcodeData)|Orientation_(Tilt[XYZ]|Distance[XYZ]|MagHeading|TrueHeading|CompMagHeading|CompTrueHeading)|Location_(Altitude|Latitude|Longitude|Speed))\b)
       scope: constant.other.sensor.uwsc
@@ -84,7 +86,7 @@ contexts:
       scope: constant.other.qsort.uwsc
     - match: (?i:\bXL_(NEW|BOOK|OOOC|DEFAULT)\b)
       scope: constant.other.xlopen.uwsc
-    - match: (?i:\b(GET_((WIN|SYS|CUR|APPDATA|UWSCR?)_DIR|UWSC_PRO|UWSCR?_(VER|NAME)|FUNC_NAME)|G_(MOUSE_[XY]|SCREEN_[WHC]))\b)
+    - match: (?i:\b(GET_((WIN|SYS|CUR|APPDATA|UWSCR?)_DIR|UWSC_PRO|UWSCR?_(VER|NAME)|FUNC_NAME)|G_(MOUSE_[XY]|SCREEN_[WHC])|THREAD_ID2?|HAS_CHKIMG|IS_GUI_BUILD)\b)
       scope: constant.other.specialvars.uwsc
     - match: (?i:\bHASH_(CASECARE|EXISTS|KEY|REMOVE(ALL)?|SORT|VAL)\b)
       scope: constant.other.hashtbl.uwsc
@@ -102,7 +104,9 @@ contexts:
       scope: constant.other.browsercontrol.uwsc
     - match: (?i:\bMORG_(WINDOW|CLIENT|DIRECT|FORE|BACK)\b)
       scope: constant.other.mouseorg.uwsc
-    - match: (?i)option\s+(EXPLICIT|SAMESTR|OPTFINALLY|OPTPUBLIC|SPECIALCHAR|SHORTCIRCUIT|DEFAULTFONT|POSITION|LOGPATH|LOGLINES|LOGFILE|DLGTITLE|NOSTOPHOTKEY|TOPSTOPFORM|FIXBALLOON|__ALLOW_IE_OBJECT__)
+    - match: (?i:\bCLASS_(MSGBOX|INPUTBOX|SLCTBOX|POPUPMENU|BALLOON|LOGPRINTWIN|FORM)\b)
+      scope: constant.other.gui.uwsc
+    - match: (?i)option\s+(EXPLICIT|SAMESTR|OPTFINALLY|OPTPUBLIC|SPECIALCHAR|SHORTCIRCUIT|DEFAULTFONT|POSITION|LOGPATH|LOGLINES|LOGFILE|DLGTITLE|NOSTOPHOTKEY|TOPSTOPFORM|FIXBALLOON|GUIPRINT|FORCEBOOL|__ALLOW_IE_OBJECT__)
       scope: storage.modifier.option.uwsc
     - match: (?i:\b(mod|(and|or|xor)[lb]?)\b)
       scope: keyword.operator.uwsc
