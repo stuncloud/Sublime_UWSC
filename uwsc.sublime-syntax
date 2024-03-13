@@ -106,6 +106,8 @@ contexts:
       scope: constant.other.mouseorg.uwsc
     - match: (?i:\bCLASS_(MSGBOX|INPUTBOX|SLCTBOX|POPUPMENU|BALLOON|LOGPRINTWIN|FORM)\b)
       scope: constant.other.gui.uwsc
+    - match: (?i:\bCHKIMG_(NO_GRAY|USE_WGCAPI)\b)
+      scope: constant.other.chkimg.uwsc
     - match: (?i)option\s+(EXPLICIT|SAMESTR|OPTFINALLY|OPTPUBLIC|SPECIALCHAR|SHORTCIRCUIT|DEFAULTFONT|POSITION|LOGPATH|LOGLINES|LOGFILE|DLGTITLE|NOSTOPHOTKEY|TOPSTOPFORM|FIXBALLOON|GUIPRINT|FORCEBOOL|__ALLOW_IE_OBJECT__)
       scope: storage.modifier.option.uwsc
     - match: (?i:\b(mod|(and|or|xor)[lb]?)\b)
@@ -189,12 +191,13 @@ contexts:
     - match: (?i)^\s*(DIM|PUBLIC|CONST|HASHTBL)\s+
       captures: 
         1: storage.type.definition.uwsc
-    - match: (?i)^\s*(CALL)\s+((url\[\s*([^\[\]]+)\s*\])|([^\(]+))
+    - match: '(?i)^\s*(CALL)\s+((url\[\s*([^\[\]]+)\s*\])|("[^"]*")|([^\(]+))'
       captures:
         1: storage.type.define.uwsc
         3: constant.language.url.uwsc
         4: variable.parameter.url.uwsc
         5: variable.parameter.path.uwsc
+        6: string.quoted.double.uwsc
     - match: (?i)^\s*(def_dll)\s+(\w+)(:(\w+))?\(
       captures:
         1: storage.type.def_dll.uwsc

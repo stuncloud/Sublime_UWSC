@@ -248,6 +248,11 @@
 			"comment": "ブラウザ操作"
 		},
 		{
+			"name":  "constant.other.uwsc",
+			"match": "(?i:\\bCHKIMG_(NO_GRAY|USE_WGCAPI)\\b)",
+			"comment": "chkimg"
+		},
+		{
 			"name":  "storage.modifier.uwsc",
 			"match": "(?i)option\\s+(EXPLICIT|SAMESTR|OPTFINALLY|OPTPUBLIC|SPECIALCHAR|SHORTCIRCUIT|DEFAULTFONT|POSITION|LOGPATH|LOGLINES|LOGFILE|DLGTITLE|NOSTOPHOTKEY|TOPSTOPFORM|FIXBALLOON|__ALLOW_IE_OBJECT__)"
 		},
